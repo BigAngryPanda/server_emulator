@@ -3,6 +3,7 @@ use mlua::{
     Table,
     UserData,
     UserDataMethods,
+    Value,
     MultiValue
 };
 
@@ -32,6 +33,14 @@ use crate::interfaces::{
 use server_emulator_macro::{
     log_impl_calls
 };
+
+use crate::lua_server::{
+    con_common::ConCommon,
+    con_plugin::ConPlugin,
+    con_server::ConServer,
+};
+
+use crate::lua_server::lua_object::as_lua_arg;
 
 use std::os::raw::{
     c_uint,
@@ -152,35 +161,73 @@ impl MT5Server for Server {
     }
 
     fn common_create(&mut self) -> *mut IMTConCommon {
-        self.lua.call(self.server_impl.clone(), "common_create", MultiValue::new());
+        match self.lua.call(self.server_impl.clone(), "common_create", MultiValue::new()) {
+            Value::Table(lua_impl) => {
+                let con_common = ConCommon::alloc(lua_impl);
 
-        std::ptr::null_mut()
+                let mt_con_common = ConCommon::alloc_con_server(con_common);
+
+                mt_con_common
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
     }
 
     fn common_get(&mut self, common: &mut IMTConCommon) -> c_uint {
-        0
+        match self.lua.call(self.server_impl.clone(), "common_get", as_lua_arg::<_, ConCommon>(common.impl_ptr)) {
+            Value::Integer(res) => {
+                res as c_uint
+            }
+            _ => {
+                0
+            }
+        }
     }
-/*
+
     fn plugin_create(&mut self) -> *mut IMTConPlugin {
-        unsafe { std::alloc::alloc(std::alloc::Layout::new::<IMTConPlugin>()) as *mut IMTConPlugin }
+        match self.lua.call(self.server_impl.clone(), "plugin_create", MultiValue::new()) {
+            Value::Table(lua_impl) => {
+                let con_plugin = ConPlugin::alloc(lua_impl);
+
+                let mt_con_plugin = ConPlugin::alloc_con_plugin(con_plugin);
+
+                mt_con_plugin
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
     }
 
     fn plugin_current(
         &mut self,
         plugin: &mut IMTConPlugin,
     ) -> c_uint {
-        plugin.vtable_ = &Self::CON_PLUGIN_VTABLE as *const IMTConPlugin__bindgen_vtable;
-        plugin.impl_ptr = &mut self.con_plugin as *mut con_plugin::ConPlugin;
-
-        0
+        match self.lua.call(self.server_impl.clone(), "plugin_current", as_lua_arg::<_, ConPlugin>(plugin.impl_ptr)) {
+            Value::Integer(res) => {
+                res as c_uint
+            }
+            _ => {
+                0
+            }
+        }
     }
 
     fn net_server_create(&mut self) -> *mut IMTConServer {
-        let con_server = con_server::ConServer::alloc();
+        match self.lua.call(self.server_impl.clone(), "net_server_create", MultiValue::new()) {
+            Value::Table(lua_impl) => {
+                let con_server = ConServer::alloc(lua_impl);
 
-        let mt_con_server = con_server::ConServer::alloc_con_server(con_server);
+                let mt_con_server = ConServer::alloc_con_server(con_server);
 
-        mt_con_server
+                mt_con_server
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
     }
 
     fn net_server_get(
@@ -188,11 +235,9 @@ impl MT5Server for Server {
         id: c_ulonglong,
         config: &mut IMTConServer,
     ) -> c_uint {
-        let _ = unsafe { &mut *(config.impl_ptr as *mut con_server::ConServer) };
-
         0
     }
-*/
+
     fn time_current_msc(&mut self) -> c_longlong {
         use std::time::{SystemTime, UNIX_EPOCH};
 

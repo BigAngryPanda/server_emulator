@@ -6,12 +6,12 @@ use crate::{
 
 use crate::{
     vtable_impl,
-    con_plugin
 };
 
 use crate::rust_server::{
     con_server,
     con_common,
+    con_plugin,
     user_sink,
     user,
     trade_sink,

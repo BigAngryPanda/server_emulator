@@ -1,5 +1,3 @@
-use pyo3::pyclass;
-
 pub const NULL: u32 = 0;
 pub type UINT = ::std::os::raw::c_uint;
 pub type MTAPIRES = UINT;
@@ -2384,7 +2382,6 @@ const _: () = {
 };
 #[repr(C, packed)]
 #[derive(Debug, Copy, Clone)]
-#[pyclass(get_all, set_all)]
 pub struct MTServerInfo {
     pub platform_name: [u16; 64usize],
     pub platform_owner: [u16; 128usize],
@@ -3392,308 +3389,308 @@ pub struct IMTConGroupSymbol__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConGroupSymbol_Clear: unsafe extern "C" fn(this: *mut IMTConGroupSymbol) -> MTAPIRES,
     pub IMTConGroupSymbol_Default: unsafe extern "C" fn(this: *mut IMTConGroupSymbol) -> MTAPIRES,
-    pub IMTConGroupSymbol_Path: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> LPCWSTR,
     pub IMTConGroupSymbol_Path1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, path: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroupSymbol_TradeMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
+    pub IMTConGroupSymbol_Path: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> LPCWSTR,
     pub IMTConGroupSymbol_TradeMode1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, mode: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_TradeMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_TradeModeDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_ExecMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_ExecMode1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, mode: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_ExecMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_ExecModeDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_FillFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_FillFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_FillFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_FillFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_ExpirFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_ExpirFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_ExpirFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_ExpirFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_SpreadDiff: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_SpreadDiff1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, spread: INT) -> MTAPIRES,
+    pub IMTConGroupSymbol_SpreadDiff: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_SpreadDiffDefault:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
-    pub IMTConGroupSymbol_SpreadDiffBalance:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_SpreadDiffBalance1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, spread: INT) -> MTAPIRES,
+    pub IMTConGroupSymbol_SpreadDiffBalance:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_SpreadDiffBalanceDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
-    pub IMTConGroupSymbol_StopsLevel: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_StopsLevel1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, level: INT) -> MTAPIRES,
+    pub IMTConGroupSymbol_StopsLevel: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_StopsLevelDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
-    pub IMTConGroupSymbol_FreezeLevel: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_FreezeLevel1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, level: INT) -> MTAPIRES,
+    pub IMTConGroupSymbol_FreezeLevel: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
     pub IMTConGroupSymbol_FreezeLevelDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> INT,
-    pub IMTConGroupSymbol_VolumeMin: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMin1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
+    pub IMTConGroupSymbol_VolumeMin: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMinDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeMax: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMax1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
+    pub IMTConGroupSymbol_VolumeMax: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMaxDefault:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeStep:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeStep1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
-    pub IMTConGroupSymbol_VolumeStepDefault:
+    pub IMTConGroupSymbol_VolumeStep:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeLimit:
+    pub IMTConGroupSymbol_VolumeStepDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeLimit1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
+    pub IMTConGroupSymbol_VolumeLimit:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeLimitDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_MarginFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_MarginFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_MarginFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_MarginInitial:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginInitial1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_MarginInitialDefault:
+    pub IMTConGroupSymbol_MarginInitial:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginMaintenance:
+    pub IMTConGroupSymbol_MarginInitialDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginMaintenance1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginMaintenance:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginMaintenanceDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginLong: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginLong1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginLong: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginLongDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginShort: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginShort1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginShort: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginShortDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginLimit: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginLimit1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginLimit: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginLimitDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginStop: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginStop1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginStop: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginStopDefault:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginStopLimit:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginStopLimit1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginStopLimit:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginStopLimitDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapMode1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, mode: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapModeDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_SwapLong: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapLong1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, swap: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapLong: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapLongDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapShort: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapShort1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, swap: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapShort: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapShortDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_Swap3Day:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> ::std::os::raw::c_int,
     pub IMTConGroupSymbol_Swap3Day1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, day: ::std::os::raw::c_int) -> MTAPIRES,
+    pub IMTConGroupSymbol_Swap3Day:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> ::std::os::raw::c_int,
     pub IMTConGroupSymbol_Swap3DayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> ::std::os::raw::c_int,
-    pub IMTConGroupSymbol_RETimeout: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_RETimeout1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, timeout: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_RETimeout: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_RETimeoutDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_IECheckMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IECheckMode1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, mode: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_IECheckMode: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IECheckModeDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_IETimeout: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IETimeout1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, timeout: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_IETimeout: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IETimeoutDefault:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_IESlipProfit:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IESlipProfit1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, slippage: UINT) -> MTAPIRES,
-    pub IMTConGroupSymbol_IESlipProfitDefault:
+    pub IMTConGroupSymbol_IESlipProfit:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_IESlipLosing:
+    pub IMTConGroupSymbol_IESlipProfitDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IESlipLosing1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, slippage: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_IESlipLosing:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IESlipLosingDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_IEVolumeMax:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_IEVolumeMax1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
+    pub IMTConGroupSymbol_IEVolumeMax:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_IEVolumeMaxDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_OrderFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_OrderFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_OrderFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_OrderFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_MarginRateInitial:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol, type_: UINT) -> f64,
     pub IMTConGroupSymbol_MarginRateInitial1: unsafe extern "C" fn(
         this: *mut IMTConGroupSymbol,
         type_: UINT,
         margin_rate: f64,
     ) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginRateInitial:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol, type_: UINT) -> f64,
     pub IMTConGroupSymbol_MarginRateInitialDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginRateMaintenance:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol, type_: UINT) -> f64,
     pub IMTConGroupSymbol_MarginRateMaintenance1: unsafe extern "C" fn(
         this: *mut IMTConGroupSymbol,
         type_: UINT,
         margin_rate: f64,
     ) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginRateMaintenance:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol, type_: UINT) -> f64,
     pub IMTConGroupSymbol_MarginRateMaintenanceDefault:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_MarginRateLiquidity:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginRateLiquidity1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginRateLiquidity:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginRateLiquidityDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_REFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_REFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_REFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_REFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_MarginHedged: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginHedged1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginHedged: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginHedgedDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_PermissionsFlags:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_PermissionsFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
-    pub IMTConGroupSymbol_MarginRateCurrency:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
+    pub IMTConGroupSymbol_PermissionsFlags:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_MarginRateCurrency1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, margin_rate: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_MarginRateCurrency:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_MarginRateCurrencyDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_BookDepthLimit:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_BookDepthLimit1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, depth: UINT) -> MTAPIRES,
-    pub IMTConGroupSymbol_IEFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
+    pub IMTConGroupSymbol_BookDepthLimit:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IEFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_IEFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_IEFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_VolumeMinExt:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMinExt1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
-    pub IMTConGroupSymbol_VolumeMinExtDefault:
+    pub IMTConGroupSymbol_VolumeMinExt:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeMaxExt:
+    pub IMTConGroupSymbol_VolumeMinExtDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeMaxExt1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
-    pub IMTConGroupSymbol_VolumeMaxExtDefault:
+    pub IMTConGroupSymbol_VolumeMaxExt:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeStepExt:
+    pub IMTConGroupSymbol_VolumeMaxExtDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeStepExt1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
-    pub IMTConGroupSymbol_VolumeStepExtDefault:
+    pub IMTConGroupSymbol_VolumeStepExt:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_VolumeLimitExt:
+    pub IMTConGroupSymbol_VolumeStepExtDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_VolumeLimitExt1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
-    pub IMTConGroupSymbol_VolumeLimitExtDefault:
+    pub IMTConGroupSymbol_VolumeLimitExt:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_IEVolumeMaxExt:
+    pub IMTConGroupSymbol_VolumeLimitExtDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_IEVolumeMaxExt1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, volume: UINT64) -> MTAPIRES,
+    pub IMTConGroupSymbol_IEVolumeMaxExt:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
     pub IMTConGroupSymbol_IEVolumeMaxExtDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT64,
-    pub IMTConGroupSymbol_SwapYearDays:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapYearDays1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, days: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapYearDays:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapYearDaysDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_SwapFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, flags: UINT) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapFlags: unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
     pub IMTConGroupSymbol_SwapFlagsDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> UINT,
-    pub IMTConGroupSymbol_SwapRateSunday:
-        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateSunday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateSundayDefault:
+    pub IMTConGroupSymbol_SwapRateSunday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateMonday:
+    pub IMTConGroupSymbol_SwapRateSundayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateMonday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateMondayDefault:
+    pub IMTConGroupSymbol_SwapRateMonday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateTuesday:
+    pub IMTConGroupSymbol_SwapRateMondayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateTuesday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateTuesdayDefault:
+    pub IMTConGroupSymbol_SwapRateTuesday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateWednesday:
+    pub IMTConGroupSymbol_SwapRateTuesdayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateWednesday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateWednesdayDefault:
+    pub IMTConGroupSymbol_SwapRateWednesday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateThursday:
+    pub IMTConGroupSymbol_SwapRateWednesdayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateThursday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateThursdayDefault:
+    pub IMTConGroupSymbol_SwapRateThursday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateFriday:
+    pub IMTConGroupSymbol_SwapRateThursdayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateFriday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
-    pub IMTConGroupSymbol_SwapRateFridayDefault:
+    pub IMTConGroupSymbol_SwapRateFriday:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
-    pub IMTConGroupSymbol_SwapRateSaturday:
+    pub IMTConGroupSymbol_SwapRateFridayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateSaturday1:
         unsafe extern "C" fn(this: *mut IMTConGroupSymbol, rate: f64) -> MTAPIRES,
+    pub IMTConGroupSymbol_SwapRateSaturday:
+        unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
     pub IMTConGroupSymbol_SwapRateSaturdayDefault:
         unsafe extern "C" fn(this: *const IMTConGroupSymbol) -> f64,
 }
@@ -3726,30 +3723,30 @@ pub struct IMTConCommTier__bindgen_vtable {
     pub IMTConCommTier_Assign:
         unsafe extern "C" fn(this: *mut IMTConCommTier, group: *const IMTConCommTier) -> MTAPIRES,
     pub IMTConCommTier_Clear: unsafe extern "C" fn(this: *mut IMTConCommTier) -> MTAPIRES,
-    pub IMTConCommTier_Mode: unsafe extern "C" fn(this: *const IMTConCommTier) -> UINT,
     pub IMTConCommTier_Mode1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, mode: UINT) -> MTAPIRES,
-    pub IMTConCommTier_Type: unsafe extern "C" fn(this: *const IMTConCommTier) -> UINT,
+    pub IMTConCommTier_Mode: unsafe extern "C" fn(this: *const IMTConCommTier) -> UINT,
     pub IMTConCommTier_Type1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, type_: UINT) -> MTAPIRES,
-    pub IMTConCommTier_Value: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
+    pub IMTConCommTier_Type: unsafe extern "C" fn(this: *const IMTConCommTier) -> UINT,
     pub IMTConCommTier_Value1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, value: f64) -> MTAPIRES,
-    pub IMTConCommTier_Minimal: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
+    pub IMTConCommTier_Value: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
     pub IMTConCommTier_Minimal1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, value: f64) -> MTAPIRES,
-    pub IMTConCommTier_RangeFrom: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
+    pub IMTConCommTier_Minimal: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
     pub IMTConCommTier_RangeFrom1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, value: f64) -> MTAPIRES,
-    pub IMTConCommTier_RangeTo: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
+    pub IMTConCommTier_RangeFrom: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
     pub IMTConCommTier_RangeTo1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, value: f64) -> MTAPIRES,
-    pub IMTConCommTier_Currency: unsafe extern "C" fn(this: *const IMTConCommTier) -> LPCWSTR,
+    pub IMTConCommTier_RangeTo: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
     pub IMTConCommTier_Currency1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, currency: LPCWSTR) -> MTAPIRES,
-    pub IMTConCommTier_Maximal: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
+    pub IMTConCommTier_Currency: unsafe extern "C" fn(this: *const IMTConCommTier) -> LPCWSTR,
     pub IMTConCommTier_Maximal1:
         unsafe extern "C" fn(this: *mut IMTConCommTier, value: f64) -> MTAPIRES,
+    pub IMTConCommTier_Maximal: unsafe extern "C" fn(this: *const IMTConCommTier) -> f64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -3792,25 +3789,25 @@ pub struct IMTConCommission__bindgen_vtable {
         group: *const IMTConCommission,
     ) -> MTAPIRES,
     pub IMTConCommission_Clear: unsafe extern "C" fn(this: *mut IMTConCommission) -> MTAPIRES,
-    pub IMTConCommission_Name: unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_Name1:
         unsafe extern "C" fn(this: *mut IMTConCommission, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConCommission_Description:
-        unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
+    pub IMTConCommission_Name: unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_Description1:
         unsafe extern "C" fn(this: *mut IMTConCommission, descr: LPCWSTR) -> MTAPIRES,
-    pub IMTConCommission_Path: unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
+    pub IMTConCommission_Description:
+        unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_Path1:
         unsafe extern "C" fn(this: *mut IMTConCommission, path: LPCWSTR) -> MTAPIRES,
-    pub IMTConCommission_Mode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_Path: unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_Mode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
-    pub IMTConCommission_RangeMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_Mode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_RangeMode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
-    pub IMTConCommission_ChargeMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_RangeMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_ChargeMode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
+    pub IMTConCommission_ChargeMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_TierAdd:
         unsafe extern "C" fn(this: *mut IMTConCommission, tier: *mut IMTConCommTier) -> MTAPIRES,
     pub IMTConCommission_TierUpdate: unsafe extern "C" fn(
@@ -3832,22 +3829,22 @@ pub struct IMTConCommission__bindgen_vtable {
         pos: UINT,
         tier: *mut IMTConCommTier,
     ) -> MTAPIRES,
-    pub IMTConCommission_TurnoverCurrency:
-        unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_TurnoverCurrency1:
         unsafe extern "C" fn(this: *mut IMTConCommission, currency: LPCWSTR) -> MTAPIRES,
-    pub IMTConCommission_EntryMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_TurnoverCurrency:
+        unsafe extern "C" fn(this: *const IMTConCommission) -> LPCWSTR,
     pub IMTConCommission_EntryMode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
-    pub IMTConCommission_ActionMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_EntryMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_ActionMode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
-    pub IMTConCommission_ProfitMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_ActionMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_ProfitMode1:
         unsafe extern "C" fn(this: *mut IMTConCommission, mode: UINT) -> MTAPIRES,
-    pub IMTConCommission_ReasonFlags: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
+    pub IMTConCommission_ProfitMode: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
     pub IMTConCommission_ReasonFlags1:
         unsafe extern "C" fn(this: *mut IMTConCommission, flags: UINT) -> MTAPIRES,
+    pub IMTConCommission_ReasonFlags: unsafe extern "C" fn(this: *const IMTConCommission) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -3931,62 +3928,62 @@ pub struct IMTConGroup__bindgen_vtable {
     pub IMTConGroup_Assign:
         unsafe extern "C" fn(this: *mut IMTConGroup, group: *const IMTConGroup) -> MTAPIRES,
     pub IMTConGroup_Clear: unsafe extern "C" fn(this: *mut IMTConGroup) -> MTAPIRES,
-    pub IMTConGroup_Group: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_Group1:
         unsafe extern "C" fn(this: *mut IMTConGroup, group: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_Server: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
+    pub IMTConGroup_Group: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_Server1:
         unsafe extern "C" fn(this: *mut IMTConGroup, server: UINT64) -> MTAPIRES,
-    pub IMTConGroup_PermissionsFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
+    pub IMTConGroup_Server: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
     pub IMTConGroup_PermissionsFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroup, flags: UINT64) -> MTAPIRES,
-    pub IMTConGroup_AuthMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_PermissionsFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
     pub IMTConGroup_AuthMode1: unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_AuthPasswordMin: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_AuthMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_AuthPasswordMin1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_Company: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_AuthPasswordMin: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_Company1:
         unsafe extern "C" fn(this: *mut IMTConGroup, company: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanyPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_Company: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanyPage1:
         unsafe extern "C" fn(this: *mut IMTConGroup, page: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanyEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanyPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanyEmail1:
         unsafe extern "C" fn(this: *mut IMTConGroup, email: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanySupportPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanyEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanySupportPage1:
         unsafe extern "C" fn(this: *mut IMTConGroup, page: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanySupportEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanySupportPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanySupportEmail1:
         unsafe extern "C" fn(this: *mut IMTConGroup, email: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanyCatalog: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanySupportEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanyCatalog1:
         unsafe extern "C" fn(this: *mut IMTConGroup, catalog: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_Currency: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanyCatalog: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_Currency1:
         unsafe extern "C" fn(this: *mut IMTConGroup, currency: LPCWSTR) -> MTAPIRES,
+    pub IMTConGroup_Currency: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CurrencyDigits: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
-    pub IMTConGroup_ReportsMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_ReportsMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_ReportsFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
+    pub IMTConGroup_ReportsMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_ReportsFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroup, flags: UINT64) -> MTAPIRES,
-    pub IMTConGroup_ReportsSMTP: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_ReportsFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
     pub IMTConGroup_ReportsSMTP1:
         unsafe extern "C" fn(this: *mut IMTConGroup, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_ReportsSMTPLogin: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_ReportsSMTP: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_ReportsSMTPLogin1:
         unsafe extern "C" fn(this: *mut IMTConGroup, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_ReportsSMTPPass: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_ReportsSMTPLogin: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_ReportsSMTPPass1:
         unsafe extern "C" fn(this: *mut IMTConGroup, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_NewsMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_ReportsSMTPPass: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_NewsMode1: unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_NewsCategory: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_NewsMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_NewsCategory1:
         unsafe extern "C" fn(this: *mut IMTConGroup, category: LPCWSTR) -> MTAPIRES,
+    pub IMTConGroup_NewsCategory: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_NewsLangAdd:
         unsafe extern "C" fn(this: *mut IMTConGroup, language: UINT) -> MTAPIRES,
     pub IMTConGroup_NewsLangUpdate:
@@ -3996,44 +3993,44 @@ pub struct IMTConGroup__bindgen_vtable {
     pub IMTConGroup_NewsLangClear: unsafe extern "C" fn(this: *mut IMTConGroup) -> MTAPIRES,
     pub IMTConGroup_NewsLangTotal: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_NewsLangNext: unsafe extern "C" fn(this: *const IMTConGroup, pos: UINT) -> UINT,
-    pub IMTConGroup_MailMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MailMode1: unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_TradeFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
+    pub IMTConGroup_MailMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_TradeFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroup, flags: UINT64) -> MTAPIRES,
-    pub IMTConGroup_TradeInterestrate: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
+    pub IMTConGroup_TradeFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
     pub IMTConGroup_TradeInterestrate1:
         unsafe extern "C" fn(this: *mut IMTConGroup, rate: f64) -> MTAPIRES,
-    pub IMTConGroup_TradeVirtualCredit: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
+    pub IMTConGroup_TradeInterestrate: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
     pub IMTConGroup_TradeVirtualCredit1:
         unsafe extern "C" fn(this: *mut IMTConGroup, credit: f64) -> MTAPIRES,
-    pub IMTConGroup_MarginFreeMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_TradeVirtualCredit: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
     pub IMTConGroup_MarginFreeMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, freemode: UINT) -> MTAPIRES,
-    pub IMTConGroup_MarginSOMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_MarginFreeMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MarginSOMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, level: UINT) -> MTAPIRES,
-    pub IMTConGroup_MarginCall: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
+    pub IMTConGroup_MarginSOMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MarginCall1:
         unsafe extern "C" fn(this: *mut IMTConGroup, level: f64) -> MTAPIRES,
-    pub IMTConGroup_MarginStopOut: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
+    pub IMTConGroup_MarginCall: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
     pub IMTConGroup_MarginStopOut1:
         unsafe extern "C" fn(this: *mut IMTConGroup, level: f64) -> MTAPIRES,
-    pub IMTConGroup_DemoLeverage: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_MarginStopOut: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
     pub IMTConGroup_DemoLeverage1:
         unsafe extern "C" fn(this: *mut IMTConGroup, leverage: UINT) -> MTAPIRES,
-    pub IMTConGroup_DemoDeposit: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
+    pub IMTConGroup_DemoLeverage: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_DemoDeposit1:
         unsafe extern "C" fn(this: *mut IMTConGroup, deposit: f64) -> MTAPIRES,
-    pub IMTConGroup_LimitHistory: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_DemoDeposit: unsafe extern "C" fn(this: *const IMTConGroup) -> f64,
     pub IMTConGroup_LimitHistory1:
         unsafe extern "C" fn(this: *mut IMTConGroup, limit: UINT) -> MTAPIRES,
-    pub IMTConGroup_LimitOrders: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_LimitHistory: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_LimitOrders1:
         unsafe extern "C" fn(this: *mut IMTConGroup, limit: UINT) -> MTAPIRES,
-    pub IMTConGroup_LimitSymbols: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_LimitOrders: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_LimitSymbols1:
         unsafe extern "C" fn(this: *mut IMTConGroup, limit: UINT) -> MTAPIRES,
+    pub IMTConGroup_LimitSymbols: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_CommissionAdd:
         unsafe extern "C" fn(this: *mut IMTConGroup, commission: *mut IMTConCommission) -> MTAPIRES,
     pub IMTConGroup_CommissionUpdate: unsafe extern "C" fn(
@@ -4086,39 +4083,39 @@ pub struct IMTConGroup__bindgen_vtable {
         name: LPCWSTR,
         symbol: *mut IMTConGroupSymbol,
     ) -> MTAPIRES,
-    pub IMTConGroup_MarginFreeProfitMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MarginFreeProfitMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_MarginMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_MarginFreeProfitMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MarginMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_AuthOTPMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_MarginMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_AuthOTPMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_TradeTransferMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_AuthOTPMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_TradeTransferMode1:
         unsafe extern "C" fn(this: *mut IMTConGroup, mode: UINT) -> MTAPIRES,
-    pub IMTConGroup_MarginFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
+    pub IMTConGroup_TradeTransferMode: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_MarginFlags1:
         unsafe extern "C" fn(this: *mut IMTConGroup, flags: UINT64) -> MTAPIRES,
-    pub IMTConGroup_LimitPositions: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
+    pub IMTConGroup_MarginFlags: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT64,
     pub IMTConGroup_LimitPositions1:
         unsafe extern "C" fn(this: *mut IMTConGroup, limit: UINT) -> MTAPIRES,
+    pub IMTConGroup_LimitPositions: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_CurrencyDigitsSet:
         unsafe extern "C" fn(this: *mut IMTConGroup, currency_digits: UINT) -> MTAPIRES,
-    pub IMTConGroup_ReportsEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_ReportsEmail1:
         unsafe extern "C" fn(this: *mut IMTConGroup, email: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_CompanyDepositPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_ReportsEmail: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
     pub IMTConGroup_CompanyDepositPage1:
+        unsafe extern "C" fn(this: *mut IMTConGroup, url: LPCWSTR) -> MTAPIRES,
+    pub IMTConGroup_CompanyDepositPage: unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
+    pub IMTConGroup_CompanyWithdrawalPage1:
         unsafe extern "C" fn(this: *mut IMTConGroup, url: LPCWSTR) -> MTAPIRES,
     pub IMTConGroup_CompanyWithdrawalPage:
         unsafe extern "C" fn(this: *const IMTConGroup) -> LPCWSTR,
-    pub IMTConGroup_CompanyWithdrawalPage1:
-        unsafe extern "C" fn(this: *mut IMTConGroup, url: LPCWSTR) -> MTAPIRES,
-    pub IMTConGroup_DemoInactivityPeriod: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
     pub IMTConGroup_DemoInactivityPeriod1:
         unsafe extern "C" fn(this: *mut IMTConGroup, period: UINT) -> MTAPIRES,
+    pub IMTConGroup_DemoInactivityPeriod: unsafe extern "C" fn(this: *const IMTConGroup) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -4273,12 +4270,12 @@ pub struct IMTConManagerAccess__bindgen_vtable {
         access: *const IMTConManagerAccess,
     ) -> MTAPIRES,
     pub IMTConManagerAccess_Clear: unsafe extern "C" fn(this: *mut IMTConManagerAccess) -> MTAPIRES,
-    pub IMTConManagerAccess_From: unsafe extern "C" fn(this: *const IMTConManagerAccess) -> LPCWSTR,
     pub IMTConManagerAccess_From1:
         unsafe extern "C" fn(this: *mut IMTConManagerAccess, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConManagerAccess_To: unsafe extern "C" fn(this: *const IMTConManagerAccess) -> LPCWSTR,
+    pub IMTConManagerAccess_From: unsafe extern "C" fn(this: *const IMTConManagerAccess) -> LPCWSTR,
     pub IMTConManagerAccess_To1:
         unsafe extern "C" fn(this: *mut IMTConManagerAccess, value: LPCWSTR) -> MTAPIRES,
+    pub IMTConManagerAccess_To: unsafe extern "C" fn(this: *const IMTConManagerAccess) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -4296,22 +4293,22 @@ pub struct IMTConManager__bindgen_vtable {
     pub IMTConManager_Assign:
         unsafe extern "C" fn(this: *mut IMTConManager, manager: *const IMTConManager) -> MTAPIRES,
     pub IMTConManager_Clear: unsafe extern "C" fn(this: *mut IMTConManager) -> MTAPIRES,
-    pub IMTConManager_Login: unsafe extern "C" fn(this: *const IMTConManager) -> UINT64,
     pub IMTConManager_Login1:
         unsafe extern "C" fn(this: *mut IMTConManager, login: UINT64) -> MTAPIRES,
-    pub IMTConManager_Mailbox: unsafe extern "C" fn(this: *const IMTConManager) -> LPCWSTR,
+    pub IMTConManager_Login: unsafe extern "C" fn(this: *const IMTConManager) -> UINT64,
     pub IMTConManager_Mailbox1:
         unsafe extern "C" fn(this: *mut IMTConManager, mailbox: LPCWSTR) -> MTAPIRES,
+    pub IMTConManager_Mailbox: unsafe extern "C" fn(this: *const IMTConManager) -> LPCWSTR,
     pub IMTConManager_Server: unsafe extern "C" fn(this: *const IMTConManager) -> UINT64,
-    pub IMTConManager_LimitLogs: unsafe extern "C" fn(this: *const IMTConManager) -> UINT,
     pub IMTConManager_LimitLogs1:
         unsafe extern "C" fn(this: *mut IMTConManager, limit: UINT) -> MTAPIRES,
-    pub IMTConManager_LimitReports: unsafe extern "C" fn(this: *const IMTConManager) -> UINT,
+    pub IMTConManager_LimitLogs: unsafe extern "C" fn(this: *const IMTConManager) -> UINT,
     pub IMTConManager_LimitReports1:
         unsafe extern "C" fn(this: *mut IMTConManager, limit: UINT) -> MTAPIRES,
-    pub IMTConManager_Right: unsafe extern "C" fn(this: *const IMTConManager, right: UINT) -> UINT,
+    pub IMTConManager_LimitReports: unsafe extern "C" fn(this: *const IMTConManager) -> UINT,
     pub IMTConManager_Right1:
         unsafe extern "C" fn(this: *mut IMTConManager, right: UINT, flags: UINT) -> MTAPIRES,
+    pub IMTConManager_Right: unsafe extern "C" fn(this: *const IMTConManager, right: UINT) -> UINT,
     pub IMTConManager_GroupAdd:
         unsafe extern "C" fn(this: *mut IMTConManager, path: LPCWSTR) -> MTAPIRES,
     pub IMTConManager_GroupUpdate:
@@ -4482,30 +4479,30 @@ pub struct IMTConHistorySync__bindgen_vtable {
         param: *const IMTConHistorySync,
     ) -> MTAPIRES,
     pub IMTConHistorySync_Clear: unsafe extern "C" fn(this: *mut IMTConHistorySync) -> MTAPIRES,
-    pub IMTConHistorySync_Server: unsafe extern "C" fn(this: *const IMTConHistorySync) -> LPCWSTR,
     pub IMTConHistorySync_Server1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConHistorySync_ServerType: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
+    pub IMTConHistorySync_Server: unsafe extern "C" fn(this: *const IMTConHistorySync) -> LPCWSTR,
     pub IMTConHistorySync_ServerType1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, type_: UINT) -> MTAPIRES,
-    pub IMTConHistorySync_Mode: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
+    pub IMTConHistorySync_ServerType: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
     pub IMTConHistorySync_Mode1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, mode: UINT) -> MTAPIRES,
-    pub IMTConHistorySync_ModeSync: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
+    pub IMTConHistorySync_Mode: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
     pub IMTConHistorySync_ModeSync1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, type_: UINT) -> MTAPIRES,
-    pub IMTConHistorySync_TimeCorrection:
-        unsafe extern "C" fn(this: *const IMTConHistorySync) -> ::std::os::raw::c_int,
+    pub IMTConHistorySync_ModeSync: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
     pub IMTConHistorySync_TimeCorrection1: unsafe extern "C" fn(
         this: *mut IMTConHistorySync,
         correction: ::std::os::raw::c_int,
     ) -> MTAPIRES,
-    pub IMTConHistorySync_From: unsafe extern "C" fn(this: *const IMTConHistorySync) -> INT64,
+    pub IMTConHistorySync_TimeCorrection:
+        unsafe extern "C" fn(this: *const IMTConHistorySync) -> ::std::os::raw::c_int,
     pub IMTConHistorySync_From1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, from: INT64) -> MTAPIRES,
-    pub IMTConHistorySync_To: unsafe extern "C" fn(this: *const IMTConHistorySync) -> INT64,
+    pub IMTConHistorySync_From: unsafe extern "C" fn(this: *const IMTConHistorySync) -> INT64,
     pub IMTConHistorySync_To1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, to: INT64) -> MTAPIRES,
+    pub IMTConHistorySync_To: unsafe extern "C" fn(this: *const IMTConHistorySync) -> INT64,
     pub IMTConHistorySync_SymbolAdd:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, path: LPCWSTR) -> MTAPIRES,
     pub IMTConHistorySync_SymbolUpdate:
@@ -4520,18 +4517,18 @@ pub struct IMTConHistorySync__bindgen_vtable {
     pub IMTConHistorySync_SymbolTotal: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
     pub IMTConHistorySync_SymbolNext:
         unsafe extern "C" fn(this: *const IMTConHistorySync, pos: UINT) -> LPCWSTR,
-    pub IMTConHistorySync_Flags: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT64,
     pub IMTConHistorySync_Flags1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, flags: UINT64) -> MTAPIRES,
-    pub IMTConHistorySync_HistoryData: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
+    pub IMTConHistorySync_Flags: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT64,
     pub IMTConHistorySync_HistoryData1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, data: UINT) -> MTAPIRES,
-    pub IMTConHistorySync_Login: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT64,
+    pub IMTConHistorySync_HistoryData: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT,
     pub IMTConHistorySync_Login1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, login: UINT64) -> MTAPIRES,
-    pub IMTConHistorySync_Password: unsafe extern "C" fn(this: *const IMTConHistorySync) -> LPCWSTR,
+    pub IMTConHistorySync_Login: unsafe extern "C" fn(this: *const IMTConHistorySync) -> UINT64,
     pub IMTConHistorySync_Password1:
         unsafe extern "C" fn(this: *mut IMTConHistorySync, password: LPCWSTR) -> MTAPIRES,
+    pub IMTConHistorySync_Password: unsafe extern "C" fn(this: *const IMTConHistorySync) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -4597,22 +4594,22 @@ pub struct IMTConFeederTranslate__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConFeederTranslate_Clear:
         unsafe extern "C" fn(this: *mut IMTConFeederTranslate) -> MTAPIRES,
-    pub IMTConFeederTranslate_Source:
-        unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> LPCWSTR,
     pub IMTConFeederTranslate_Source1:
         unsafe extern "C" fn(this: *mut IMTConFeederTranslate, source: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeederTranslate_Symbol:
+    pub IMTConFeederTranslate_Source:
         unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> LPCWSTR,
     pub IMTConFeederTranslate_Symbol1:
         unsafe extern "C" fn(this: *mut IMTConFeederTranslate, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeederTranslate_BidMarkup:
-        unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> INT,
+    pub IMTConFeederTranslate_Symbol:
+        unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> LPCWSTR,
     pub IMTConFeederTranslate_BidMarkup1:
         unsafe extern "C" fn(this: *mut IMTConFeederTranslate, markup: INT) -> MTAPIRES,
-    pub IMTConFeederTranslate_AskMarkup:
+    pub IMTConFeederTranslate_BidMarkup:
         unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> INT,
     pub IMTConFeederTranslate_AskMarkup1:
         unsafe extern "C" fn(this: *mut IMTConFeederTranslate, markup: INT) -> MTAPIRES,
+    pub IMTConFeederTranslate_AskMarkup:
+        unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> INT,
     pub IMTConFeederTranslate_Digits:
         unsafe extern "C" fn(this: *const IMTConFeederTranslate) -> UINT,
 }
@@ -4694,22 +4691,22 @@ pub struct IMTConGatewayTranslate__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConGatewayTranslate_Clear:
         unsafe extern "C" fn(this: *mut IMTConGatewayTranslate) -> MTAPIRES,
-    pub IMTConGatewayTranslate_Source:
-        unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> LPCWSTR,
     pub IMTConGatewayTranslate_Source1:
         unsafe extern "C" fn(this: *mut IMTConGatewayTranslate, source: LPCWSTR) -> MTAPIRES,
-    pub IMTConGatewayTranslate_Symbol:
+    pub IMTConGatewayTranslate_Source:
         unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> LPCWSTR,
     pub IMTConGatewayTranslate_Symbol1:
         unsafe extern "C" fn(this: *mut IMTConGatewayTranslate, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTConGatewayTranslate_BidMarkup:
-        unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> INT,
+    pub IMTConGatewayTranslate_Symbol:
+        unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> LPCWSTR,
     pub IMTConGatewayTranslate_BidMarkup1:
         unsafe extern "C" fn(this: *mut IMTConGatewayTranslate, markup: INT) -> MTAPIRES,
-    pub IMTConGatewayTranslate_AskMarkup:
+    pub IMTConGatewayTranslate_BidMarkup:
         unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> INT,
     pub IMTConGatewayTranslate_AskMarkup1:
         unsafe extern "C" fn(this: *mut IMTConGatewayTranslate, markup: INT) -> MTAPIRES,
+    pub IMTConGatewayTranslate_AskMarkup:
+        unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> INT,
     pub IMTConGatewayTranslate_Digits:
         unsafe extern "C" fn(this: *const IMTConGatewayTranslate) -> UINT,
 }
@@ -4730,43 +4727,43 @@ pub struct IMTConGateway__bindgen_vtable {
     pub IMTConGateway_Assign:
         unsafe extern "C" fn(this: *mut IMTConGateway, param: *const IMTConGateway) -> MTAPIRES,
     pub IMTConGateway_Clear: unsafe extern "C" fn(this: *mut IMTConGateway) -> MTAPIRES,
-    pub IMTConGateway_Name: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_Name1:
         unsafe extern "C" fn(this: *mut IMTConGateway, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_ID: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT64,
+    pub IMTConGateway_Name: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_ID1: unsafe extern "C" fn(this: *mut IMTConGateway, id: UINT64) -> MTAPIRES,
-    pub IMTConGateway_Module: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_ID: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT64,
     pub IMTConGateway_Module1:
         unsafe extern "C" fn(this: *mut IMTConGateway, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_TradingServer: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_Module: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_TradingServer1:
         unsafe extern "C" fn(this: *mut IMTConGateway, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_TradingLogin: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_TradingServer: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_TradingLogin1:
         unsafe extern "C" fn(this: *mut IMTConGateway, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_TradingPassword: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_TradingLogin: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_TradingPassword1:
         unsafe extern "C" fn(this: *mut IMTConGateway, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_GatewayServer: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_TradingPassword: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_GatewayServer1:
         unsafe extern "C" fn(this: *mut IMTConGateway, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConGateway_Mode: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_GatewayServer: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_Mode1: unsafe extern "C" fn(this: *mut IMTConGateway, mode: UINT) -> MTAPIRES,
-    pub IMTConGateway_Flags: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_Mode: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_Flags1:
         unsafe extern "C" fn(this: *mut IMTConGateway, flags: UINT) -> MTAPIRES,
-    pub IMTConGateway_ObsoleteValue: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_Flags: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_ObsoleteValue1:
         unsafe extern "C" fn(this: *mut IMTConGateway, value: UINT) -> MTAPIRES,
-    pub IMTConGateway_TimeoutReconnect: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_ObsoleteValue: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_TimeoutReconnect1:
         unsafe extern "C" fn(this: *mut IMTConGateway, timeout: UINT) -> MTAPIRES,
-    pub IMTConGateway_TimeoutSleep: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_TimeoutReconnect: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_TimeoutSleep1:
         unsafe extern "C" fn(this: *mut IMTConGateway, timeout: UINT) -> MTAPIRES,
-    pub IMTConGateway_TimeoutAttempts: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
+    pub IMTConGateway_TimeoutSleep: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_TimeoutAttempts1:
         unsafe extern "C" fn(this: *mut IMTConGateway, attempts: UINT) -> MTAPIRES,
+    pub IMTConGateway_TimeoutAttempts: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT,
     pub IMTConGateway_ParameterAdd:
         unsafe extern "C" fn(this: *mut IMTConGateway, param: *mut IMTConParam) -> MTAPIRES,
     pub IMTConGateway_ParameterUpdate: unsafe extern "C" fn(
@@ -4851,12 +4848,12 @@ pub struct IMTConGateway__bindgen_vtable {
         symbol: LPCWSTR,
         param: *mut IMTConGatewayTranslate,
     ) -> MTAPIRES,
-    pub IMTConGateway_GatewayLogin: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT64,
     pub IMTConGateway_GatewayLogin1:
         unsafe extern "C" fn(this: *mut IMTConGateway, login: UINT64) -> MTAPIRES,
-    pub IMTConGateway_GatewayPassword: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
+    pub IMTConGateway_GatewayLogin: unsafe extern "C" fn(this: *const IMTConGateway) -> UINT64,
     pub IMTConGateway_GatewayPassword1:
         unsafe extern "C" fn(this: *mut IMTConGateway, password: LPCWSTR) -> MTAPIRES,
+    pub IMTConGateway_GatewayPassword: unsafe extern "C" fn(this: *const IMTConGateway) -> LPCWSTR,
     pub IMTConGateway_TranslateGetSource: unsafe extern "C" fn(
         this: *const IMTConGateway,
         source: LPCWSTR,
@@ -4969,43 +4966,43 @@ pub struct IMTConFeeder__bindgen_vtable {
     pub IMTConFeeder_Assign:
         unsafe extern "C" fn(this: *mut IMTConFeeder, param: *const IMTConFeeder) -> MTAPIRES,
     pub IMTConFeeder_Clear: unsafe extern "C" fn(this: *mut IMTConFeeder) -> MTAPIRES,
-    pub IMTConFeeder_Name: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_Name1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_Module: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_Name: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_Module1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_FeedServer: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_Module: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_FeedServer1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_FeedLogin: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_FeedServer: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_FeedLogin1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_FeedPassword: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_FeedLogin: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_FeedPassword1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_Mode: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_FeedPassword: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_Mode1: unsafe extern "C" fn(this: *mut IMTConFeeder, mode: UINT) -> MTAPIRES,
-    pub IMTConFeeder_Flags: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_Mode: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_Flags1: unsafe extern "C" fn(this: *mut IMTConFeeder, flags: UINT) -> MTAPIRES,
-    pub IMTConFeeder_Keywords: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_Flags: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_Keywords1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, keywords: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_Categories: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_Keywords: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_Categories1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, categories: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_ObsoleteValue: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_Categories: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_ObsoleteValue1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, value: UINT) -> MTAPIRES,
-    pub IMTConFeeder_TimeoutReconnect: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_ObsoleteValue: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_TimeoutReconnect1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, timeout: UINT) -> MTAPIRES,
-    pub IMTConFeeder_TimeoutSleep: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_TimeoutReconnect: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_TimeoutSleep1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, timeout: UINT) -> MTAPIRES,
-    pub IMTConFeeder_TimeoutAttempts: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
+    pub IMTConFeeder_TimeoutSleep: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_TimeoutAttempts1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, attempts: UINT) -> MTAPIRES,
+    pub IMTConFeeder_TimeoutAttempts: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_ParameterAdd:
         unsafe extern "C" fn(this: *mut IMTConFeeder, param: *mut IMTConParam) -> MTAPIRES,
     pub IMTConFeeder_ParameterUpdate: unsafe extern "C" fn(
@@ -5075,15 +5072,15 @@ pub struct IMTConFeeder__bindgen_vtable {
         symbol: LPCWSTR,
         param: *mut IMTConFeederTranslate,
     ) -> MTAPIRES,
-    pub IMTConFeeder_GatewayServer: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_GatewayServer1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConFeeder_GatewayLogin: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT64,
+    pub IMTConFeeder_GatewayServer: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_GatewayLogin1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, login: UINT64) -> MTAPIRES,
-    pub IMTConFeeder_GatewayPassword: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
+    pub IMTConFeeder_GatewayLogin: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT64,
     pub IMTConFeeder_GatewayPassword1:
         unsafe extern "C" fn(this: *mut IMTConFeeder, password: LPCWSTR) -> MTAPIRES,
+    pub IMTConFeeder_GatewayPassword: unsafe extern "C" fn(this: *const IMTConFeeder) -> LPCWSTR,
     pub IMTConFeeder_StateConnected: unsafe extern "C" fn(this: *const IMTConFeeder) -> bool,
     pub IMTConFeeder_StateReceivedTicks: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
     pub IMTConFeeder_StateReceivedBooks: unsafe extern "C" fn(this: *const IMTConFeeder) -> UINT,
@@ -5219,17 +5216,17 @@ pub struct IMTConReport__bindgen_vtable {
     pub IMTConReport_Assign:
         unsafe extern "C" fn(this: *mut IMTConReport, param: *const IMTConReport) -> MTAPIRES,
     pub IMTConReport_Clear: unsafe extern "C" fn(this: *mut IMTConReport) -> MTAPIRES,
-    pub IMTConReport_Name: unsafe extern "C" fn(this: *const IMTConReport) -> LPCWSTR,
     pub IMTConReport_Name1:
         unsafe extern "C" fn(this: *mut IMTConReport, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConReport_Server: unsafe extern "C" fn(this: *const IMTConReport) -> UINT64,
+    pub IMTConReport_Name: unsafe extern "C" fn(this: *const IMTConReport) -> LPCWSTR,
     pub IMTConReport_Server1:
         unsafe extern "C" fn(this: *mut IMTConReport, server: UINT64) -> MTAPIRES,
-    pub IMTConReport_Module: unsafe extern "C" fn(this: *const IMTConReport) -> LPCWSTR,
+    pub IMTConReport_Server: unsafe extern "C" fn(this: *const IMTConReport) -> UINT64,
     pub IMTConReport_Module1:
         unsafe extern "C" fn(this: *mut IMTConReport, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConReport_Mode: unsafe extern "C" fn(this: *const IMTConReport) -> UINT,
+    pub IMTConReport_Module: unsafe extern "C" fn(this: *const IMTConReport) -> LPCWSTR,
     pub IMTConReport_Mode1: unsafe extern "C" fn(this: *mut IMTConReport, mode: UINT) -> MTAPIRES,
+    pub IMTConReport_Mode: unsafe extern "C" fn(this: *const IMTConReport) -> UINT,
     pub IMTConReport_ParameterAdd:
         unsafe extern "C" fn(this: *mut IMTConReport, param: *mut IMTConParam) -> MTAPIRES,
     pub IMTConReport_ParameterUpdate: unsafe extern "C" fn(
@@ -5292,53 +5289,53 @@ pub struct IMTConCondition__bindgen_vtable {
         config: *const IMTConCondition,
     ) -> MTAPIRES,
     pub IMTConCondition_Clear: unsafe extern "C" fn(this: *mut IMTConCondition) -> MTAPIRES,
-    pub IMTConCondition_Condition: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
     pub IMTConCondition_Condition1:
         unsafe extern "C" fn(this: *mut IMTConCondition, condition: UINT) -> MTAPIRES,
-    pub IMTConCondition_Rule: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
+    pub IMTConCondition_Condition: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
     pub IMTConCondition_Rule1:
         unsafe extern "C" fn(this: *mut IMTConCondition, rule: UINT) -> MTAPIRES,
+    pub IMTConCondition_Rule: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
     pub IMTConCondition_ValueType: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
-    pub IMTConCondition_ValueInt: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
     pub IMTConCondition_ValueInt1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: INT64) -> MTAPIRES,
-    pub IMTConCondition_ValueUInt: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
+    pub IMTConCondition_ValueInt: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
     pub IMTConCondition_ValueUInt1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: UINT64) -> MTAPIRES,
-    pub IMTConCondition_ValueDouble: unsafe extern "C" fn(this: *const IMTConCondition) -> f64,
+    pub IMTConCondition_ValueUInt: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
     pub IMTConCondition_ValueDouble1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: f64) -> MTAPIRES,
-    pub IMTConCondition_ValueString: unsafe extern "C" fn(this: *const IMTConCondition) -> LPCWSTR,
+    pub IMTConCondition_ValueDouble: unsafe extern "C" fn(this: *const IMTConCondition) -> f64,
     pub IMTConCondition_ValueString1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: LPCWSTR) -> MTAPIRES,
-    pub IMTConCondition_ValueColor: unsafe extern "C" fn(this: *const IMTConCondition) -> COLORREF,
+    pub IMTConCondition_ValueString: unsafe extern "C" fn(this: *const IMTConCondition) -> LPCWSTR,
     pub IMTConCondition_ValueColor1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: COLORREF) -> MTAPIRES,
-    pub IMTConCondition_ValueMoney: unsafe extern "C" fn(this: *const IMTConCondition) -> f64,
+    pub IMTConCondition_ValueColor: unsafe extern "C" fn(this: *const IMTConCondition) -> COLORREF,
     pub IMTConCondition_ValueMoney1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: f64) -> MTAPIRES,
-    pub IMTConCondition_ValueVolume: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
+    pub IMTConCondition_ValueMoney: unsafe extern "C" fn(this: *const IMTConCondition) -> f64,
     pub IMTConCondition_ValueVolume1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: UINT64) -> MTAPIRES,
-    pub IMTConCondition_ValueDatetime: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
+    pub IMTConCondition_ValueVolume: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
     pub IMTConCondition_ValueDatetime1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: INT64) -> MTAPIRES,
-    pub IMTConCondition_ValueLeverage: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
+    pub IMTConCondition_ValueDatetime: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
     pub IMTConCondition_ValueLeverage1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: INT64) -> MTAPIRES,
-    pub IMTConCondition_ValueBool: unsafe extern "C" fn(this: *const IMTConCondition) -> bool,
+    pub IMTConCondition_ValueLeverage: unsafe extern "C" fn(this: *const IMTConCondition) -> INT64,
     pub IMTConCondition_ValueBool1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: bool) -> MTAPIRES,
-    pub IMTConCondition_ValueTime: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
+    pub IMTConCondition_ValueBool: unsafe extern "C" fn(this: *const IMTConCondition) -> bool,
     pub IMTConCondition_ValueTime1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: UINT) -> MTAPIRES,
-    pub IMTConCondition_ValueWeekDay: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
+    pub IMTConCondition_ValueTime: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
     pub IMTConCondition_ValueWeekDay1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: UINT) -> MTAPIRES,
-    pub IMTConCondition_ValueVolumeExt:
-        unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
+    pub IMTConCondition_ValueWeekDay: unsafe extern "C" fn(this: *const IMTConCondition) -> UINT,
     pub IMTConCondition_ValueVolumeExt1:
         unsafe extern "C" fn(this: *mut IMTConCondition, value: UINT64) -> MTAPIRES,
+    pub IMTConCondition_ValueVolumeExt:
+        unsafe extern "C" fn(this: *const IMTConCondition) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -5466,9 +5463,9 @@ pub struct IMTConRouteDealer__bindgen_vtable {
         config: *const IMTConRouteDealer,
     ) -> MTAPIRES,
     pub IMTConRouteDealer_Clear: unsafe extern "C" fn(this: *mut IMTConRouteDealer) -> MTAPIRES,
-    pub IMTConRouteDealer_Login: unsafe extern "C" fn(this: *const IMTConRouteDealer) -> UINT64,
     pub IMTConRouteDealer_Login1:
         unsafe extern "C" fn(this: *mut IMTConRouteDealer, login: UINT64) -> MTAPIRES,
+    pub IMTConRouteDealer_Login: unsafe extern "C" fn(this: *const IMTConRouteDealer) -> UINT64,
     pub IMTConRouteDealer_Name: unsafe extern "C" fn(this: *const IMTConRouteDealer) -> LPCWSTR,
 }
 #[repr(C)]
@@ -5487,51 +5484,51 @@ pub struct IMTConRoute__bindgen_vtable {
     pub IMTConRoute_Assign:
         unsafe extern "C" fn(this: *mut IMTConRoute, config: *const IMTConRoute) -> MTAPIRES,
     pub IMTConRoute_Clear: unsafe extern "C" fn(this: *mut IMTConRoute) -> MTAPIRES,
-    pub IMTConRoute_Name: unsafe extern "C" fn(this: *const IMTConRoute) -> LPCWSTR,
     pub IMTConRoute_Name1: unsafe extern "C" fn(this: *mut IMTConRoute, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConRoute_Mode: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
+    pub IMTConRoute_Name: unsafe extern "C" fn(this: *const IMTConRoute) -> LPCWSTR,
     pub IMTConRoute_Mode1: unsafe extern "C" fn(this: *mut IMTConRoute, mode: UINT) -> MTAPIRES,
-    pub IMTConRoute_Request: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
+    pub IMTConRoute_Mode: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
     pub IMTConRoute_Request1:
         unsafe extern "C" fn(this: *mut IMTConRoute, request: UINT) -> MTAPIRES,
-    pub IMTConRoute_Type: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
+    pub IMTConRoute_Request: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
     pub IMTConRoute_Type1: unsafe extern "C" fn(this: *mut IMTConRoute, type_: UINT) -> MTAPIRES,
-    pub IMTConRoute_Action: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
+    pub IMTConRoute_Type: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
     pub IMTConRoute_Action1: unsafe extern "C" fn(this: *mut IMTConRoute, action: UINT) -> MTAPIRES,
+    pub IMTConRoute_Action: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
     pub IMTConRoute_ParamType: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
-    pub IMTConRoute_ParamInt: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
     pub IMTConRoute_ParamInt1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: INT64) -> MTAPIRES,
-    pub IMTConRoute_ParamUInt: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
+    pub IMTConRoute_ParamInt: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
     pub IMTConRoute_ParamUInt1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: UINT64) -> MTAPIRES,
-    pub IMTConRoute_ParamDouble: unsafe extern "C" fn(this: *const IMTConRoute) -> f64,
+    pub IMTConRoute_ParamUInt: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
     pub IMTConRoute_ParamDouble1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: f64) -> MTAPIRES,
-    pub IMTConRoute_ParamString: unsafe extern "C" fn(this: *const IMTConRoute) -> LPCWSTR,
+    pub IMTConRoute_ParamDouble: unsafe extern "C" fn(this: *const IMTConRoute) -> f64,
     pub IMTConRoute_ParamString1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: LPCWSTR) -> MTAPIRES,
-    pub IMTConRoute_ParamColor: unsafe extern "C" fn(this: *const IMTConRoute) -> COLORREF,
+    pub IMTConRoute_ParamString: unsafe extern "C" fn(this: *const IMTConRoute) -> LPCWSTR,
     pub IMTConRoute_ParamColor1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: COLORREF) -> MTAPIRES,
-    pub IMTConRoute_ParamMoney: unsafe extern "C" fn(this: *const IMTConRoute) -> f64,
+    pub IMTConRoute_ParamColor: unsafe extern "C" fn(this: *const IMTConRoute) -> COLORREF,
     pub IMTConRoute_ParamMoney1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: f64) -> MTAPIRES,
-    pub IMTConRoute_ParamVolume: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
+    pub IMTConRoute_ParamMoney: unsafe extern "C" fn(this: *const IMTConRoute) -> f64,
     pub IMTConRoute_ParamVolume1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: UINT64) -> MTAPIRES,
-    pub IMTConRoute_ParamDatetime: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
+    pub IMTConRoute_ParamVolume: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
     pub IMTConRoute_ParamDatetime1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: INT64) -> MTAPIRES,
-    pub IMTConRoute_ParamLeverage: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
+    pub IMTConRoute_ParamDatetime: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
     pub IMTConRoute_ParamLeverage1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: INT64) -> MTAPIRES,
-    pub IMTConRoute_ParamBool: unsafe extern "C" fn(this: *const IMTConRoute) -> bool,
+    pub IMTConRoute_ParamLeverage: unsafe extern "C" fn(this: *const IMTConRoute) -> INT64,
     pub IMTConRoute_ParamBool1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: bool) -> MTAPIRES,
-    pub IMTConRoute_ParamTime: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
+    pub IMTConRoute_ParamBool: unsafe extern "C" fn(this: *const IMTConRoute) -> bool,
     pub IMTConRoute_ParamTime1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: UINT) -> MTAPIRES,
+    pub IMTConRoute_ParamTime: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT,
     pub IMTConRoute_ConditionAdd:
         unsafe extern "C" fn(this: *mut IMTConRoute, condition: *mut IMTConCondition) -> MTAPIRES,
     pub IMTConRoute_ConditionUpdate: unsafe extern "C" fn(
@@ -5579,9 +5576,9 @@ pub struct IMTConRoute__bindgen_vtable {
         login: UINT64,
         dealer: *mut IMTConRouteDealer,
     ) -> MTAPIRES,
-    pub IMTConRoute_ParamVolumeExt: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
     pub IMTConRoute_ParamVolumeExt1:
         unsafe extern "C" fn(this: *mut IMTConRoute, value: UINT64) -> MTAPIRES,
+    pub IMTConRoute_ParamVolumeExt: unsafe extern "C" fn(this: *const IMTConRoute) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -5673,53 +5670,53 @@ pub struct IMTUser__bindgen_vtable {
     pub IMTUser_Release: unsafe extern "C" fn(this: *mut IMTUser),
     pub IMTUser_Assign: unsafe extern "C" fn(this: *mut IMTUser, user: *const IMTUser) -> MTAPIRES,
     pub IMTUser_Clear: unsafe extern "C" fn(this: *mut IMTUser) -> MTAPIRES,
-    pub IMTUser_Login: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_Login1: unsafe extern "C" fn(this: *mut IMTUser, login: UINT64) -> MTAPIRES,
-    pub IMTUser_Group: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Login: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_Group1: unsafe extern "C" fn(this: *mut IMTUser, group: LPCWSTR) -> MTAPIRES,
+    pub IMTUser_Group: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_CertSerialNumber: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
-    pub IMTUser_Rights: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_Rights1: unsafe extern "C" fn(this: *mut IMTUser, rights: UINT64) -> MTAPIRES,
+    pub IMTUser_Rights: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_Registration: unsafe extern "C" fn(this: *const IMTUser) -> INT64,
     pub IMTUser_LastAccess: unsafe extern "C" fn(this: *const IMTUser) -> INT64,
     pub IMTUser_LastIP: unsafe extern "C" fn(this: *const IMTUser, ip: *mut MTAPISTR) -> LPCWSTR,
-    pub IMTUser_Name: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Name1: unsafe extern "C" fn(this: *mut IMTUser, name: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Company: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Name: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Company1: unsafe extern "C" fn(this: *mut IMTUser, id: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Account: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Company: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Account1: unsafe extern "C" fn(this: *mut IMTUser, account: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Country: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Account: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Country1: unsafe extern "C" fn(this: *mut IMTUser, account: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Language: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
+    pub IMTUser_Country: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Language1: unsafe extern "C" fn(this: *mut IMTUser, language: UINT) -> MTAPIRES,
-    pub IMTUser_City: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Language: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
     pub IMTUser_City1: unsafe extern "C" fn(this: *mut IMTUser, city: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_State: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_City: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_State1: unsafe extern "C" fn(this: *mut IMTUser, state: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_ZIPCode: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_State: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_ZIPCode1: unsafe extern "C" fn(this: *mut IMTUser, code: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Address: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_ZIPCode: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Address1: unsafe extern "C" fn(this: *mut IMTUser, code: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Phone: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Address: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Phone1: unsafe extern "C" fn(this: *mut IMTUser, phone: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_EMail: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Phone: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_EMail1: unsafe extern "C" fn(this: *mut IMTUser, email: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_ID: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_EMail: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_ID1: unsafe extern "C" fn(this: *mut IMTUser, email: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Status: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_ID: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Status1: unsafe extern "C" fn(this: *mut IMTUser, id: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Comment: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Status: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Comment1: unsafe extern "C" fn(this: *mut IMTUser, comment: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Color: unsafe extern "C" fn(this: *const IMTUser) -> COLORREF,
+    pub IMTUser_Comment: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Color1: unsafe extern "C" fn(this: *mut IMTUser, color: COLORREF) -> MTAPIRES,
-    pub IMTUser_PhonePassword: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_Color: unsafe extern "C" fn(this: *const IMTUser) -> COLORREF,
     pub IMTUser_PhonePassword1:
         unsafe extern "C" fn(this: *mut IMTUser, password: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_Leverage: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
+    pub IMTUser_PhonePassword: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_Leverage1: unsafe extern "C" fn(this: *mut IMTUser, leverage: UINT) -> MTAPIRES,
-    pub IMTUser_Agent: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
+    pub IMTUser_Leverage: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
     pub IMTUser_Agent1: unsafe extern "C" fn(this: *mut IMTUser, agent: UINT64) -> MTAPIRES,
+    pub IMTUser_Agent: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_Balance: unsafe extern "C" fn(this: *const IMTUser) -> f64,
     pub IMTUser_Credit: unsafe extern "C" fn(this: *const IMTUser) -> f64,
     pub IMTUser_InterestRate: unsafe extern "C" fn(this: *const IMTUser) -> f64,
@@ -5731,25 +5728,25 @@ pub struct IMTUser__bindgen_vtable {
     pub IMTUser_BalancePrevMonth: unsafe extern "C" fn(this: *const IMTUser) -> f64,
     pub IMTUser_EquityPrevDay: unsafe extern "C" fn(this: *const IMTUser) -> f64,
     pub IMTUser_EquityPrevMonth: unsafe extern "C" fn(this: *const IMTUser) -> f64,
-    pub IMTUser_ApiDataSet: unsafe extern "C" fn(
-        this: *mut IMTUser,
-        app_id: USHORT,
-        id: UCHAR,
-        value: INT64,
-    ) -> MTAPIRES,
+    pub IMTUser_ApiDataSet2:
+        unsafe extern "C" fn(this: *mut IMTUser, app_id: USHORT, id: UCHAR, value: f64) -> MTAPIRES,
     pub IMTUser_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTUser,
         app_id: USHORT,
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTUser_ApiDataSet2:
-        unsafe extern "C" fn(this: *mut IMTUser, app_id: USHORT, id: UCHAR, value: f64) -> MTAPIRES,
-    pub IMTUser_ApiDataGet: unsafe extern "C" fn(
+    pub IMTUser_ApiDataSet: unsafe extern "C" fn(
+        this: *mut IMTUser,
+        app_id: USHORT,
+        id: UCHAR,
+        value: INT64,
+    ) -> MTAPIRES,
+    pub IMTUser_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTUser,
         app_id: USHORT,
         id: UCHAR,
-        value: *mut INT64,
+        value: *mut f64,
     ) -> MTAPIRES,
     pub IMTUser_ApiDataGet1: unsafe extern "C" fn(
         this: *const IMTUser,
@@ -5757,11 +5754,11 @@ pub struct IMTUser__bindgen_vtable {
         id: UCHAR,
         value: *mut UINT64,
     ) -> MTAPIRES,
-    pub IMTUser_ApiDataGet2: unsafe extern "C" fn(
+    pub IMTUser_ApiDataGet: unsafe extern "C" fn(
         this: *const IMTUser,
         app_id: USHORT,
         id: UCHAR,
-        value: *mut f64,
+        value: *mut INT64,
     ) -> MTAPIRES,
     pub IMTUser_ApiDataClear: unsafe extern "C" fn(this: *mut IMTUser, app_id: USHORT) -> MTAPIRES,
     pub IMTUser_ApiDataClearAll: unsafe extern "C" fn(this: *mut IMTUser) -> MTAPIRES,
@@ -5790,12 +5787,12 @@ pub struct IMTUser__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTUser_LastPassChange: unsafe extern "C" fn(this: *const IMTUser) -> INT64,
     pub IMTUser_MQID: unsafe extern "C" fn(this: *const IMTUser, mqid: *mut MTAPISTR) -> LPCWSTR,
-    pub IMTUser_ApiDataUpdate: unsafe extern "C" fn(
+    pub IMTUser_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTUser,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTUser_ApiDataUpdate1: unsafe extern "C" fn(
         this: *mut IMTUser,
@@ -5804,26 +5801,12 @@ pub struct IMTUser__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTUser_ApiDataUpdate2: unsafe extern "C" fn(
+    pub IMTUser_ApiDataUpdate: unsafe extern "C" fn(
         this: *mut IMTUser,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTUser_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTUser,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTUser_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTUser,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTUser_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTUser,
@@ -5832,37 +5815,51 @@ pub struct IMTUser__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTUser_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTUser,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTUser_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTUser,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTUser_PasswordHash: unsafe extern "C" fn(
         this: *const IMTUser,
         type_: UINT,
         password_hash: *mut MTAPISTR,
     ) -> MTAPIRES,
-    pub IMTUser_LeadCampaign: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_LeadCampaign1:
         unsafe extern "C" fn(this: *mut IMTUser, lead_campaign: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_LeadSource: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_LeadCampaign: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_LeadSource1:
         unsafe extern "C" fn(this: *mut IMTUser, lead_source: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_ClientID: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
+    pub IMTUser_LeadSource: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_ClientID1: unsafe extern "C" fn(this: *mut IMTUser, id: UINT64) -> MTAPIRES,
-    pub IMTUser_FirstName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_ClientID: unsafe extern "C" fn(this: *const IMTUser) -> UINT64,
     pub IMTUser_FirstName1:
         unsafe extern "C" fn(this: *mut IMTUser, first_name: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_LastName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_FirstName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_LastName1: unsafe extern "C" fn(this: *mut IMTUser, last_name: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_MiddleName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
+    pub IMTUser_LastName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_MiddleName1:
         unsafe extern "C" fn(this: *mut IMTUser, middle_name: LPCWSTR) -> MTAPIRES,
+    pub IMTUser_MiddleName: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_RegistrationSet:
         unsafe extern "C" fn(this: *mut IMTUser, datetime: INT64) -> MTAPIRES,
-    pub IMTUser_OTPSecret: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_OTPSecret1:
         unsafe extern "C" fn(this: *mut IMTUser, otp_secret: LPCWSTR) -> MTAPIRES,
-    pub IMTUser_LimitOrders: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
+    pub IMTUser_OTPSecret: unsafe extern "C" fn(this: *const IMTUser) -> LPCWSTR,
     pub IMTUser_LimitOrders1: unsafe extern "C" fn(this: *mut IMTUser, id: UINT) -> MTAPIRES,
-    pub IMTUser_LimitPositionsValue: unsafe extern "C" fn(this: *const IMTUser) -> f64,
+    pub IMTUser_LimitOrders: unsafe extern "C" fn(this: *const IMTUser) -> UINT,
     pub IMTUser_LimitPositionsValue1:
         unsafe extern "C" fn(this: *mut IMTUser, value: f64) -> MTAPIRES,
+    pub IMTUser_LimitPositionsValue: unsafe extern "C" fn(this: *const IMTUser) -> f64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -5931,14 +5928,14 @@ pub struct IMTUserArray__bindgen_vtable {
     pub IMTUserArray_Assign:
         unsafe extern "C" fn(this: *mut IMTUserArray, array: *const IMTUserArray) -> MTAPIRES,
     pub IMTUserArray_Clear: unsafe extern "C" fn(this: *mut IMTUserArray) -> MTAPIRES,
-    pub IMTUserArray_Add:
-        unsafe extern "C" fn(this: *mut IMTUserArray, user: *mut IMTUser) -> MTAPIRES,
-    pub IMTUserArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTUserArray, user: *const IMTUser) -> MTAPIRES,
     pub IMTUserArray_Add1:
         unsafe extern "C" fn(this: *mut IMTUserArray, array: *mut IMTUserArray) -> MTAPIRES,
+    pub IMTUserArray_Add:
+        unsafe extern "C" fn(this: *mut IMTUserArray, user: *mut IMTUser) -> MTAPIRES,
     pub IMTUserArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTUserArray, array: *const IMTUserArray) -> MTAPIRES,
+    pub IMTUserArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTUserArray, user: *const IMTUser) -> MTAPIRES,
     pub IMTUserArray_Delete: unsafe extern "C" fn(this: *mut IMTUserArray, pos: UINT) -> MTAPIRES,
     pub IMTUserArray_Detach:
         unsafe extern "C" fn(this: *mut IMTUserArray, pos: UINT) -> *mut IMTUser,
@@ -6038,67 +6035,67 @@ pub struct IMTAccount__bindgen_vtable {
     pub IMTAccount_Assign:
         unsafe extern "C" fn(this: *mut IMTAccount, user: *const IMTAccount) -> MTAPIRES,
     pub IMTAccount_Clear: unsafe extern "C" fn(this: *mut IMTAccount) -> MTAPIRES,
-    pub IMTAccount_Login: unsafe extern "C" fn(this: *const IMTAccount) -> UINT64,
     pub IMTAccount_Login1: unsafe extern "C" fn(this: *mut IMTAccount, login: UINT64) -> MTAPIRES,
-    pub IMTAccount_CurrencyDigits: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
+    pub IMTAccount_Login: unsafe extern "C" fn(this: *const IMTAccount) -> UINT64,
     pub IMTAccount_CurrencyDigits1:
         unsafe extern "C" fn(this: *mut IMTAccount, digits: UINT) -> MTAPIRES,
-    pub IMTAccount_Balance: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_CurrencyDigits: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
     pub IMTAccount_Balance1: unsafe extern "C" fn(this: *mut IMTAccount, balance: f64) -> MTAPIRES,
-    pub IMTAccount_Credit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Balance: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Credit1: unsafe extern "C" fn(this: *mut IMTAccount, credit: f64) -> MTAPIRES,
-    pub IMTAccount_Margin: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Credit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Margin1: unsafe extern "C" fn(this: *mut IMTAccount, margin: f64) -> MTAPIRES,
-    pub IMTAccount_MarginFree: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Margin: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_MarginFree1:
         unsafe extern "C" fn(this: *mut IMTAccount, margin_free: f64) -> MTAPIRES,
-    pub IMTAccount_MarginLevel: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_MarginFree: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_MarginLevel1:
         unsafe extern "C" fn(this: *mut IMTAccount, margin_level: f64) -> MTAPIRES,
-    pub IMTAccount_MarginLeverage: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
+    pub IMTAccount_MarginLevel: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_MarginLeverage1:
         unsafe extern "C" fn(this: *mut IMTAccount, leverage: UINT) -> MTAPIRES,
-    pub IMTAccount_Profit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_MarginLeverage: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
     pub IMTAccount_Profit1: unsafe extern "C" fn(this: *mut IMTAccount, profit: f64) -> MTAPIRES,
-    pub IMTAccount_Storage: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Profit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Storage1: unsafe extern "C" fn(this: *mut IMTAccount, storage: f64) -> MTAPIRES,
-    pub IMTAccount_ObsoleteValue: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Storage: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_ObsoleteValue1:
         unsafe extern "C" fn(this: *mut IMTAccount, value: f64) -> MTAPIRES,
-    pub IMTAccount_Floating: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_ObsoleteValue: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Floating1:
         unsafe extern "C" fn(this: *mut IMTAccount, floating: f64) -> MTAPIRES,
-    pub IMTAccount_Equity: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Floating: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Equity1: unsafe extern "C" fn(this: *mut IMTAccount, equity: f64) -> MTAPIRES,
-    pub IMTAccount_SOActivation: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
+    pub IMTAccount_Equity: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_SOActivation1:
         unsafe extern "C" fn(this: *mut IMTAccount, activation: UINT) -> MTAPIRES,
-    pub IMTAccount_SOTime: unsafe extern "C" fn(this: *const IMTAccount) -> INT64,
+    pub IMTAccount_SOActivation: unsafe extern "C" fn(this: *const IMTAccount) -> UINT,
     pub IMTAccount_SOTime1:
         unsafe extern "C" fn(this: *mut IMTAccount, datetime: INT64) -> MTAPIRES,
-    pub IMTAccount_SOLevel: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_SOTime: unsafe extern "C" fn(this: *const IMTAccount) -> INT64,
     pub IMTAccount_SOLevel1: unsafe extern "C" fn(this: *mut IMTAccount, level: f64) -> MTAPIRES,
-    pub IMTAccount_SOEquity: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_SOLevel: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_SOEquity1: unsafe extern "C" fn(this: *mut IMTAccount, equity: f64) -> MTAPIRES,
-    pub IMTAccount_SOMargin: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_SOEquity: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_SOMargin1: unsafe extern "C" fn(this: *mut IMTAccount, margin: f64) -> MTAPIRES,
-    pub IMTAccount_BlockedCommission: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_SOMargin: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_BlockedCommission1:
         unsafe extern "C" fn(this: *mut IMTAccount, commission: f64) -> MTAPIRES,
-    pub IMTAccount_BlockedProfit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_BlockedCommission: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_BlockedProfit1:
         unsafe extern "C" fn(this: *mut IMTAccount, profit: f64) -> MTAPIRES,
-    pub IMTAccount_MarginInitial: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_BlockedProfit: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_MarginInitial1:
         unsafe extern "C" fn(this: *mut IMTAccount, margin: f64) -> MTAPIRES,
-    pub IMTAccount_MarginMaintenance: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_MarginInitial: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_MarginMaintenance1:
         unsafe extern "C" fn(this: *mut IMTAccount, margin: f64) -> MTAPIRES,
-    pub IMTAccount_Assets: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_MarginMaintenance: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Assets1: unsafe extern "C" fn(this: *mut IMTAccount, assets: f64) -> MTAPIRES,
-    pub IMTAccount_Liabilities: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
+    pub IMTAccount_Assets: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
     pub IMTAccount_Liabilities1:
         unsafe extern "C" fn(this: *mut IMTAccount, liabilities: f64) -> MTAPIRES,
+    pub IMTAccount_Liabilities: unsafe extern "C" fn(this: *const IMTAccount) -> f64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -6180,69 +6177,77 @@ pub struct IMTPosition__bindgen_vtable {
     pub IMTPosition_Print:
         unsafe extern "C" fn(this: *const IMTPosition, string: *mut MTAPISTR) -> LPCWSTR,
     pub IMTPosition_Login: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
-    pub IMTPosition_Symbol: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
     pub IMTPosition_Symbol1:
         unsafe extern "C" fn(this: *mut IMTPosition, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTPosition_Action: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
+    pub IMTPosition_Symbol: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
     pub IMTPosition_Action1: unsafe extern "C" fn(this: *mut IMTPosition, action: UINT) -> MTAPIRES,
-    pub IMTPosition_Digits: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
+    pub IMTPosition_Action: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
     pub IMTPosition_Digits1: unsafe extern "C" fn(this: *mut IMTPosition, digits: UINT) -> MTAPIRES,
-    pub IMTPosition_DigitsCurrency: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
+    pub IMTPosition_Digits: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
     pub IMTPosition_DigitsCurrency1:
         unsafe extern "C" fn(this: *mut IMTPosition, digits: UINT) -> MTAPIRES,
-    pub IMTPosition_ContractSize: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_DigitsCurrency: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
     pub IMTPosition_ContractSize1:
         unsafe extern "C" fn(this: *mut IMTPosition, contract_size: f64) -> MTAPIRES,
-    pub IMTPosition_TimeCreate: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
+    pub IMTPosition_ContractSize: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_TimeCreate1:
         unsafe extern "C" fn(this: *mut IMTPosition, time: INT64) -> MTAPIRES,
-    pub IMTPosition_TimeUpdate: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
+    pub IMTPosition_TimeCreate: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
     pub IMTPosition_TimeUpdate1:
         unsafe extern "C" fn(this: *mut IMTPosition, time: INT64) -> MTAPIRES,
-    pub IMTPosition_PriceOpen: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_TimeUpdate: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
     pub IMTPosition_PriceOpen1:
         unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
-    pub IMTPosition_PriceCurrent: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_PriceOpen: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_PriceCurrent1:
         unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
-    pub IMTPosition_PriceSL: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_PriceCurrent: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_PriceSL1: unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
-    pub IMTPosition_PriceTP: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_PriceSL: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_PriceTP1: unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
-    pub IMTPosition_Volume: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
+    pub IMTPosition_PriceTP: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_Volume1:
         unsafe extern "C" fn(this: *mut IMTPosition, volume: UINT64) -> MTAPIRES,
-    pub IMTPosition_Profit: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_Volume: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
     pub IMTPosition_Profit1: unsafe extern "C" fn(this: *mut IMTPosition, profit: f64) -> MTAPIRES,
-    pub IMTPosition_Storage: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_Profit: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_Storage1:
         unsafe extern "C" fn(this: *mut IMTPosition, storage: f64) -> MTAPIRES,
-    pub IMTPosition_ObsoleteValue: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_Storage: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_ObsoleteValue1:
         unsafe extern "C" fn(this: *mut IMTPosition, value: f64) -> MTAPIRES,
-    pub IMTPosition_RateProfit: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_ObsoleteValue: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_RateProfit1:
         unsafe extern "C" fn(this: *mut IMTPosition, rate: f64) -> MTAPIRES,
-    pub IMTPosition_RateMargin: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_RateProfit: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_RateMargin1:
         unsafe extern "C" fn(this: *mut IMTPosition, rate: f64) -> MTAPIRES,
-    pub IMTPosition_ExpertID: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
+    pub IMTPosition_RateMargin: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
     pub IMTPosition_ExpertID1: unsafe extern "C" fn(this: *mut IMTPosition, id: UINT64) -> MTAPIRES,
-    pub IMTPosition_ExpertPositionID: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
+    pub IMTPosition_ExpertID: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
     pub IMTPosition_ExpertPositionID1:
         unsafe extern "C" fn(this: *mut IMTPosition, id: UINT64) -> MTAPIRES,
-    pub IMTPosition_Comment: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
+    pub IMTPosition_ExpertPositionID: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
     pub IMTPosition_Comment1:
         unsafe extern "C" fn(this: *mut IMTPosition, comment: LPCWSTR) -> MTAPIRES,
+    pub IMTPosition_Comment: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
+    pub IMTPosition_ActivationMode1:
+        unsafe extern "C" fn(this: *mut IMTPosition, mode: UINT) -> MTAPIRES,
     pub IMTPosition_ActivationMode: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
+    pub IMTPosition_ActivationTime1:
+        unsafe extern "C" fn(this: *mut IMTPosition, atm: INT64) -> MTAPIRES,
     pub IMTPosition_ActivationTime: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
+    pub IMTPosition_ActivationPrice1:
+        unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
     pub IMTPosition_ActivationPrice: unsafe extern "C" fn(this: *const IMTPosition) -> f64,
+    pub IMTPosition_ActivationFlags1:
+        unsafe extern "C" fn(this: *mut IMTPosition, flags: UINT) -> MTAPIRES,
     pub IMTPosition_ActivationFlags: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
-    pub IMTPosition_ApiDataSet: unsafe extern "C" fn(
+    pub IMTPosition_ApiDataSet2: unsafe extern "C" fn(
         this: *mut IMTPosition,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTPosition_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTPosition,
@@ -6250,23 +6255,11 @@ pub struct IMTPosition__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTPosition_ApiDataSet2: unsafe extern "C" fn(
+    pub IMTPosition_ApiDataSet: unsafe extern "C" fn(
         this: *mut IMTPosition,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTPosition_ApiDataGet: unsafe extern "C" fn(
-        this: *const IMTPosition,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTPosition_ApiDataGet1: unsafe extern "C" fn(
-        this: *const IMTPosition,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTPosition_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTPosition,
@@ -6274,32 +6267,36 @@ pub struct IMTPosition__bindgen_vtable {
         id: UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTPosition_ApiDataGet1: unsafe extern "C" fn(
+        this: *const IMTPosition,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTPosition_ApiDataGet: unsafe extern "C" fn(
+        this: *const IMTPosition,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTPosition_ApiDataClear:
         unsafe extern "C" fn(this: *mut IMTPosition, app_id: USHORT) -> MTAPIRES,
     pub IMTPosition_ApiDataClearAll: unsafe extern "C" fn(this: *mut IMTPosition) -> MTAPIRES,
-    pub IMTPosition_TimeCreateMsc: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
     pub IMTPosition_TimeCreateMsc1:
         unsafe extern "C" fn(this: *mut IMTPosition, time: INT64) -> MTAPIRES,
-    pub IMTPosition_TimeUpdateMsc: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
+    pub IMTPosition_TimeCreateMsc: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
     pub IMTPosition_TimeUpdateMsc1:
         unsafe extern "C" fn(this: *mut IMTPosition, time: INT64) -> MTAPIRES,
-    pub IMTPosition_ActivationMode1:
-        unsafe extern "C" fn(this: *mut IMTPosition, mode: UINT) -> MTAPIRES,
-    pub IMTPosition_ActivationTime1:
-        unsafe extern "C" fn(this: *mut IMTPosition, atm: INT64) -> MTAPIRES,
-    pub IMTPosition_ActivationPrice1:
-        unsafe extern "C" fn(this: *mut IMTPosition, price: f64) -> MTAPIRES,
-    pub IMTPosition_ActivationFlags1:
-        unsafe extern "C" fn(this: *mut IMTPosition, flags: UINT) -> MTAPIRES,
-    pub IMTPosition_Dealer: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
+    pub IMTPosition_TimeUpdateMsc: unsafe extern "C" fn(this: *const IMTPosition) -> INT64,
     pub IMTPosition_Dealer1:
         unsafe extern "C" fn(this: *mut IMTPosition, dealer: UINT64) -> MTAPIRES,
-    pub IMTPosition_ApiDataUpdate: unsafe extern "C" fn(
+    pub IMTPosition_Dealer: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
+    pub IMTPosition_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTPosition,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTPosition_ApiDataUpdate1: unsafe extern "C" fn(
         this: *mut IMTPosition,
@@ -6308,26 +6305,12 @@ pub struct IMTPosition__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTPosition_ApiDataUpdate2: unsafe extern "C" fn(
+    pub IMTPosition_ApiDataUpdate: unsafe extern "C" fn(
         this: *mut IMTPosition,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTPosition_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTPosition,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTPosition_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTPosition,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTPosition_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTPosition,
@@ -6336,17 +6319,31 @@ pub struct IMTPosition__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTPosition_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTPosition,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTPosition_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTPosition,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTPosition_LoginSet:
         unsafe extern "C" fn(this: *mut IMTPosition, login: UINT64) -> MTAPIRES,
     pub IMTPosition_Position: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
-    pub IMTPosition_ExternalID: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
     pub IMTPosition_ExternalID1:
         unsafe extern "C" fn(this: *mut IMTPosition, id: LPCWSTR) -> MTAPIRES,
+    pub IMTPosition_ExternalID: unsafe extern "C" fn(this: *const IMTPosition) -> LPCWSTR,
     pub IMTPosition_ModificationFlags: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
     pub IMTPosition_Reason: unsafe extern "C" fn(this: *const IMTPosition) -> UINT,
-    pub IMTPosition_VolumeExt: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
     pub IMTPosition_VolumeExt1:
         unsafe extern "C" fn(this: *mut IMTPosition, volume: UINT64) -> MTAPIRES,
+    pub IMTPosition_VolumeExt: unsafe extern "C" fn(this: *const IMTPosition) -> UINT64,
     pub IMTPosition_ReasonSet:
         unsafe extern "C" fn(this: *mut IMTPosition, reason: UINT) -> MTAPIRES,
 }
@@ -6439,16 +6436,16 @@ pub struct IMTPositionArray__bindgen_vtable {
         array: *const IMTPositionArray,
     ) -> MTAPIRES,
     pub IMTPositionArray_Clear: unsafe extern "C" fn(this: *mut IMTPositionArray) -> MTAPIRES,
-    pub IMTPositionArray_Add:
-        unsafe extern "C" fn(this: *mut IMTPositionArray, position: *mut IMTPosition) -> MTAPIRES,
-    pub IMTPositionArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTPositionArray, position: *const IMTPosition) -> MTAPIRES,
     pub IMTPositionArray_Add1:
         unsafe extern "C" fn(this: *mut IMTPositionArray, array: *mut IMTPositionArray) -> MTAPIRES,
+    pub IMTPositionArray_Add:
+        unsafe extern "C" fn(this: *mut IMTPositionArray, position: *mut IMTPosition) -> MTAPIRES,
     pub IMTPositionArray_AddCopy1: unsafe extern "C" fn(
         this: *mut IMTPositionArray,
         array: *const IMTPositionArray,
     ) -> MTAPIRES,
+    pub IMTPositionArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTPositionArray, position: *const IMTPosition) -> MTAPIRES,
     pub IMTPositionArray_Delete:
         unsafe extern "C" fn(this: *mut IMTPositionArray, pos: UINT) -> MTAPIRES,
     pub IMTPositionArray_Detach:
@@ -6540,76 +6537,64 @@ pub struct IMTDeal__bindgen_vtable {
     pub IMTDeal_Clear: unsafe extern "C" fn(this: *mut IMTDeal) -> MTAPIRES,
     pub IMTDeal_Print: unsafe extern "C" fn(this: *const IMTDeal, string: *mut MTAPISTR) -> LPCWSTR,
     pub IMTDeal_Deal: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
-    pub IMTDeal_ExternalID: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
     pub IMTDeal_ExternalID1: unsafe extern "C" fn(this: *mut IMTDeal, id: LPCWSTR) -> MTAPIRES,
-    pub IMTDeal_Login: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_ExternalID: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
     pub IMTDeal_Login1: unsafe extern "C" fn(this: *mut IMTDeal, login: UINT64) -> MTAPIRES,
-    pub IMTDeal_Dealer: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_Login: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Dealer1: unsafe extern "C" fn(this: *mut IMTDeal, dealer: UINT64) -> MTAPIRES,
-    pub IMTDeal_Order: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_Dealer: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Order1: unsafe extern "C" fn(this: *mut IMTDeal, order: UINT64) -> MTAPIRES,
-    pub IMTDeal_Action: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
+    pub IMTDeal_Order: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Action1: unsafe extern "C" fn(this: *mut IMTDeal, action: UINT) -> MTAPIRES,
-    pub IMTDeal_Entry: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
+    pub IMTDeal_Action: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_Entry1: unsafe extern "C" fn(this: *mut IMTDeal, entry: UINT) -> MTAPIRES,
-    pub IMTDeal_Digits: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
+    pub IMTDeal_Entry: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_Digits1: unsafe extern "C" fn(this: *mut IMTDeal, digits: UINT) -> MTAPIRES,
-    pub IMTDeal_DigitsCurrency: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
+    pub IMTDeal_Digits: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_DigitsCurrency1: unsafe extern "C" fn(this: *mut IMTDeal, digits: UINT) -> MTAPIRES,
-    pub IMTDeal_ContractSize: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_DigitsCurrency: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_ContractSize1:
         unsafe extern "C" fn(this: *mut IMTDeal, contract_size: f64) -> MTAPIRES,
-    pub IMTDeal_Time: unsafe extern "C" fn(this: *const IMTDeal) -> INT64,
+    pub IMTDeal_ContractSize: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Time1: unsafe extern "C" fn(this: *mut IMTDeal, time: INT64) -> MTAPIRES,
-    pub IMTDeal_Symbol: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
+    pub IMTDeal_Time: unsafe extern "C" fn(this: *const IMTDeal) -> INT64,
     pub IMTDeal_Symbol1: unsafe extern "C" fn(this: *mut IMTDeal, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTDeal_Price: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Symbol: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
     pub IMTDeal_Price1: unsafe extern "C" fn(this: *mut IMTDeal, price: f64) -> MTAPIRES,
-    pub IMTDeal_Volume: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_Price: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Volume1: unsafe extern "C" fn(this: *mut IMTDeal, volume: UINT64) -> MTAPIRES,
-    pub IMTDeal_Profit: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Volume: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Profit1: unsafe extern "C" fn(this: *mut IMTDeal, profit: f64) -> MTAPIRES,
-    pub IMTDeal_Storage: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Profit: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Storage1: unsafe extern "C" fn(this: *mut IMTDeal, storage: f64) -> MTAPIRES,
-    pub IMTDeal_Commission: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Storage: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Commission1: unsafe extern "C" fn(this: *mut IMTDeal, comm: f64) -> MTAPIRES,
-    pub IMTDeal_ObsoleteValue: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Commission: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_ObsoleteValue1: unsafe extern "C" fn(this: *mut IMTDeal, agent: f64) -> MTAPIRES,
-    pub IMTDeal_RateProfit: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_ObsoleteValue: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_RateProfit1: unsafe extern "C" fn(this: *mut IMTDeal, rate: f64) -> MTAPIRES,
-    pub IMTDeal_RateMargin: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_RateProfit: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_RateMargin1: unsafe extern "C" fn(this: *mut IMTDeal, rate: f64) -> MTAPIRES,
-    pub IMTDeal_ExpertID: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_RateMargin: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_ExpertID1: unsafe extern "C" fn(this: *mut IMTDeal, id: UINT64) -> MTAPIRES,
-    pub IMTDeal_PositionID: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_ExpertID: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_PositionID1: unsafe extern "C" fn(this: *mut IMTDeal, id: UINT64) -> MTAPIRES,
-    pub IMTDeal_Comment: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
+    pub IMTDeal_PositionID: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Comment1: unsafe extern "C" fn(this: *mut IMTDeal, comment: LPCWSTR) -> MTAPIRES,
-    pub IMTDeal_ApiDataSet: unsafe extern "C" fn(
-        this: *mut IMTDeal,
-        app_id: USHORT,
-        id: UCHAR,
-        value: INT64,
-    ) -> MTAPIRES,
+    pub IMTDeal_Comment: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
+    pub IMTDeal_ApiDataSet2:
+        unsafe extern "C" fn(this: *mut IMTDeal, app_id: USHORT, id: UCHAR, value: f64) -> MTAPIRES,
     pub IMTDeal_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTDeal,
         app_id: USHORT,
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTDeal_ApiDataSet2:
-        unsafe extern "C" fn(this: *mut IMTDeal, app_id: USHORT, id: UCHAR, value: f64) -> MTAPIRES,
-    pub IMTDeal_ApiDataGet: unsafe extern "C" fn(
-        this: *const IMTDeal,
+    pub IMTDeal_ApiDataSet: unsafe extern "C" fn(
+        this: *mut IMTDeal,
         app_id: USHORT,
         id: UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTDeal_ApiDataGet1: unsafe extern "C" fn(
-        this: *const IMTDeal,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTDeal_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTDeal,
@@ -6617,31 +6602,43 @@ pub struct IMTDeal__bindgen_vtable {
         id: UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTDeal_ApiDataGet1: unsafe extern "C" fn(
+        this: *const IMTDeal,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTDeal_ApiDataGet: unsafe extern "C" fn(
+        this: *const IMTDeal,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTDeal_ApiDataClear: unsafe extern "C" fn(this: *mut IMTDeal, app_id: USHORT) -> MTAPIRES,
     pub IMTDeal_ApiDataClearAll: unsafe extern "C" fn(this: *mut IMTDeal) -> MTAPIRES,
-    pub IMTDeal_ProfitRaw: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_ProfitRaw1: unsafe extern "C" fn(this: *mut IMTDeal, profit: f64) -> MTAPIRES,
-    pub IMTDeal_PricePosition: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_ProfitRaw: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_PricePosition1: unsafe extern "C" fn(this: *mut IMTDeal, price: f64) -> MTAPIRES,
-    pub IMTDeal_VolumeClosed: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_PricePosition: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_VolumeClosed1: unsafe extern "C" fn(this: *mut IMTDeal, volume: UINT64) -> MTAPIRES,
-    pub IMTDeal_TickValue: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_VolumeClosed: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_TickValue1: unsafe extern "C" fn(this: *mut IMTDeal, value: f64) -> MTAPIRES,
-    pub IMTDeal_TickSize: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_TickValue: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_TickSize1: unsafe extern "C" fn(this: *mut IMTDeal, size: f64) -> MTAPIRES,
-    pub IMTDeal_Flags: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_TickSize: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Flags1: unsafe extern "C" fn(this: *mut IMTDeal, flags: UINT64) -> MTAPIRES,
-    pub IMTDeal_TimeMsc: unsafe extern "C" fn(this: *const IMTDeal) -> INT64,
+    pub IMTDeal_Flags: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_TimeMsc1: unsafe extern "C" fn(this: *mut IMTDeal, time: INT64) -> MTAPIRES,
+    pub IMTDeal_TimeMsc: unsafe extern "C" fn(this: *const IMTDeal) -> INT64,
     pub IMTDeal_Reason: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_Gateway: unsafe extern "C" fn(this: *const IMTDeal) -> LPCWSTR,
     pub IMTDeal_PriceGateway: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
-    pub IMTDeal_ApiDataUpdate: unsafe extern "C" fn(
+    pub IMTDeal_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTDeal,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTDeal_ApiDataUpdate1: unsafe extern "C" fn(
         this: *mut IMTDeal,
@@ -6650,26 +6647,12 @@ pub struct IMTDeal__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTDeal_ApiDataUpdate2: unsafe extern "C" fn(
+    pub IMTDeal_ApiDataUpdate: unsafe extern "C" fn(
         this: *mut IMTDeal,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTDeal_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTDeal,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTDeal_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTDeal,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTDeal_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTDeal,
@@ -6678,25 +6661,39 @@ pub struct IMTDeal__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTDeal_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTDeal,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTDeal_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTDeal,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTDeal_DealSet: unsafe extern "C" fn(this: *mut IMTDeal, deal: UINT64) -> MTAPIRES,
     pub IMTDeal_ModificationFlags: unsafe extern "C" fn(this: *const IMTDeal) -> UINT,
     pub IMTDeal_ReasonSet: unsafe extern "C" fn(this: *mut IMTDeal, reason: UINT) -> MTAPIRES,
     pub IMTDeal_GatewaySet: unsafe extern "C" fn(this: *mut IMTDeal, gateway: LPCWSTR) -> MTAPIRES,
     pub IMTDeal_PriceGatewaySet:
         unsafe extern "C" fn(this: *mut IMTDeal, price_gateway: f64) -> MTAPIRES,
-    pub IMTDeal_PriceSL: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_PriceSL1: unsafe extern "C" fn(this: *mut IMTDeal, price: f64) -> MTAPIRES,
-    pub IMTDeal_PriceTP: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_PriceSL: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_PriceTP1: unsafe extern "C" fn(this: *mut IMTDeal, price: f64) -> MTAPIRES,
-    pub IMTDeal_VolumeExt: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_PriceTP: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_VolumeExt1: unsafe extern "C" fn(this: *mut IMTDeal, volume: UINT64) -> MTAPIRES,
-    pub IMTDeal_VolumeClosedExt: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
+    pub IMTDeal_VolumeExt: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_VolumeClosedExt1:
         unsafe extern "C" fn(this: *mut IMTDeal, volume: UINT64) -> MTAPIRES,
-    pub IMTDeal_Fee: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_VolumeClosedExt: unsafe extern "C" fn(this: *const IMTDeal) -> UINT64,
     pub IMTDeal_Fee1: unsafe extern "C" fn(this: *mut IMTDeal, fee: f64) -> MTAPIRES,
-    pub IMTDeal_Value: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
+    pub IMTDeal_Fee: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_Value1: unsafe extern "C" fn(this: *mut IMTDeal, value: f64) -> MTAPIRES,
+    pub IMTDeal_Value: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_MarketBid: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_MarketAsk: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
     pub IMTDeal_MarketLast: unsafe extern "C" fn(this: *const IMTDeal) -> f64,
@@ -6784,14 +6781,14 @@ pub struct IMTDealArray__bindgen_vtable {
     pub IMTDealArray_Assign:
         unsafe extern "C" fn(this: *mut IMTDealArray, array: *const IMTDealArray) -> MTAPIRES,
     pub IMTDealArray_Clear: unsafe extern "C" fn(this: *mut IMTDealArray) -> MTAPIRES,
-    pub IMTDealArray_Add:
-        unsafe extern "C" fn(this: *mut IMTDealArray, deal: *mut IMTDeal) -> MTAPIRES,
-    pub IMTDealArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTDealArray, deal: *const IMTDeal) -> MTAPIRES,
     pub IMTDealArray_Add1:
         unsafe extern "C" fn(this: *mut IMTDealArray, array: *mut IMTDealArray) -> MTAPIRES,
+    pub IMTDealArray_Add:
+        unsafe extern "C" fn(this: *mut IMTDealArray, deal: *mut IMTDeal) -> MTAPIRES,
     pub IMTDealArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTDealArray, array: *const IMTDealArray) -> MTAPIRES,
+    pub IMTDealArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTDealArray, deal: *const IMTDeal) -> MTAPIRES,
     pub IMTDealArray_Delete: unsafe extern "C" fn(this: *mut IMTDealArray, pos: UINT) -> MTAPIRES,
     pub IMTDealArray_Detach:
         unsafe extern "C" fn(this: *mut IMTDealArray, pos: UINT) -> *mut IMTDeal,
@@ -6876,68 +6873,74 @@ pub struct IMTOrder__bindgen_vtable {
     pub IMTOrder_Print:
         unsafe extern "C" fn(this: *const IMTOrder, string: *mut MTAPISTR) -> LPCWSTR,
     pub IMTOrder_Order: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
-    pub IMTOrder_ExternalID: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
     pub IMTOrder_ExternalID1: unsafe extern "C" fn(this: *mut IMTOrder, id: LPCWSTR) -> MTAPIRES,
-    pub IMTOrder_Login: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_ExternalID: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
     pub IMTOrder_Login1: unsafe extern "C" fn(this: *mut IMTOrder, order: UINT64) -> MTAPIRES,
-    pub IMTOrder_Dealer: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_Login: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_Dealer1: unsafe extern "C" fn(this: *mut IMTOrder, dealer: UINT64) -> MTAPIRES,
-    pub IMTOrder_Symbol: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
+    pub IMTOrder_Dealer: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_Symbol1: unsafe extern "C" fn(this: *mut IMTOrder, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTOrder_Digits: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_Symbol: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
     pub IMTOrder_Digits1: unsafe extern "C" fn(this: *mut IMTOrder, digits: UINT) -> MTAPIRES,
-    pub IMTOrder_DigitsCurrency: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_Digits: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_DigitsCurrency1:
         unsafe extern "C" fn(this: *mut IMTOrder, digits: UINT) -> MTAPIRES,
-    pub IMTOrder_ContractSize: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_DigitsCurrency: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_ContractSize1:
         unsafe extern "C" fn(this: *mut IMTOrder, contract_size: f64) -> MTAPIRES,
+    pub IMTOrder_ContractSize: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_State: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_Reason: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
-    pub IMTOrder_TimeSetup: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_TimeSetup1: unsafe extern "C" fn(this: *mut IMTOrder, time: INT64) -> MTAPIRES,
-    pub IMTOrder_TimeExpiration: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
+    pub IMTOrder_TimeSetup: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_TimeExpiration1:
         unsafe extern "C" fn(this: *mut IMTOrder, time: INT64) -> MTAPIRES,
-    pub IMTOrder_TimeDone: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
+    pub IMTOrder_TimeExpiration: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_TimeDone1: unsafe extern "C" fn(this: *mut IMTOrder, time: INT64) -> MTAPIRES,
-    pub IMTOrder_Type: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_TimeDone: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_Type1: unsafe extern "C" fn(this: *mut IMTOrder, type_: UINT) -> MTAPIRES,
-    pub IMTOrder_TypeFill: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_Type: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_TypeFill1: unsafe extern "C" fn(this: *mut IMTOrder, type_: UINT) -> MTAPIRES,
-    pub IMTOrder_TypeTime: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_TypeFill: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_TypeTime1: unsafe extern "C" fn(this: *mut IMTOrder, type_: UINT) -> MTAPIRES,
-    pub IMTOrder_PriceOrder: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_TypeTime: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_PriceOrder1: unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_PriceTrigger: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_PriceOrder: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_PriceTrigger1: unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_PriceCurrent: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_PriceTrigger: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_PriceCurrent1: unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_PriceSL: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_PriceCurrent: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_PriceSL1: unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_PriceTP: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_PriceSL: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_PriceTP1: unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_VolumeInitial: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_PriceTP: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
     pub IMTOrder_VolumeInitial1:
         unsafe extern "C" fn(this: *mut IMTOrder, volume: UINT64) -> MTAPIRES,
-    pub IMTOrder_VolumeCurrent: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_VolumeInitial: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_VolumeCurrent1:
         unsafe extern "C" fn(this: *mut IMTOrder, volume: UINT64) -> MTAPIRES,
-    pub IMTOrder_ExpertID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_VolumeCurrent: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_ExpertID1: unsafe extern "C" fn(this: *mut IMTOrder, id: UINT64) -> MTAPIRES,
-    pub IMTOrder_PositionID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_ExpertID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_PositionID1: unsafe extern "C" fn(this: *mut IMTOrder, id: UINT64) -> MTAPIRES,
-    pub IMTOrder_Comment: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
+    pub IMTOrder_PositionID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_Comment1: unsafe extern "C" fn(this: *mut IMTOrder, comment: LPCWSTR) -> MTAPIRES,
+    pub IMTOrder_Comment: unsafe extern "C" fn(this: *const IMTOrder) -> LPCWSTR,
+    pub IMTOrder_ActivationMode1: unsafe extern "C" fn(this: *mut IMTOrder, mode: UINT) -> MTAPIRES,
     pub IMTOrder_ActivationMode: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
+    pub IMTOrder_ActivationTime1: unsafe extern "C" fn(this: *mut IMTOrder, atm: INT64) -> MTAPIRES,
     pub IMTOrder_ActivationTime: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
+    pub IMTOrder_ActivationPrice1:
+        unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
     pub IMTOrder_ActivationPrice: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_ActivationFlags1:
+        unsafe extern "C" fn(this: *mut IMTOrder, flags: UINT) -> MTAPIRES,
     pub IMTOrder_ActivationFlags: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
-    pub IMTOrder_ApiDataSet: unsafe extern "C" fn(
+    pub IMTOrder_ApiDataSet2: unsafe extern "C" fn(
         this: *mut IMTOrder,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTOrder_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTOrder,
@@ -6945,23 +6948,11 @@ pub struct IMTOrder__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTOrder_ApiDataSet2: unsafe extern "C" fn(
+    pub IMTOrder_ApiDataSet: unsafe extern "C" fn(
         this: *mut IMTOrder,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTOrder_ApiDataGet: unsafe extern "C" fn(
-        this: *const IMTOrder,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTOrder_ApiDataGet1: unsafe extern "C" fn(
-        this: *const IMTOrder,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTOrder_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTOrder,
@@ -6969,27 +6960,33 @@ pub struct IMTOrder__bindgen_vtable {
         id: UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTOrder_ApiDataGet1: unsafe extern "C" fn(
+        this: *const IMTOrder,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTOrder_ApiDataGet: unsafe extern "C" fn(
+        this: *const IMTOrder,
+        app_id: USHORT,
+        id: UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTOrder_ApiDataClear:
         unsafe extern "C" fn(this: *mut IMTOrder, app_id: USHORT) -> MTAPIRES,
     pub IMTOrder_ApiDataClearAll: unsafe extern "C" fn(this: *mut IMTOrder) -> MTAPIRES,
-    pub IMTOrder_TimeSetupMsc: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_TimeSetupMsc1: unsafe extern "C" fn(this: *mut IMTOrder, time: INT64) -> MTAPIRES,
-    pub IMTOrder_TimeDoneMsc: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
+    pub IMTOrder_TimeSetupMsc: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_TimeDoneMsc1: unsafe extern "C" fn(this: *mut IMTOrder, time: INT64) -> MTAPIRES,
-    pub IMTOrder_ActivationMode1: unsafe extern "C" fn(this: *mut IMTOrder, mode: UINT) -> MTAPIRES,
-    pub IMTOrder_ActivationTime1: unsafe extern "C" fn(this: *mut IMTOrder, atm: INT64) -> MTAPIRES,
-    pub IMTOrder_ActivationPrice1:
-        unsafe extern "C" fn(this: *mut IMTOrder, price: f64) -> MTAPIRES,
-    pub IMTOrder_ActivationFlags1:
-        unsafe extern "C" fn(this: *mut IMTOrder, flags: UINT) -> MTAPIRES,
-    pub IMTOrder_RateMargin: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_TimeDoneMsc: unsafe extern "C" fn(this: *const IMTOrder) -> INT64,
     pub IMTOrder_RateMargin1: unsafe extern "C" fn(this: *mut IMTOrder, rate: f64) -> MTAPIRES,
-    pub IMTOrder_ApiDataUpdate: unsafe extern "C" fn(
+    pub IMTOrder_RateMargin: unsafe extern "C" fn(this: *const IMTOrder) -> f64,
+    pub IMTOrder_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTOrder,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTOrder_ApiDataUpdate1: unsafe extern "C" fn(
         this: *mut IMTOrder,
@@ -6998,26 +6995,12 @@ pub struct IMTOrder__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTOrder_ApiDataUpdate2: unsafe extern "C" fn(
+    pub IMTOrder_ApiDataUpdate: unsafe extern "C" fn(
         this: *mut IMTOrder,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTOrder_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTOrder,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTOrder_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTOrder,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTOrder_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTOrder,
@@ -7026,18 +7009,32 @@ pub struct IMTOrder__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTOrder_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTOrder,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTOrder_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTOrder,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTOrder_OrderSet: unsafe extern "C" fn(this: *mut IMTOrder, order: UINT64) -> MTAPIRES,
-    pub IMTOrder_PositionByID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_PositionByID1: unsafe extern "C" fn(this: *mut IMTOrder, id: UINT64) -> MTAPIRES,
+    pub IMTOrder_PositionByID: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_ModificationFlags: unsafe extern "C" fn(this: *const IMTOrder) -> UINT,
     pub IMTOrder_StateSet: unsafe extern "C" fn(this: *mut IMTOrder, state: UINT) -> MTAPIRES,
     pub IMTOrder_ReasonSet: unsafe extern "C" fn(this: *mut IMTOrder, reason: UINT) -> MTAPIRES,
-    pub IMTOrder_VolumeInitialExt: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_VolumeInitialExt1:
         unsafe extern "C" fn(this: *mut IMTOrder, volume: UINT64) -> MTAPIRES,
-    pub IMTOrder_VolumeCurrentExt: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
+    pub IMTOrder_VolumeInitialExt: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
     pub IMTOrder_VolumeCurrentExt1:
         unsafe extern "C" fn(this: *mut IMTOrder, volume: UINT64) -> MTAPIRES,
+    pub IMTOrder_VolumeCurrentExt: unsafe extern "C" fn(this: *const IMTOrder) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -7147,14 +7144,14 @@ pub struct IMTOrderArray__bindgen_vtable {
     pub IMTOrderArray_Assign:
         unsafe extern "C" fn(this: *mut IMTOrderArray, array: *const IMTOrderArray) -> MTAPIRES,
     pub IMTOrderArray_Clear: unsafe extern "C" fn(this: *mut IMTOrderArray) -> MTAPIRES,
-    pub IMTOrderArray_Add:
-        unsafe extern "C" fn(this: *mut IMTOrderArray, order: *mut IMTOrder) -> MTAPIRES,
-    pub IMTOrderArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTOrderArray, order: *const IMTOrder) -> MTAPIRES,
     pub IMTOrderArray_Add1:
         unsafe extern "C" fn(this: *mut IMTOrderArray, array: *mut IMTOrderArray) -> MTAPIRES,
+    pub IMTOrderArray_Add:
+        unsafe extern "C" fn(this: *mut IMTOrderArray, order: *mut IMTOrder) -> MTAPIRES,
     pub IMTOrderArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTOrderArray, array: *const IMTOrderArray) -> MTAPIRES,
+    pub IMTOrderArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTOrderArray, order: *const IMTOrder) -> MTAPIRES,
     pub IMTOrderArray_Delete: unsafe extern "C" fn(this: *mut IMTOrderArray, pos: UINT) -> MTAPIRES,
     pub IMTOrderArray_Detach:
         unsafe extern "C" fn(this: *mut IMTOrderArray, pos: UINT) -> *mut IMTOrder,
@@ -7253,96 +7250,96 @@ pub struct IMTDaily__bindgen_vtable {
     pub IMTDaily_Assign:
         unsafe extern "C" fn(this: *mut IMTDaily, exec: *const IMTDaily) -> MTAPIRES,
     pub IMTDaily_Clear: unsafe extern "C" fn(this: *mut IMTDaily) -> MTAPIRES,
-    pub IMTDaily_Datetime: unsafe extern "C" fn(this: *const IMTDaily) -> INT64,
     pub IMTDaily_Datetime1: unsafe extern "C" fn(this: *mut IMTDaily, datetime: INT64) -> MTAPIRES,
-    pub IMTDaily_DatetimePrev: unsafe extern "C" fn(this: *const IMTDaily) -> INT64,
+    pub IMTDaily_Datetime: unsafe extern "C" fn(this: *const IMTDaily) -> INT64,
     pub IMTDaily_DatetimePrev1:
         unsafe extern "C" fn(this: *mut IMTDaily, datetime: INT64) -> MTAPIRES,
-    pub IMTDaily_Login: unsafe extern "C" fn(this: *const IMTDaily) -> UINT64,
+    pub IMTDaily_DatetimePrev: unsafe extern "C" fn(this: *const IMTDaily) -> INT64,
     pub IMTDaily_Login1: unsafe extern "C" fn(this: *mut IMTDaily, login: UINT64) -> MTAPIRES,
-    pub IMTDaily_Name: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
+    pub IMTDaily_Login: unsafe extern "C" fn(this: *const IMTDaily) -> UINT64,
     pub IMTDaily_Name1: unsafe extern "C" fn(this: *mut IMTDaily, name: LPCWSTR) -> MTAPIRES,
-    pub IMTDaily_Group: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
+    pub IMTDaily_Name: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_Group1: unsafe extern "C" fn(this: *mut IMTDaily, group: LPCWSTR) -> MTAPIRES,
-    pub IMTDaily_Currency: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
+    pub IMTDaily_Group: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_Currency1: unsafe extern "C" fn(this: *mut IMTDaily, curr: LPCWSTR) -> MTAPIRES,
+    pub IMTDaily_Currency: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_CurrencyDigits: unsafe extern "C" fn(this: *const IMTDaily) -> UINT,
-    pub IMTDaily_Company: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_Company1: unsafe extern "C" fn(this: *mut IMTDaily, company: LPCWSTR) -> MTAPIRES,
-    pub IMTDaily_EMail: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
+    pub IMTDaily_Company: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_EMail1: unsafe extern "C" fn(this: *mut IMTDaily, mail: LPCWSTR) -> MTAPIRES,
-    pub IMTDaily_Balance: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_EMail: unsafe extern "C" fn(this: *const IMTDaily) -> LPCWSTR,
     pub IMTDaily_Balance1: unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_Credit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_Balance: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_Credit1: unsafe extern "C" fn(this: *mut IMTDaily, credit: f64) -> MTAPIRES,
-    pub IMTDaily_InterestRate: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_Credit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_InterestRate1: unsafe extern "C" fn(this: *mut IMTDaily, credit: f64) -> MTAPIRES,
-    pub IMTDaily_CommissionDaily: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_InterestRate: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_CommissionDaily1: unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_CommissionMonthly: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_CommissionDaily: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_CommissionMonthly1:
         unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_AgentDaily: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_CommissionMonthly: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_AgentDaily1: unsafe extern "C" fn(this: *mut IMTDaily, agent: f64) -> MTAPIRES,
-    pub IMTDaily_AgentMonthly: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_AgentDaily: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_AgentMonthly1: unsafe extern "C" fn(this: *mut IMTDaily, agent: f64) -> MTAPIRES,
-    pub IMTDaily_BalancePrevDay: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_AgentMonthly: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_BalancePrevDay1:
         unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_BalancePrevMonth: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_BalancePrevDay: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_BalancePrevMonth1:
         unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_EquityPrevDay: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_BalancePrevMonth: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_EquityPrevDay1:
         unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_EquityPrevMonth: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_EquityPrevDay: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_EquityPrevMonth1:
         unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_Margin: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_EquityPrevMonth: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_Margin1: unsafe extern "C" fn(this: *mut IMTDaily, margin: f64) -> MTAPIRES,
-    pub IMTDaily_MarginFree: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_Margin: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_MarginFree1:
         unsafe extern "C" fn(this: *mut IMTDaily, margin_free: f64) -> MTAPIRES,
-    pub IMTDaily_MarginLevel: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_MarginFree: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_MarginLevel1:
         unsafe extern "C" fn(this: *mut IMTDaily, margin_level: f64) -> MTAPIRES,
-    pub IMTDaily_MarginLeverage: unsafe extern "C" fn(this: *const IMTDaily) -> UINT,
+    pub IMTDaily_MarginLevel: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_MarginLeverage1:
         unsafe extern "C" fn(this: *mut IMTDaily, leverage: UINT) -> MTAPIRES,
-    pub IMTDaily_Profit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_MarginLeverage: unsafe extern "C" fn(this: *const IMTDaily) -> UINT,
     pub IMTDaily_Profit1: unsafe extern "C" fn(this: *mut IMTDaily, profit: f64) -> MTAPIRES,
-    pub IMTDaily_ProfitStorage: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_Profit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_ProfitStorage1:
         unsafe extern "C" fn(this: *mut IMTDaily, storage: f64) -> MTAPIRES,
-    pub IMTDaily_ObsoleteValue: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_ProfitStorage: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_ObsoleteValue1: unsafe extern "C" fn(this: *mut IMTDaily, value: f64) -> MTAPIRES,
-    pub IMTDaily_ProfitEquity: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_ObsoleteValue: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_ProfitEquity1: unsafe extern "C" fn(this: *mut IMTDaily, equity: f64) -> MTAPIRES,
-    pub IMTDaily_DailyProfit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_ProfitEquity: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyProfit1: unsafe extern "C" fn(this: *mut IMTDaily, profit: f64) -> MTAPIRES,
-    pub IMTDaily_DailyBalance: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyProfit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyBalance1: unsafe extern "C" fn(this: *mut IMTDaily, balance: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCredit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyBalance: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCredit1: unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCharge: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCredit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCharge1: unsafe extern "C" fn(this: *mut IMTDaily, charge: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCorrection: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCharge: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCorrection1:
         unsafe extern "C" fn(this: *mut IMTDaily, correction: f64) -> MTAPIRES,
-    pub IMTDaily_DailyBonus: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCorrection: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyBonus1: unsafe extern "C" fn(this: *mut IMTDaily, bonus: f64) -> MTAPIRES,
-    pub IMTDaily_DailyStorage: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyBonus: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyStorage1: unsafe extern "C" fn(this: *mut IMTDaily, storage: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCommInstant: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyStorage: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCommInstant1:
         unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCommRound: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCommInstant: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCommRound1: unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_DailyAgent: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCommRound: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyAgent1: unsafe extern "C" fn(this: *mut IMTDaily, comm: f64) -> MTAPIRES,
-    pub IMTDaily_DailyInterest: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyAgent: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyInterest1:
         unsafe extern "C" fn(this: *mut IMTDaily, interest: f64) -> MTAPIRES,
+    pub IMTDaily_DailyInterest: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_PositionAdd:
         unsafe extern "C" fn(this: *mut IMTDaily, position: *mut IMTPosition) -> MTAPIRES,
     pub IMTDaily_PositionUpdate: unsafe extern "C" fn(
@@ -7387,24 +7384,24 @@ pub struct IMTDaily__bindgen_vtable {
         ticket: UINT64,
         order: *mut IMTOrder,
     ) -> MTAPIRES,
-    pub IMTDaily_ProfitAssets: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_ProfitAssets1: unsafe extern "C" fn(this: *mut IMTDaily, assets: f64) -> MTAPIRES,
-    pub IMTDaily_ProfitLiabilities: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_ProfitAssets: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_ProfitLiabilities1:
         unsafe extern "C" fn(this: *mut IMTDaily, liabilities: f64) -> MTAPIRES,
-    pub IMTDaily_DailyDividend: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_ProfitLiabilities: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyDividend1:
         unsafe extern "C" fn(this: *mut IMTDaily, dividend: f64) -> MTAPIRES,
-    pub IMTDaily_DailyTaxes: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyDividend: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyTaxes1: unsafe extern "C" fn(this: *mut IMTDaily, taxes: f64) -> MTAPIRES,
-    pub IMTDaily_DailySOCompensation: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyTaxes: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailySOCompensation1:
         unsafe extern "C" fn(this: *mut IMTDaily, compensation: f64) -> MTAPIRES,
-    pub IMTDaily_DailyCommFee: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailySOCompensation: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailyCommFee1: unsafe extern "C" fn(this: *mut IMTDaily, fee: f64) -> MTAPIRES,
-    pub IMTDaily_DailySOCompensationCredit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
+    pub IMTDaily_DailyCommFee: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
     pub IMTDaily_DailySOCompensationCredit1:
         unsafe extern "C" fn(this: *mut IMTDaily, compensation: f64) -> MTAPIRES,
+    pub IMTDaily_DailySOCompensationCredit: unsafe extern "C" fn(this: *const IMTDaily) -> f64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -7422,14 +7419,14 @@ pub struct IMTDailyArray__bindgen_vtable {
     pub IMTDailyArray_Assign:
         unsafe extern "C" fn(this: *mut IMTDailyArray, array: *const IMTDailyArray) -> MTAPIRES,
     pub IMTDailyArray_Clear: unsafe extern "C" fn(this: *mut IMTDailyArray) -> MTAPIRES,
-    pub IMTDailyArray_Add:
-        unsafe extern "C" fn(this: *mut IMTDailyArray, daily: *mut IMTDaily) -> MTAPIRES,
-    pub IMTDailyArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTDailyArray, daily: *const IMTDaily) -> MTAPIRES,
     pub IMTDailyArray_Add1:
         unsafe extern "C" fn(this: *mut IMTDailyArray, array: *mut IMTDailyArray) -> MTAPIRES,
+    pub IMTDailyArray_Add:
+        unsafe extern "C" fn(this: *mut IMTDailyArray, daily: *mut IMTDaily) -> MTAPIRES,
     pub IMTDailyArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTDailyArray, array: *const IMTDailyArray) -> MTAPIRES,
+    pub IMTDailyArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTDailyArray, daily: *const IMTDaily) -> MTAPIRES,
     pub IMTDailyArray_Delete: unsafe extern "C" fn(this: *mut IMTDailyArray, pos: UINT) -> MTAPIRES,
     pub IMTDailyArray_Detach:
         unsafe extern "C" fn(this: *mut IMTDailyArray, pos: UINT) -> *mut IMTDaily,
@@ -7785,16 +7782,16 @@ pub struct IMTMail__bindgen_vtable {
     pub IMTMail_Clear: unsafe extern "C" fn(this: *mut IMTMail) -> MTAPIRES,
     pub IMTMail_ID: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
     pub IMTMail_Parent: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
-    pub IMTMail_Subject: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
     pub IMTMail_Subject1: unsafe extern "C" fn(this: *mut IMTMail, subject: LPCWSTR) -> MTAPIRES,
-    pub IMTMail_From: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
+    pub IMTMail_Subject: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
     pub IMTMail_From1: unsafe extern "C" fn(this: *mut IMTMail, id: UINT64) -> MTAPIRES,
-    pub IMTMail_FromName: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
+    pub IMTMail_From: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
     pub IMTMail_FromName1: unsafe extern "C" fn(this: *mut IMTMail, name: LPCWSTR) -> MTAPIRES,
-    pub IMTMail_To: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
+    pub IMTMail_FromName: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
     pub IMTMail_To1: unsafe extern "C" fn(this: *mut IMTMail, id: UINT64) -> MTAPIRES,
-    pub IMTMail_ToName: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
+    pub IMTMail_To: unsafe extern "C" fn(this: *const IMTMail) -> UINT64,
     pub IMTMail_ToName1: unsafe extern "C" fn(this: *mut IMTMail, name: LPCWSTR) -> MTAPIRES,
+    pub IMTMail_ToName: unsafe extern "C" fn(this: *const IMTMail) -> LPCWSTR,
     pub IMTMail_ToRangesAdd:
         unsafe extern "C" fn(this: *mut IMTMail, range: *mut MTMailRange) -> MTAPIRES,
     pub IMTMail_ToRangesDelete: unsafe extern "C" fn(this: *mut IMTMail, pos: UINT) -> MTAPIRES,
@@ -7803,10 +7800,10 @@ pub struct IMTMail__bindgen_vtable {
     pub IMTMail_ToRangesNext:
         unsafe extern "C" fn(this: *const IMTMail, pos: UINT, range: *mut MTMailRange) -> MTAPIRES,
     pub IMTMail_Time: unsafe extern "C" fn(this: *const IMTMail) -> INT64,
-    pub IMTMail_Body: unsafe extern "C" fn(this: *const IMTMail) -> LPCVOID,
-    pub IMTMail_BodySize: unsafe extern "C" fn(this: *const IMTMail) -> UINT,
     pub IMTMail_Body1:
         unsafe extern "C" fn(this: *mut IMTMail, body: LPCVOID, body_size: UINT) -> MTAPIRES,
+    pub IMTMail_Body: unsafe extern "C" fn(this: *const IMTMail) -> LPCVOID,
+    pub IMTMail_BodySize: unsafe extern "C" fn(this: *const IMTMail) -> UINT,
     pub IMTMail_AttachmentsAdd: unsafe extern "C" fn(
         this: *mut IMTMail,
         filename: LPCWSTR,
@@ -7847,20 +7844,20 @@ pub struct IMTNews__bindgen_vtable {
     pub IMTNews_Assign: unsafe extern "C" fn(this: *mut IMTNews, news: *const IMTNews) -> MTAPIRES,
     pub IMTNews_Clear: unsafe extern "C" fn(this: *mut IMTNews) -> MTAPIRES,
     pub IMTNews_ID: unsafe extern "C" fn(this: *const IMTNews) -> UINT64,
-    pub IMTNews_Subject: unsafe extern "C" fn(this: *const IMTNews) -> LPCWSTR,
     pub IMTNews_Subject1: unsafe extern "C" fn(this: *mut IMTNews, subject: LPCWSTR) -> MTAPIRES,
-    pub IMTNews_Category: unsafe extern "C" fn(this: *const IMTNews) -> LPCWSTR,
+    pub IMTNews_Subject: unsafe extern "C" fn(this: *const IMTNews) -> LPCWSTR,
     pub IMTNews_Category1: unsafe extern "C" fn(this: *mut IMTNews, category: LPCWSTR) -> MTAPIRES,
-    pub IMTNews_Time: unsafe extern "C" fn(this: *const IMTNews) -> INT64,
+    pub IMTNews_Category: unsafe extern "C" fn(this: *const IMTNews) -> LPCWSTR,
     pub IMTNews_Time1: unsafe extern "C" fn(this: *mut IMTNews, datetime: INT64) -> MTAPIRES,
-    pub IMTNews_Language: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
+    pub IMTNews_Time: unsafe extern "C" fn(this: *const IMTNews) -> INT64,
     pub IMTNews_Language1: unsafe extern "C" fn(this: *mut IMTNews, language: UINT) -> MTAPIRES,
-    pub IMTNews_Flags: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
+    pub IMTNews_Language: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
     pub IMTNews_Flags1: unsafe extern "C" fn(this: *mut IMTNews, flags: UINT) -> MTAPIRES,
-    pub IMTNews_Body: unsafe extern "C" fn(this: *const IMTNews) -> LPCVOID,
-    pub IMTNews_BodySize: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
+    pub IMTNews_Flags: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
     pub IMTNews_Body1:
         unsafe extern "C" fn(this: *mut IMTNews, body: LPCVOID, body_size: UINT) -> MTAPIRES,
+    pub IMTNews_Body: unsafe extern "C" fn(this: *const IMTNews) -> LPCVOID,
+    pub IMTNews_BodySize: unsafe extern "C" fn(this: *const IMTNews) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -8004,10 +8001,10 @@ pub struct IMTByteStream__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTByteStream, cmd: *mut MTAPISTR) -> MTAPIRES,
     pub IMTByteStream_WebReadParamName:
         unsafe extern "C" fn(this: *mut IMTByteStream, name: *mut MTAPISTR) -> MTAPIRES,
-    pub IMTByteStream_WebReadParamStr:
-        unsafe extern "C" fn(this: *mut IMTByteStream, str_: *mut MTAPISTR) -> MTAPIRES,
     pub IMTByteStream_WebReadParamStr1:
         unsafe extern "C" fn(this: *mut IMTByteStream, value: LPWSTR, size: UINT) -> MTAPIRES,
+    pub IMTByteStream_WebReadParamStr:
+        unsafe extern "C" fn(this: *mut IMTByteStream, str_: *mut MTAPISTR) -> MTAPIRES,
     pub IMTByteStream_WebReadParamSkip: unsafe extern "C" fn(this: *mut IMTByteStream) -> MTAPIRES,
     pub IMTByteStream_WebReadParamChar: unsafe extern "C" fn(
         this: *mut IMTByteStream,
@@ -8063,50 +8060,50 @@ pub struct IMTRequest__bindgen_vtable {
     pub IMTRequest_Print:
         unsafe extern "C" fn(this: *const IMTRequest, string: *mut MTAPISTR) -> LPCWSTR,
     pub IMTRequest_ID: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
-    pub IMTRequest_Login: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_Login1: unsafe extern "C" fn(this: *mut IMTRequest, login: UINT64) -> MTAPIRES,
+    pub IMTRequest_Login: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_Group: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
-    pub IMTRequest_Symbol: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_Symbol1:
         unsafe extern "C" fn(this: *mut IMTRequest, symbol: LPCWSTR) -> MTAPIRES,
+    pub IMTRequest_Symbol: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_Digits: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
-    pub IMTRequest_Action: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_Action1: unsafe extern "C" fn(this: *mut IMTRequest, action: UINT) -> MTAPIRES,
-    pub IMTRequest_TimeExpiration: unsafe extern "C" fn(this: *const IMTRequest) -> INT64,
+    pub IMTRequest_Action: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_TimeExpiration1:
         unsafe extern "C" fn(this: *mut IMTRequest, time: INT64) -> MTAPIRES,
-    pub IMTRequest_Type: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
+    pub IMTRequest_TimeExpiration: unsafe extern "C" fn(this: *const IMTRequest) -> INT64,
     pub IMTRequest_Type1: unsafe extern "C" fn(this: *mut IMTRequest, type_: UINT) -> MTAPIRES,
-    pub IMTRequest_TypeFill: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
+    pub IMTRequest_Type: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_TypeFill1: unsafe extern "C" fn(this: *mut IMTRequest, type_: UINT) -> MTAPIRES,
-    pub IMTRequest_TypeTime: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
+    pub IMTRequest_TypeFill: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_TypeTime1: unsafe extern "C" fn(this: *mut IMTRequest, type_: UINT) -> MTAPIRES,
-    pub IMTRequest_Flags: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_TypeTime: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_Flags1: unsafe extern "C" fn(this: *mut IMTRequest, flags: UINT64) -> MTAPIRES,
-    pub IMTRequest_Volume: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_Flags: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_Volume1: unsafe extern "C" fn(this: *mut IMTRequest, volume: UINT64) -> MTAPIRES,
-    pub IMTRequest_Order: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_Volume: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_Order1: unsafe extern "C" fn(this: *mut IMTRequest, order: UINT64) -> MTAPIRES,
-    pub IMTRequest_OrderExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
+    pub IMTRequest_Order: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_OrderExternalID1:
         unsafe extern "C" fn(this: *mut IMTRequest, id: LPCWSTR) -> MTAPIRES,
-    pub IMTRequest_PriceOrder: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
+    pub IMTRequest_OrderExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_PriceOrder1: unsafe extern "C" fn(this: *mut IMTRequest, price: f64) -> MTAPIRES,
-    pub IMTRequest_PriceTrigger: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
+    pub IMTRequest_PriceOrder: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_PriceTrigger1:
         unsafe extern "C" fn(this: *mut IMTRequest, price: f64) -> MTAPIRES,
-    pub IMTRequest_PriceSL: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
+    pub IMTRequest_PriceTrigger: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_PriceSL1: unsafe extern "C" fn(this: *mut IMTRequest, price: f64) -> MTAPIRES,
-    pub IMTRequest_PriceTP: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
+    pub IMTRequest_PriceSL: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_PriceTP1: unsafe extern "C" fn(this: *mut IMTRequest, price: f64) -> MTAPIRES,
-    pub IMTRequest_PriceDeviation: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_PriceTP: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_PriceDeviation1:
         unsafe extern "C" fn(this: *mut IMTRequest, deviation: UINT64) -> MTAPIRES,
+    pub IMTRequest_PriceDeviation: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_PriceDeviationTop: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_PriceDeviationBottom: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
-    pub IMTRequest_Comment: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_Comment1:
         unsafe extern "C" fn(this: *mut IMTRequest, comment: LPCWSTR) -> MTAPIRES,
+    pub IMTRequest_Comment: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_ResultRetcode: unsafe extern "C" fn(this: *const IMTRequest) -> MTAPIRES,
     pub IMTRequest_ResultDealer: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_ResultDeal: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
@@ -8120,37 +8117,37 @@ pub struct IMTRequest__bindgen_vtable {
     pub IMTRequest_ResultMarketAsk: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_ResultMarketLast: unsafe extern "C" fn(this: *const IMTRequest) -> f64,
     pub IMTRequest_ResultComment: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
-    pub IMTRequest_ExternalAccount: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_ExternalAccount1:
         unsafe extern "C" fn(this: *mut IMTRequest, account: LPCWSTR) -> MTAPIRES,
+    pub IMTRequest_ExternalAccount: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_IDClient: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
-    pub IMTRequest_IP: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_IP1: unsafe extern "C" fn(this: *mut IMTRequest, ip: LPCWSTR) -> MTAPIRES,
-    pub IMTRequest_SourceLogin: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_IP: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_SourceLogin1:
         unsafe extern "C" fn(this: *mut IMTRequest, login: UINT64) -> MTAPIRES,
-    pub IMTRequest_Position: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_SourceLogin: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_Position1:
         unsafe extern "C" fn(this: *mut IMTRequest, position: UINT64) -> MTAPIRES,
-    pub IMTRequest_PositionBy: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_Position: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_PositionBy1:
         unsafe extern "C" fn(this: *mut IMTRequest, position: UINT64) -> MTAPIRES,
-    pub IMTRequest_PositionExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
+    pub IMTRequest_PositionBy: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_PositionExternalID1:
         unsafe extern "C" fn(this: *mut IMTRequest, id: LPCWSTR) -> MTAPIRES,
-    pub IMTRequest_PositionByExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
+    pub IMTRequest_PositionExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_PositionByExternalID1:
         unsafe extern "C" fn(this: *mut IMTRequest, id: LPCWSTR) -> MTAPIRES,
-    pub IMTRequest_VolumeExt: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_PositionByExternalID: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
     pub IMTRequest_VolumeExt1:
         unsafe extern "C" fn(this: *mut IMTRequest, volume: UINT64) -> MTAPIRES,
+    pub IMTRequest_VolumeExt: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_ResultVolumeExt: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_DigitsSet: unsafe extern "C" fn(this: *mut IMTRequest, digits: UINT) -> MTAPIRES,
-    pub IMTRequest_ApiDataSet: unsafe extern "C" fn(
+    pub IMTRequest_ApiDataSet2: unsafe extern "C" fn(
         this: *mut IMTRequest,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTRequest_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTRequest,
@@ -8158,23 +8155,11 @@ pub struct IMTRequest__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTRequest_ApiDataSet2: unsafe extern "C" fn(
+    pub IMTRequest_ApiDataSet: unsafe extern "C" fn(
         this: *mut IMTRequest,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTRequest_ApiDataGet: unsafe extern "C" fn(
-        this: *const IMTRequest,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTRequest_ApiDataGet1: unsafe extern "C" fn(
-        this: *const IMTRequest,
-        app_id: USHORT,
-        id: UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTRequest_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTRequest,
@@ -8182,19 +8167,17 @@ pub struct IMTRequest__bindgen_vtable {
         id: UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
-    pub IMTRequest_ApiDataUpdate: unsafe extern "C" fn(
-        this: *mut IMTRequest,
-        pos: UINT,
+    pub IMTRequest_ApiDataGet1: unsafe extern "C" fn(
+        this: *const IMTRequest,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: *mut UINT64,
     ) -> MTAPIRES,
-    pub IMTRequest_ApiDataUpdate1: unsafe extern "C" fn(
-        this: *mut IMTRequest,
-        pos: UINT,
+    pub IMTRequest_ApiDataGet: unsafe extern "C" fn(
+        this: *const IMTRequest,
         app_id: USHORT,
         id: UCHAR,
-        value: UINT64,
+        value: *mut INT64,
     ) -> MTAPIRES,
     pub IMTRequest_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTRequest,
@@ -8203,19 +8186,19 @@ pub struct IMTRequest__bindgen_vtable {
         id: UCHAR,
         value: f64,
     ) -> MTAPIRES,
-    pub IMTRequest_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTRequest,
+    pub IMTRequest_ApiDataUpdate1: unsafe extern "C" fn(
+        this: *mut IMTRequest,
         pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
+        app_id: USHORT,
+        id: UCHAR,
+        value: UINT64,
     ) -> MTAPIRES,
-    pub IMTRequest_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTRequest,
+    pub IMTRequest_ApiDataUpdate: unsafe extern "C" fn(
+        this: *mut IMTRequest,
         pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        app_id: USHORT,
+        id: UCHAR,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTRequest_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTRequest,
@@ -8224,20 +8207,34 @@ pub struct IMTRequest__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
+    pub IMTRequest_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTRequest,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTRequest_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTRequest,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTRequest_ApiDataRaw: unsafe extern "C" fn(this: *const IMTRequest) -> LPVOID,
     pub IMTRequest_ApiDataRawMax: unsafe extern "C" fn(this: *const IMTRequest) -> UINT,
     pub IMTRequest_ApiDataClear:
         unsafe extern "C" fn(this: *mut IMTRequest, app_id: USHORT) -> MTAPIRES,
     pub IMTRequest_ApiDataClearAll: unsafe extern "C" fn(this: *mut IMTRequest) -> MTAPIRES,
-    pub IMTRequest_VolumeCurrent: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_VolumeCurrent1:
         unsafe extern "C" fn(this: *mut IMTRequest, volume: UINT64) -> MTAPIRES,
-    pub IMTRequest_VolumeCurrentExt: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
+    pub IMTRequest_VolumeCurrent: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_VolumeCurrentExt1:
         unsafe extern "C" fn(this: *mut IMTRequest, volume: UINT64) -> MTAPIRES,
-    pub IMTRequest_SymbolOriginal: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
+    pub IMTRequest_VolumeCurrentExt: unsafe extern "C" fn(this: *const IMTRequest) -> UINT64,
     pub IMTRequest_SymbolOriginal1:
         unsafe extern "C" fn(this: *mut IMTRequest, symbol: LPCWSTR) -> MTAPIRES,
+    pub IMTRequest_SymbolOriginal: unsafe extern "C" fn(this: *const IMTRequest) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -8312,46 +8309,46 @@ pub struct IMTConfirm__bindgen_vtable {
     pub IMTConfirm_Clear: unsafe extern "C" fn(this: *mut IMTConfirm) -> MTAPIRES,
     pub IMTConfirm_Print:
         unsafe extern "C" fn(this: *const IMTConfirm, string: *mut MTAPISTR) -> LPCWSTR,
-    pub IMTConfirm_ID: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT,
     pub IMTConfirm_ID1: unsafe extern "C" fn(this: *mut IMTConfirm, id: UINT) -> MTAPIRES,
-    pub IMTConfirm_Retcode: unsafe extern "C" fn(this: *const IMTConfirm) -> MTAPIRES,
+    pub IMTConfirm_ID: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT,
     pub IMTConfirm_Retcode1:
         unsafe extern "C" fn(this: *mut IMTConfirm, retcode: MTAPIRES) -> MTAPIRES,
-    pub IMTConfirm_Volume: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT64,
+    pub IMTConfirm_Retcode: unsafe extern "C" fn(this: *const IMTConfirm) -> MTAPIRES,
     pub IMTConfirm_Volume1: unsafe extern "C" fn(this: *mut IMTConfirm, volume: UINT64) -> MTAPIRES,
-    pub IMTConfirm_Price: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
+    pub IMTConfirm_Volume: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT64,
     pub IMTConfirm_Price1: unsafe extern "C" fn(this: *mut IMTConfirm, price: f64) -> MTAPIRES,
-    pub IMTConfirm_TickBid: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
+    pub IMTConfirm_Price: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
     pub IMTConfirm_TickBid1: unsafe extern "C" fn(this: *mut IMTConfirm, tickbid: f64) -> MTAPIRES,
-    pub IMTConfirm_TickAsk: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
+    pub IMTConfirm_TickBid: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
     pub IMTConfirm_TickAsk1: unsafe extern "C" fn(this: *mut IMTConfirm, tickask: f64) -> MTAPIRES,
-    pub IMTConfirm_TickLast: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
+    pub IMTConfirm_TickAsk: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
     pub IMTConfirm_TickLast1:
         unsafe extern "C" fn(this: *mut IMTConfirm, ticklast: f64) -> MTAPIRES,
-    pub IMTConfirm_Comment: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
+    pub IMTConfirm_TickLast: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
     pub IMTConfirm_Comment1:
         unsafe extern "C" fn(this: *mut IMTConfirm, comment: LPCWSTR) -> MTAPIRES,
-    pub IMTConfirm_Flags: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT,
+    pub IMTConfirm_Comment: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
     pub IMTConfirm_Flags1: unsafe extern "C" fn(this: *mut IMTConfirm, flags: UINT) -> MTAPIRES,
-    pub IMTConfirm_DealID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
+    pub IMTConfirm_Flags: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT,
     pub IMTConfirm_DealID1:
         unsafe extern "C" fn(this: *mut IMTConfirm, deal_id: LPCWSTR) -> MTAPIRES,
-    pub IMTConfirm_OrderID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
+    pub IMTConfirm_DealID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
     pub IMTConfirm_OrderID1:
         unsafe extern "C" fn(this: *mut IMTConfirm, order_id: LPCWSTR) -> MTAPIRES,
-    pub IMTConfirm_PriceGateway: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
+    pub IMTConfirm_OrderID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
     pub IMTConfirm_PriceGateway1:
         unsafe extern "C" fn(this: *mut IMTConfirm, price: f64) -> MTAPIRES,
-    pub IMTConfirm_PositionExternalID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
+    pub IMTConfirm_PriceGateway: unsafe extern "C" fn(this: *const IMTConfirm) -> f64,
     pub IMTConfirm_PositionExternalID1:
         unsafe extern "C" fn(this: *mut IMTConfirm, id: LPCWSTR) -> MTAPIRES,
-    pub IMTConfirm_ExternalRetcode:
-        unsafe extern "C" fn(this: *const IMTConfirm) -> ::std::os::raw::c_int,
+    pub IMTConfirm_PositionExternalID: unsafe extern "C" fn(this: *const IMTConfirm) -> LPCWSTR,
     pub IMTConfirm_ExternalRetcode1:
         unsafe extern "C" fn(this: *mut IMTConfirm, retcode: ::std::os::raw::c_int) -> MTAPIRES,
-    pub IMTConfirm_VolumeExt: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT64,
+    pub IMTConfirm_ExternalRetcode:
+        unsafe extern "C" fn(this: *const IMTConfirm) -> ::std::os::raw::c_int,
     pub IMTConfirm_VolumeExt1:
         unsafe extern "C" fn(this: *mut IMTConfirm, volume: UINT64) -> MTAPIRES,
+    pub IMTConfirm_VolumeExt: unsafe extern "C" fn(this: *const IMTConfirm) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -8375,126 +8372,126 @@ pub struct IMTExecution__bindgen_vtable {
     pub IMTExecution_Clear: unsafe extern "C" fn(this: *mut IMTExecution) -> MTAPIRES,
     pub IMTExecution_Print:
         unsafe extern "C" fn(this: *const IMTExecution, string: *mut MTAPISTR) -> LPCWSTR,
-    pub IMTExecution_ID: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_ID1: unsafe extern "C" fn(this: *mut IMTExecution, id: UINT64) -> MTAPIRES,
-    pub IMTExecution_ExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_ID: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_ExternalID1:
         unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_Action: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_ExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
     pub IMTExecution_Action1:
         unsafe extern "C" fn(this: *mut IMTExecution, action: UINT) -> MTAPIRES,
-    pub IMTExecution_Datetime: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
+    pub IMTExecution_Action: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_Datetime1:
         unsafe extern "C" fn(this: *mut IMTExecution, datetime: INT64) -> MTAPIRES,
-    pub IMTExecution_Login: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_Datetime: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
     pub IMTExecution_Login1:
         unsafe extern "C" fn(this: *mut IMTExecution, login: UINT64) -> MTAPIRES,
-    pub IMTExecution_Group: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_Login: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_Group1:
         unsafe extern "C" fn(this: *mut IMTExecution, group: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_Flags: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_Group: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
     pub IMTExecution_Flags1:
         unsafe extern "C" fn(this: *mut IMTExecution, flags: UINT64) -> MTAPIRES,
-    pub IMTExecution_Symbol: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_Flags: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_Symbol1:
         unsafe extern "C" fn(this: *mut IMTExecution, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_Digits: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
-    pub IMTExecution_Comment: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
-    pub IMTExecution_Comment1:
-        unsafe extern "C" fn(this: *mut IMTExecution, comment: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_Order: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
-    pub IMTExecution_Order1:
-        unsafe extern "C" fn(this: *mut IMTExecution, order: UINT64) -> MTAPIRES,
-    pub IMTExecution_OrderExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
-    pub IMTExecution_OrderExternalID1:
-        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_OrderType: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
-    pub IMTExecution_OrderType1:
-        unsafe extern "C" fn(this: *mut IMTExecution, type_: UINT) -> MTAPIRES,
-    pub IMTExecution_OrderVolume: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
-    pub IMTExecution_OrderVolume1:
-        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
-    pub IMTExecution_OrderPrice: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
-    pub IMTExecution_OrderPrice1:
-        unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
-    pub IMTExecution_OrderActivationFlags: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
-    pub IMTExecution_OrderActivationFlags1:
-        unsafe extern "C" fn(this: *mut IMTExecution, activation: UINT) -> MTAPIRES,
-    pub IMTExecution_DealExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
-    pub IMTExecution_DealExternalID1:
-        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_DealAction: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
-    pub IMTExecution_DealAction1:
-        unsafe extern "C" fn(this: *mut IMTExecution, action: UINT) -> MTAPIRES,
-    pub IMTExecution_DealVolume: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
-    pub IMTExecution_DealVolume1:
-        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
-    pub IMTExecution_DealVolumeRemaind: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
-    pub IMTExecution_DealVolumeRemaind1:
-        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
-    pub IMTExecution_DealPrice: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
-    pub IMTExecution_DealPrice1:
-        unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
+    pub IMTExecution_Symbol: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
     pub IMTExecution_Digits1:
         unsafe extern "C" fn(this: *mut IMTExecution, digits: UINT) -> MTAPIRES,
-    pub IMTExecution_ExternalAccount: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_Digits: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_Comment1:
+        unsafe extern "C" fn(this: *mut IMTExecution, comment: LPCWSTR) -> MTAPIRES,
+    pub IMTExecution_Comment: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_Order1:
+        unsafe extern "C" fn(this: *mut IMTExecution, order: UINT64) -> MTAPIRES,
+    pub IMTExecution_Order: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_OrderExternalID1:
+        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
+    pub IMTExecution_OrderExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_OrderType1:
+        unsafe extern "C" fn(this: *mut IMTExecution, type_: UINT) -> MTAPIRES,
+    pub IMTExecution_OrderType: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_OrderVolume1:
+        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
+    pub IMTExecution_OrderVolume: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_OrderPrice1:
+        unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
+    pub IMTExecution_OrderPrice: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_OrderActivationFlags1:
+        unsafe extern "C" fn(this: *mut IMTExecution, activation: UINT) -> MTAPIRES,
+    pub IMTExecution_OrderActivationFlags: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_DealExternalID1:
+        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
+    pub IMTExecution_DealExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_DealAction1:
+        unsafe extern "C" fn(this: *mut IMTExecution, action: UINT) -> MTAPIRES,
+    pub IMTExecution_DealAction: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_DealVolume1:
+        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
+    pub IMTExecution_DealVolume: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_DealVolumeRemaind1:
+        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
+    pub IMTExecution_DealVolumeRemaind: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_DealPrice1:
+        unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
+    pub IMTExecution_DealPrice: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_ExternalAccount1:
         unsafe extern "C" fn(this: *mut IMTExecution, account: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_OrderPriceTrigger: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_ExternalAccount: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
     pub IMTExecution_OrderPriceTrigger1:
         unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
-    pub IMTExecution_OrderTypeTime: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_OrderPriceTrigger: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_OrderTypeTime1:
         unsafe extern "C" fn(this: *mut IMTExecution, type_: UINT) -> MTAPIRES,
-    pub IMTExecution_OrderTimeExpiration: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
+    pub IMTExecution_OrderTypeTime: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_OrderTimeExpiration1:
         unsafe extern "C" fn(this: *mut IMTExecution, time: INT64) -> MTAPIRES,
-    pub IMTExecution_OrderTypeFill: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_OrderTimeExpiration: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
     pub IMTExecution_OrderTypeFill1:
         unsafe extern "C" fn(this: *mut IMTExecution, type_: UINT) -> MTAPIRES,
-    pub IMTExecution_EOSSessionStart: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
+    pub IMTExecution_OrderTypeFill: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_EOSSessionStart1:
         unsafe extern "C" fn(this: *mut IMTExecution, start: INT64) -> MTAPIRES,
-    pub IMTExecution_EOSSessionEnd: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
+    pub IMTExecution_EOSSessionStart: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
     pub IMTExecution_EOSSessionEnd1:
         unsafe extern "C" fn(this: *mut IMTExecution, end: INT64) -> MTAPIRES,
-    pub IMTExecution_EOSPriceSettlement: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_EOSSessionEnd: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
     pub IMTExecution_EOSPriceSettlement1:
         unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
+    pub IMTExecution_EOSPriceSettlement: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSProfitRateBuy: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSProfitRateSell: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSProfitRate:
         unsafe extern "C" fn(this: *mut IMTExecution, rate_buy: f64, rate_sell: f64) -> MTAPIRES,
-    pub IMTExecution_EOSTickValue: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSTickValue1:
         unsafe extern "C" fn(this: *mut IMTExecution, value: f64) -> MTAPIRES,
-    pub IMTExecution_OrderPriceSL: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_EOSTickValue: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_OrderPriceSL1:
         unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
-    pub IMTExecution_OrderPriceTP: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_OrderPriceSL: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_OrderPriceTP1:
         unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
-    pub IMTExecution_PriceGateway: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_OrderPriceTP: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_PriceGateway1:
         unsafe extern "C" fn(this: *mut IMTExecution, price: f64) -> MTAPIRES,
-    pub IMTExecution_OrderActivationMode: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
+    pub IMTExecution_PriceGateway: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_OrderActivationMode1:
         unsafe extern "C" fn(this: *mut IMTExecution, activation: UINT) -> MTAPIRES,
-    pub IMTExecution_DealCommission: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_OrderActivationMode: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_DealCommission1:
         unsafe extern "C" fn(this: *mut IMTExecution, comm: f64) -> MTAPIRES,
-    pub IMTExecution_DatetimeMsc: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
+    pub IMTExecution_DealCommission: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_DatetimeMsc1:
         unsafe extern "C" fn(this: *mut IMTExecution, datetime: INT64) -> MTAPIRES,
-    pub IMTExecution_SymbolNew: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_DatetimeMsc: unsafe extern "C" fn(this: *const IMTExecution) -> INT64,
     pub IMTExecution_SymbolNew1:
         unsafe extern "C" fn(this: *mut IMTExecution, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTExecution_ApiDataUpdate: unsafe extern "C" fn(
+    pub IMTExecution_SymbolNew: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_ApiDataUpdate2: unsafe extern "C" fn(
         this: *mut IMTExecution,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTExecution_ApiDataUpdate1: unsafe extern "C" fn(
         this: *mut IMTExecution,
@@ -8503,26 +8500,12 @@ pub struct IMTExecution__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTExecution_ApiDataUpdate2: unsafe extern "C" fn(
+    pub IMTExecution_ApiDataUpdate: unsafe extern "C" fn(
         this: *mut IMTExecution,
         pos: UINT,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
-    ) -> MTAPIRES,
-    pub IMTExecution_ApiDataNext: unsafe extern "C" fn(
-        this: *const IMTExecution,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut INT64,
-    ) -> MTAPIRES,
-    pub IMTExecution_ApiDataNext1: unsafe extern "C" fn(
-        this: *const IMTExecution,
-        pos: UINT,
-        app_id: *mut USHORT,
-        id: *mut UCHAR,
-        value: *mut UINT64,
+        value: INT64,
     ) -> MTAPIRES,
     pub IMTExecution_ApiDataNext2: unsafe extern "C" fn(
         this: *const IMTExecution,
@@ -8531,9 +8514,23 @@ pub struct IMTExecution__bindgen_vtable {
         id: *mut UCHAR,
         value: *mut f64,
     ) -> MTAPIRES,
-    pub IMTExecution_DealStorage: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
+    pub IMTExecution_ApiDataNext1: unsafe extern "C" fn(
+        this: *const IMTExecution,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut UINT64,
+    ) -> MTAPIRES,
+    pub IMTExecution_ApiDataNext: unsafe extern "C" fn(
+        this: *const IMTExecution,
+        pos: UINT,
+        app_id: *mut USHORT,
+        id: *mut UCHAR,
+        value: *mut INT64,
+    ) -> MTAPIRES,
     pub IMTExecution_DealStorage1:
         unsafe extern "C" fn(this: *mut IMTExecution, storage: f64) -> MTAPIRES,
+    pub IMTExecution_DealStorage: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSRolloverValueLong: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSRolloverValueShort: unsafe extern "C" fn(this: *const IMTExecution) -> f64,
     pub IMTExecution_EOSRolloverValue: unsafe extern "C" fn(
@@ -8541,44 +8538,44 @@ pub struct IMTExecution__bindgen_vtable {
         value_long: f64,
         value_short: f64,
     ) -> MTAPIRES,
-    pub IMTExecution_DealReason: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_DealReason1:
         unsafe extern "C" fn(this: *mut IMTExecution, reason: UINT) -> MTAPIRES,
-    pub IMTExecution_GatewayID: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_DealReason: unsafe extern "C" fn(this: *const IMTExecution) -> UINT,
     pub IMTExecution_GatewayID1:
         unsafe extern "C" fn(this: *mut IMTExecution, gateway_id: UINT64) -> MTAPIRES,
-    pub IMTExecution_Position: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_GatewayID: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_Position1:
         unsafe extern "C" fn(this: *mut IMTExecution, position: UINT64) -> MTAPIRES,
-    pub IMTExecution_PositionBy: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_Position: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_PositionBy1:
         unsafe extern "C" fn(this: *mut IMTExecution, position: UINT64) -> MTAPIRES,
-    pub IMTExecution_PositionExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_PositionBy: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_PositionExternalID1:
+        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
+    pub IMTExecution_PositionExternalID: unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
+    pub IMTExecution_PositionByExternalID1:
         unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
     pub IMTExecution_PositionByExternalID:
         unsafe extern "C" fn(this: *const IMTExecution) -> LPCWSTR,
-    pub IMTExecution_PositionByExternalID1:
-        unsafe extern "C" fn(this: *mut IMTExecution, id: LPCWSTR) -> MTAPIRES,
     pub IMTExecution_ExternalRetcode:
         unsafe extern "C" fn(this: *const IMTExecution) -> ::std::os::raw::c_int,
     pub IMTExecution_ExternalRetcode1:
         unsafe extern "C" fn(this: *mut IMTExecution, retcode: ::std::os::raw::c_int) -> MTAPIRES,
-    pub IMTExecution_OrderVolumeExt: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_OrderVolumeExt1:
         unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
-    pub IMTExecution_DealVolumeExt: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_OrderVolumeExt: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
     pub IMTExecution_DealVolumeExt1:
+        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
+    pub IMTExecution_DealVolumeExt: unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
+    pub IMTExecution_DealVolumeRemaindExt1:
         unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
     pub IMTExecution_DealVolumeRemaindExt:
         unsafe extern "C" fn(this: *const IMTExecution) -> UINT64,
-    pub IMTExecution_DealVolumeRemaindExt1:
-        unsafe extern "C" fn(this: *mut IMTExecution, volume: UINT64) -> MTAPIRES,
-    pub IMTExecution_ApiDataSet: unsafe extern "C" fn(
+    pub IMTExecution_ApiDataSet2: unsafe extern "C" fn(
         this: *mut IMTExecution,
         app_id: USHORT,
         id: UCHAR,
-        value: INT64,
+        value: f64,
     ) -> MTAPIRES,
     pub IMTExecution_ApiDataSet1: unsafe extern "C" fn(
         this: *mut IMTExecution,
@@ -8586,17 +8583,17 @@ pub struct IMTExecution__bindgen_vtable {
         id: UCHAR,
         value: UINT64,
     ) -> MTAPIRES,
-    pub IMTExecution_ApiDataSet2: unsafe extern "C" fn(
+    pub IMTExecution_ApiDataSet: unsafe extern "C" fn(
         this: *mut IMTExecution,
         app_id: USHORT,
         id: UCHAR,
-        value: f64,
+        value: INT64,
     ) -> MTAPIRES,
-    pub IMTExecution_ApiDataGet: unsafe extern "C" fn(
+    pub IMTExecution_ApiDataGet2: unsafe extern "C" fn(
         this: *const IMTExecution,
         app_id: USHORT,
         id: UCHAR,
-        value: *mut INT64,
+        value: *mut f64,
     ) -> MTAPIRES,
     pub IMTExecution_ApiDataGet1: unsafe extern "C" fn(
         this: *const IMTExecution,
@@ -8604,11 +8601,11 @@ pub struct IMTExecution__bindgen_vtable {
         id: UCHAR,
         value: *mut UINT64,
     ) -> MTAPIRES,
-    pub IMTExecution_ApiDataGet2: unsafe extern "C" fn(
+    pub IMTExecution_ApiDataGet: unsafe extern "C" fn(
         this: *const IMTExecution,
         app_id: USHORT,
         id: UCHAR,
-        value: *mut f64,
+        value: *mut INT64,
     ) -> MTAPIRES,
     pub IMTExecution_ApiDataRawSet: unsafe extern "C" fn(
         this: *mut IMTExecution,
@@ -8981,14 +8978,14 @@ pub struct IMTRequestArray__bindgen_vtable {
     pub IMTRequestArray_Assign:
         unsafe extern "C" fn(this: *mut IMTRequestArray, array: *const IMTRequestArray) -> MTAPIRES,
     pub IMTRequestArray_Clear: unsafe extern "C" fn(this: *mut IMTRequestArray) -> MTAPIRES,
-    pub IMTRequestArray_Add:
-        unsafe extern "C" fn(this: *mut IMTRequestArray, request: *mut IMTRequest) -> MTAPIRES,
-    pub IMTRequestArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTRequestArray, request: *const IMTRequest) -> MTAPIRES,
     pub IMTRequestArray_Add1:
         unsafe extern "C" fn(this: *mut IMTRequestArray, array: *mut IMTRequestArray) -> MTAPIRES,
+    pub IMTRequestArray_Add:
+        unsafe extern "C" fn(this: *mut IMTRequestArray, request: *mut IMTRequest) -> MTAPIRES,
     pub IMTRequestArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTRequestArray, array: *const IMTRequestArray) -> MTAPIRES,
+    pub IMTRequestArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTRequestArray, request: *const IMTRequest) -> MTAPIRES,
     pub IMTRequestArray_Delete:
         unsafe extern "C" fn(this: *mut IMTRequestArray, pos: UINT) -> MTAPIRES,
     pub IMTRequestArray_Detach:
@@ -9234,24 +9231,24 @@ pub struct IMTConSpreadLeg__bindgen_vtable {
     pub IMTConSpreadLeg_Assign:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, leg: *const IMTConSpreadLeg) -> MTAPIRES,
     pub IMTConSpreadLeg_Clear: unsafe extern "C" fn(this: *mut IMTConSpreadLeg) -> MTAPIRES,
-    pub IMTConSpreadLeg_Mode: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> UINT,
     pub IMTConSpreadLeg_Mode1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, mode: UINT) -> MTAPIRES,
-    pub IMTConSpreadLeg_Symbol: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> LPCWSTR,
+    pub IMTConSpreadLeg_Mode: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> UINT,
     pub IMTConSpreadLeg_Symbol1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, symbol: LPCWSTR) -> MTAPIRES,
-    pub IMTConSpreadLeg_TimeFrom: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> INT64,
+    pub IMTConSpreadLeg_Symbol: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> LPCWSTR,
     pub IMTConSpreadLeg_TimeFrom1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, from: INT64) -> MTAPIRES,
-    pub IMTConSpreadLeg_TimeTo: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> INT64,
+    pub IMTConSpreadLeg_TimeFrom: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> INT64,
     pub IMTConSpreadLeg_TimeTo1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, to: INT64) -> MTAPIRES,
-    pub IMTConSpreadLeg_Ratio: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> UINT64,
+    pub IMTConSpreadLeg_TimeTo: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> INT64,
     pub IMTConSpreadLeg_Ratio1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, ratio: UINT64) -> MTAPIRES,
-    pub IMTConSpreadLeg_RatioDbl: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> f64,
+    pub IMTConSpreadLeg_Ratio: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> UINT64,
     pub IMTConSpreadLeg_RatioDbl1:
         unsafe extern "C" fn(this: *mut IMTConSpreadLeg, ratio: f64) -> MTAPIRES,
+    pub IMTConSpreadLeg_RatioDbl: unsafe extern "C" fn(this: *const IMTConSpreadLeg) -> f64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -9275,15 +9272,15 @@ pub struct IMTConSpread__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTConSpread, spread: *const IMTConSpread) -> MTAPIRES,
     pub IMTConSpread_Clear: unsafe extern "C" fn(this: *mut IMTConSpread) -> MTAPIRES,
     pub IMTConSpread_ID: unsafe extern "C" fn(this: *const IMTConSpread) -> UINT,
-    pub IMTConSpread_MarginType: unsafe extern "C" fn(this: *const IMTConSpread) -> UINT,
     pub IMTConSpread_MarginType1:
         unsafe extern "C" fn(this: *mut IMTConSpread, type_: UINT) -> MTAPIRES,
-    pub IMTConSpread_MarginInitial: unsafe extern "C" fn(this: *const IMTConSpread) -> f64,
+    pub IMTConSpread_MarginType: unsafe extern "C" fn(this: *const IMTConSpread) -> UINT,
     pub IMTConSpread_MarginInitial1:
         unsafe extern "C" fn(this: *mut IMTConSpread, margin: f64) -> MTAPIRES,
-    pub IMTConSpread_MarginMaintenance: unsafe extern "C" fn(this: *const IMTConSpread) -> f64,
+    pub IMTConSpread_MarginInitial: unsafe extern "C" fn(this: *const IMTConSpread) -> f64,
     pub IMTConSpread_MarginMaintenance1:
         unsafe extern "C" fn(this: *mut IMTConSpread, margin: f64) -> MTAPIRES,
+    pub IMTConSpread_MarginMaintenance: unsafe extern "C" fn(this: *const IMTConSpread) -> f64,
     pub IMTConSpread_ALegAdd:
         unsafe extern "C" fn(this: *mut IMTConSpread, leg: *mut IMTConSpreadLeg) -> MTAPIRES,
     pub IMTConSpread_ALegUpdate: unsafe extern "C" fn(
@@ -9364,14 +9361,14 @@ pub struct IMTOnlineArray__bindgen_vtable {
     pub IMTOnlineArray_Assign:
         unsafe extern "C" fn(this: *mut IMTOnlineArray, array: *const IMTOnlineArray) -> MTAPIRES,
     pub IMTOnlineArray_Clear: unsafe extern "C" fn(this: *mut IMTOnlineArray) -> MTAPIRES,
-    pub IMTOnlineArray_Add:
-        unsafe extern "C" fn(this: *mut IMTOnlineArray, online: *mut IMTOnline) -> MTAPIRES,
-    pub IMTOnlineArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTOnlineArray, online: *const IMTOnline) -> MTAPIRES,
     pub IMTOnlineArray_Add1:
         unsafe extern "C" fn(this: *mut IMTOnlineArray, array: *mut IMTOnlineArray) -> MTAPIRES,
+    pub IMTOnlineArray_Add:
+        unsafe extern "C" fn(this: *mut IMTOnlineArray, online: *mut IMTOnline) -> MTAPIRES,
     pub IMTOnlineArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTOnlineArray, array: *const IMTOnlineArray) -> MTAPIRES,
+    pub IMTOnlineArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTOnlineArray, online: *const IMTOnline) -> MTAPIRES,
     pub IMTOnlineArray_Delete:
         unsafe extern "C" fn(this: *mut IMTOnlineArray, pos: UINT) -> MTAPIRES,
     pub IMTOnlineArray_Detach:
@@ -9462,25 +9459,25 @@ pub struct IMTConEmail__bindgen_vtable {
     pub IMTConEmail_Assign:
         unsafe extern "C" fn(this: *mut IMTConEmail, email: *const IMTConEmail) -> MTAPIRES,
     pub IMTConEmail_Clear: unsafe extern "C" fn(this: *mut IMTConEmail) -> MTAPIRES,
-    pub IMTConEmail_Name: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_Name1: unsafe extern "C" fn(this: *mut IMTConEmail, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_SenderMail: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
+    pub IMTConEmail_Name: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_SenderMail1:
         unsafe extern "C" fn(this: *mut IMTConEmail, mail: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_SenderName: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
+    pub IMTConEmail_SenderMail: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_SenderName1:
         unsafe extern "C" fn(this: *mut IMTConEmail, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_Server: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
+    pub IMTConEmail_SenderName: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_Server1:
         unsafe extern "C" fn(this: *mut IMTConEmail, server: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_Login: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
+    pub IMTConEmail_Server: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_Login1:
         unsafe extern "C" fn(this: *mut IMTConEmail, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_Password: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
+    pub IMTConEmail_Login: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_Password1:
         unsafe extern "C" fn(this: *mut IMTConEmail, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConEmail_Flags: unsafe extern "C" fn(this: *const IMTConEmail) -> UINT64,
+    pub IMTConEmail_Password: unsafe extern "C" fn(this: *const IMTConEmail) -> LPCWSTR,
     pub IMTConEmail_Flags1: unsafe extern "C" fn(this: *mut IMTConEmail, flags: UINT64) -> MTAPIRES,
+    pub IMTConEmail_Flags: unsafe extern "C" fn(this: *const IMTConEmail) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -9523,10 +9520,10 @@ pub struct IMTConMessengerCountry__bindgen_vtable {
         unsafe extern "C" fn(this: *const IMTConMessengerCountry) -> LPCWSTR,
     pub IMTConMessengerCountry_PhoneCode1:
         unsafe extern "C" fn(this: *mut IMTConMessengerCountry, code: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessengerCountry_MessageTemplate:
-        unsafe extern "C" fn(this: *const IMTConMessengerCountry) -> LPCWSTR,
     pub IMTConMessengerCountry_MessageTemplate1:
         unsafe extern "C" fn(this: *mut IMTConMessengerCountry, msg_template: LPCWSTR) -> MTAPIRES,
+    pub IMTConMessengerCountry_MessageTemplate:
+        unsafe extern "C" fn(this: *const IMTConMessengerCountry) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -9548,10 +9545,10 @@ pub struct IMTConMessengerGroup__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConMessengerGroup_Clear:
         unsafe extern "C" fn(this: *mut IMTConMessengerGroup) -> MTAPIRES,
-    pub IMTConMessengerGroup_Group:
-        unsafe extern "C" fn(this: *const IMTConMessengerGroup) -> LPCWSTR,
     pub IMTConMessengerGroup_Group1:
         unsafe extern "C" fn(this: *mut IMTConMessengerGroup, group: LPCWSTR) -> MTAPIRES,
+    pub IMTConMessengerGroup_Group:
+        unsafe extern "C" fn(this: *const IMTConMessengerGroup) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -9571,46 +9568,46 @@ pub struct IMTConMessenger__bindgen_vtable {
         messenger: *const IMTConMessenger,
     ) -> MTAPIRES,
     pub IMTConMessenger_Clear: unsafe extern "C" fn(this: *mut IMTConMessenger) -> MTAPIRES,
-    pub IMTConMessenger_Name: unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_Name1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_Sender: unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
+    pub IMTConMessenger_Name: unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_Sender1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, sender: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderType: unsafe extern "C" fn(this: *const IMTConMessenger) -> UINT,
+    pub IMTConMessenger_Sender: unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderType1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, provider: UINT) -> MTAPIRES,
-    pub IMTConMessenger_ProviderAddress:
-        unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
+    pub IMTConMessenger_ProviderType: unsafe extern "C" fn(this: *const IMTConMessenger) -> UINT,
     pub IMTConMessenger_ProviderAddress1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, address: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderLogin:
+    pub IMTConMessenger_ProviderAddress:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderLogin1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderPassword:
+    pub IMTConMessenger_ProviderLogin:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderPassword1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderToken:
+    pub IMTConMessenger_ProviderPassword:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderToken1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, token: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderSubId:
+    pub IMTConMessenger_ProviderToken:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderSubId1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, subid: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderCurrency:
+    pub IMTConMessenger_ProviderSubId:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderCurrency1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, currency: LPCWSTR) -> MTAPIRES,
-    pub IMTConMessenger_ProviderCurrencyRate:
-        unsafe extern "C" fn(this: *const IMTConMessenger) -> f64,
+    pub IMTConMessenger_ProviderCurrency:
+        unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_ProviderCurrencyRate1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, rate: f64) -> MTAPIRES,
-    pub IMTConMessenger_Flags: unsafe extern "C" fn(this: *const IMTConMessenger) -> UINT64,
+    pub IMTConMessenger_ProviderCurrencyRate:
+        unsafe extern "C" fn(this: *const IMTConMessenger) -> f64,
     pub IMTConMessenger_Flags1:
         unsafe extern "C" fn(this: *mut IMTConMessenger, flags: UINT64) -> MTAPIRES,
+    pub IMTConMessenger_Flags: unsafe extern "C" fn(this: *const IMTConMessenger) -> UINT64,
     pub IMTConMessenger_MessageTemplate:
         unsafe extern "C" fn(this: *const IMTConMessenger) -> LPCWSTR,
     pub IMTConMessenger_MessageTemplate1:
@@ -9722,192 +9719,192 @@ pub struct IMTClient__bindgen_vtable {
     pub IMTClient_Assign:
         unsafe extern "C" fn(this: *mut IMTClient, client: *const IMTClient) -> MTAPIRES,
     pub IMTClient_Clear: unsafe extern "C" fn(this: *mut IMTClient) -> MTAPIRES,
-    pub IMTClient_RecordID: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
     pub IMTClient_RecordID1:
         unsafe extern "C" fn(this: *mut IMTClient, record_id: UINT64) -> MTAPIRES,
-    pub IMTClient_ClientType: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_RecordID: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
     pub IMTClient_ClientType1: unsafe extern "C" fn(this: *mut IMTClient, type_: UINT) -> MTAPIRES,
-    pub IMTClient_ClientStatus: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_ClientType: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ClientStatus1:
         unsafe extern "C" fn(this: *mut IMTClient, status: UINT) -> MTAPIRES,
-    pub IMTClient_AssignedManager: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
+    pub IMTClient_ClientStatus: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_AssignedManager1:
         unsafe extern "C" fn(this: *mut IMTClient, manager: UINT64) -> MTAPIRES,
-    pub IMTClient_ComplianceApprovedBy: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
+    pub IMTClient_AssignedManager: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
     pub IMTClient_ComplianceApprovedBy1:
         unsafe extern "C" fn(this: *mut IMTClient, manager: UINT64) -> MTAPIRES,
-    pub IMTClient_ComplianceClientCategory: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ComplianceApprovedBy: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
     pub IMTClient_ComplianceClientCategory1:
         unsafe extern "C" fn(this: *mut IMTClient, category: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ComplianceDateApproval: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_ComplianceClientCategory: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ComplianceDateApproval1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_ComplianceDateTermination: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_ComplianceDateApproval: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_ComplianceDateTermination1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_LeadCampaign: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ComplianceDateTermination: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_LeadCampaign1:
         unsafe extern "C" fn(this: *mut IMTClient, campaign: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_LeadSource: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_LeadCampaign: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_LeadSource1:
         unsafe extern "C" fn(this: *mut IMTClient, source: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_Introducer: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_LeadSource: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_Introducer1:
         unsafe extern "C" fn(this: *mut IMTClient, introducer: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonTitle: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_Introducer: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonTitle1:
         unsafe extern "C" fn(this: *mut IMTClient, title: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonTitle: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonName1:
         unsafe extern "C" fn(this: *mut IMTClient, name: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonMiddleName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonMiddleName1:
         unsafe extern "C" fn(this: *mut IMTClient, middle_name: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonLastName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonMiddleName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonLastName1:
         unsafe extern "C" fn(this: *mut IMTClient, last_name: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonBirthDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_PersonLastName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonBirthDate1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_PersonCitizenship: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonBirthDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_PersonCitizenship1:
         unsafe extern "C" fn(this: *mut IMTClient, citizenship: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonGender: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonCitizenship: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonGender1:
         unsafe extern "C" fn(this: *mut IMTClient, gender: UINT) -> MTAPIRES,
-    pub IMTClient_PersonTaxID: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonGender: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_PersonTaxID1:
         unsafe extern "C" fn(this: *mut IMTClient, taxid: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonDocumentType: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonTaxID: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonDocumentType1:
         unsafe extern "C" fn(this: *mut IMTClient, type_: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonDocumentNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonDocumentType: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonDocumentNumber1:
         unsafe extern "C" fn(this: *mut IMTClient, number: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonDocumentDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_PersonDocumentNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonDocumentDate1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_PersonDocumentExtra: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonDocumentDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_PersonDocumentExtra1:
         unsafe extern "C" fn(this: *mut IMTClient, extra: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonEmployment: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonDocumentExtra: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonEmployment1:
         unsafe extern "C" fn(this: *mut IMTClient, employment: UINT) -> MTAPIRES,
-    pub IMTClient_PersonIndustry: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonEmployment: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_PersonIndustry1:
         unsafe extern "C" fn(this: *mut IMTClient, industry: UINT) -> MTAPIRES,
-    pub IMTClient_PersonEducation: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonIndustry: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_PersonEducation1:
         unsafe extern "C" fn(this: *mut IMTClient, education: UINT) -> MTAPIRES,
-    pub IMTClient_PersonWealthSource: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonEducation: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_PersonWealthSource1:
         unsafe extern "C" fn(this: *mut IMTClient, source: UINT) -> MTAPIRES,
-    pub IMTClient_PersonAnnualIncome: unsafe extern "C" fn(this: *const IMTClient) -> f64,
+    pub IMTClient_PersonWealthSource: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_PersonAnnualIncome1:
         unsafe extern "C" fn(this: *mut IMTClient, income: f64) -> MTAPIRES,
-    pub IMTClient_PersonNetWorth: unsafe extern "C" fn(this: *const IMTClient) -> f64,
+    pub IMTClient_PersonAnnualIncome: unsafe extern "C" fn(this: *const IMTClient) -> f64,
     pub IMTClient_PersonNetWorth1:
         unsafe extern "C" fn(this: *mut IMTClient, worth: f64) -> MTAPIRES,
-    pub IMTClient_PersonAnnualDeposit: unsafe extern "C" fn(this: *const IMTClient) -> f64,
+    pub IMTClient_PersonNetWorth: unsafe extern "C" fn(this: *const IMTClient) -> f64,
     pub IMTClient_PersonAnnualDeposit1:
         unsafe extern "C" fn(this: *mut IMTClient, deposit: f64) -> MTAPIRES,
-    pub IMTClient_CompanyName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_PersonAnnualDeposit: unsafe extern "C" fn(this: *const IMTClient) -> f64,
     pub IMTClient_CompanyName1:
         unsafe extern "C" fn(this: *mut IMTClient, name: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyRegNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyName: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyRegNumber1:
         unsafe extern "C" fn(this: *mut IMTClient, number: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyRegDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_CompanyRegNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyRegDate1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_CompanyRegAuthority: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyRegDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_CompanyRegAuthority1:
         unsafe extern "C" fn(this: *mut IMTClient, authority: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyVat: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyRegAuthority: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyVat1: unsafe extern "C" fn(this: *mut IMTClient, vat: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyLei: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyVat: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyLei1: unsafe extern "C" fn(this: *mut IMTClient, lei: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyLicenseNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyLei: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyLicenseNumber1:
         unsafe extern "C" fn(this: *mut IMTClient, number: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyLicenseAuthority: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyLicenseNumber: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyLicenseAuthority1:
         unsafe extern "C" fn(this: *mut IMTClient, authority: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyCountry: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyLicenseAuthority: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyCountry1:
         unsafe extern "C" fn(this: *mut IMTClient, country: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyAddress: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyCountry: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyAddress1:
         unsafe extern "C" fn(this: *mut IMTClient, address: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_CompanyWebsite: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_CompanyAddress: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_CompanyWebsite1:
         unsafe extern "C" fn(this: *mut IMTClient, website: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactPreferred: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_CompanyWebsite: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactPreferred1:
         unsafe extern "C" fn(this: *mut IMTClient, preferred: UINT) -> MTAPIRES,
-    pub IMTClient_ContactLanguage: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactPreferred: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ContactLanguage1:
         unsafe extern "C" fn(this: *mut IMTClient, language: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactEmail: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactLanguage: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactEmail1:
         unsafe extern "C" fn(this: *mut IMTClient, email: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactPhone: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactEmail: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactPhone1:
         unsafe extern "C" fn(this: *mut IMTClient, phone: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactMessengers: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactPhone: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactMessengers1:
         unsafe extern "C" fn(this: *mut IMTClient, messengers: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactSocialNetworks: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactMessengers: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactSocialNetworks1:
         unsafe extern "C" fn(this: *mut IMTClient, social_networks: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ContactLastDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_ContactSocialNetworks: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ContactLastDate1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_AddressCountry: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ContactLastDate: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_AddressCountry1:
         unsafe extern "C" fn(this: *mut IMTClient, country: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_AddressPostcode: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_AddressCountry: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_AddressPostcode1:
         unsafe extern "C" fn(this: *mut IMTClient, postcode: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_AddressStreet: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_AddressPostcode: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_AddressStreet1:
         unsafe extern "C" fn(this: *mut IMTClient, street: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_AddressState: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_AddressStreet: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_AddressState1:
         unsafe extern "C" fn(this: *mut IMTClient, state: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_AddressCity: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_AddressState: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_AddressCity1:
         unsafe extern "C" fn(this: *mut IMTClient, city: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ExperienceFX: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_AddressCity: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ExperienceFX1:
         unsafe extern "C" fn(this: *mut IMTClient, experience: UINT) -> MTAPIRES,
-    pub IMTClient_ExperienceCFD: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_ExperienceFX: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ExperienceCFD1:
         unsafe extern "C" fn(this: *mut IMTClient, experience: UINT) -> MTAPIRES,
-    pub IMTClient_ExperienceFutures: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_ExperienceCFD: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ExperienceFutures1:
         unsafe extern "C" fn(this: *mut IMTClient, experience: UINT) -> MTAPIRES,
-    pub IMTClient_ExperienceStocks: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_ExperienceFutures: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ExperienceStocks1:
         unsafe extern "C" fn(this: *mut IMTClient, experience: UINT) -> MTAPIRES,
-    pub IMTClient_TradingGroup: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ExperienceStocks: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_TradingGroup1:
         unsafe extern "C" fn(this: *mut IMTClient, group: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_ClientOrigin: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_TradingGroup: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_ClientOrigin1:
         unsafe extern "C" fn(this: *mut IMTClient, origin: UINT) -> MTAPIRES,
-    pub IMTClient_ClientOriginLogin: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
+    pub IMTClient_ClientOrigin: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
     pub IMTClient_ClientOriginLogin1:
         unsafe extern "C" fn(this: *mut IMTClient, login: UINT64) -> MTAPIRES,
-    pub IMTClient_ClientExternalID: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
+    pub IMTClient_ClientOriginLogin: unsafe extern "C" fn(this: *const IMTClient) -> UINT64,
     pub IMTClient_ClientExternalID1:
         unsafe extern "C" fn(this: *mut IMTClient, external_id: LPCWSTR) -> MTAPIRES,
-    pub IMTClient_PersonDocumentExpiration: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
+    pub IMTClient_ClientExternalID: unsafe extern "C" fn(this: *const IMTClient) -> LPCWSTR,
     pub IMTClient_PersonDocumentExpiration1:
         unsafe extern "C" fn(this: *mut IMTClient, date: INT64) -> MTAPIRES,
-    pub IMTClient_KYCStatus: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
+    pub IMTClient_PersonDocumentExpiration: unsafe extern "C" fn(this: *const IMTClient) -> INT64,
     pub IMTClient_KYCStatus1:
         unsafe extern "C" fn(this: *mut IMTClient, kyc_status: UINT) -> MTAPIRES,
+    pub IMTClient_KYCStatus: unsafe extern "C" fn(this: *const IMTClient) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -10040,14 +10037,14 @@ pub struct IMTClientArray__bindgen_vtable {
     pub IMTClientArray_Assign:
         unsafe extern "C" fn(this: *mut IMTClientArray, array: *const IMTClientArray) -> MTAPIRES,
     pub IMTClientArray_Clear: unsafe extern "C" fn(this: *mut IMTClientArray) -> MTAPIRES,
-    pub IMTClientArray_Add:
-        unsafe extern "C" fn(this: *mut IMTClientArray, client: *mut IMTClient) -> MTAPIRES,
-    pub IMTClientArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTClientArray, client: *const IMTClient) -> MTAPIRES,
     pub IMTClientArray_Add1:
         unsafe extern "C" fn(this: *mut IMTClientArray, array: *mut IMTClientArray) -> MTAPIRES,
+    pub IMTClientArray_Add:
+        unsafe extern "C" fn(this: *mut IMTClientArray, client: *mut IMTClient) -> MTAPIRES,
     pub IMTClientArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTClientArray, array: *const IMTClientArray) -> MTAPIRES,
+    pub IMTClientArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTClientArray, client: *const IMTClient) -> MTAPIRES,
     pub IMTClientArray_Delete:
         unsafe extern "C" fn(this: *mut IMTClientArray, pos: UINT) -> MTAPIRES,
     pub IMTClientArray_Detach:
@@ -10138,31 +10135,31 @@ pub struct IMTAttachment__bindgen_vtable {
     pub IMTAttachment_Assign:
         unsafe extern "C" fn(this: *mut IMTAttachment, file: *const IMTAttachment) -> MTAPIRES,
     pub IMTAttachment_Clear: unsafe extern "C" fn(this: *mut IMTAttachment) -> MTAPIRES,
-    pub IMTAttachment_RecordID: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT64,
     pub IMTAttachment_RecordID1:
         unsafe extern "C" fn(this: *mut IMTAttachment, record_id: UINT64) -> MTAPIRES,
-    pub IMTAttachment_RelatedClient: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT64,
+    pub IMTAttachment_RecordID: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT64,
     pub IMTAttachment_RelatedClient1:
         unsafe extern "C" fn(this: *mut IMTAttachment, record_id: UINT64) -> MTAPIRES,
-    pub IMTAttachment_FileType: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT,
+    pub IMTAttachment_RelatedClient: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT64,
     pub IMTAttachment_FileType1:
         unsafe extern "C" fn(this: *mut IMTAttachment, type_: UINT) -> MTAPIRES,
-    pub IMTAttachment_FileName: unsafe extern "C" fn(this: *const IMTAttachment) -> LPCWSTR,
+    pub IMTAttachment_FileType: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT,
     pub IMTAttachment_FileName1:
         unsafe extern "C" fn(this: *mut IMTAttachment, name: LPCWSTR) -> MTAPIRES,
-    pub IMTAttachment_FileContent: unsafe extern "C" fn(
-        this: *const IMTAttachment,
-        content_size: *mut UINT,
-    ) -> *const ::std::os::raw::c_void,
+    pub IMTAttachment_FileName: unsafe extern "C" fn(this: *const IMTAttachment) -> LPCWSTR,
     pub IMTAttachment_FileContent1: unsafe extern "C" fn(
         this: *mut IMTAttachment,
         content: *const ::std::os::raw::c_void,
         content_size: UINT,
     ) -> MTAPIRES,
+    pub IMTAttachment_FileContent: unsafe extern "C" fn(
+        this: *const IMTAttachment,
+        content_size: *mut UINT,
+    ) -> *const ::std::os::raw::c_void,
     pub IMTAttachment_FileSize: unsafe extern "C" fn(this: *mut IMTAttachment) -> UINT,
-    pub IMTAttachment_FileFlags: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT,
     pub IMTAttachment_FileFlags1:
         unsafe extern "C" fn(this: *mut IMTAttachment, flags: UINT) -> MTAPIRES,
+    pub IMTAttachment_FileFlags: unsafe extern "C" fn(this: *const IMTAttachment) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -10197,21 +10194,21 @@ pub struct IMTAttachmentArray__bindgen_vtable {
         array: *const IMTAttachmentArray,
     ) -> MTAPIRES,
     pub IMTAttachmentArray_Clear: unsafe extern "C" fn(this: *mut IMTAttachmentArray) -> MTAPIRES,
-    pub IMTAttachmentArray_Add: unsafe extern "C" fn(
-        this: *mut IMTAttachmentArray,
-        attachment: *mut IMTAttachment,
-    ) -> MTAPIRES,
-    pub IMTAttachmentArray_AddCopy: unsafe extern "C" fn(
-        this: *mut IMTAttachmentArray,
-        attachment: *const IMTAttachment,
-    ) -> MTAPIRES,
     pub IMTAttachmentArray_Add1: unsafe extern "C" fn(
         this: *mut IMTAttachmentArray,
         array: *mut IMTAttachmentArray,
     ) -> MTAPIRES,
+    pub IMTAttachmentArray_Add: unsafe extern "C" fn(
+        this: *mut IMTAttachmentArray,
+        attachment: *mut IMTAttachment,
+    ) -> MTAPIRES,
     pub IMTAttachmentArray_AddCopy1: unsafe extern "C" fn(
         this: *mut IMTAttachmentArray,
         array: *const IMTAttachmentArray,
+    ) -> MTAPIRES,
+    pub IMTAttachmentArray_AddCopy: unsafe extern "C" fn(
+        this: *mut IMTAttachmentArray,
+        attachment: *const IMTAttachment,
     ) -> MTAPIRES,
     pub IMTAttachmentArray_Delete:
         unsafe extern "C" fn(this: *mut IMTAttachmentArray, pos: UINT) -> MTAPIRES,
@@ -10291,33 +10288,33 @@ pub struct IMTDocument__bindgen_vtable {
     pub IMTDocument_Assign:
         unsafe extern "C" fn(this: *mut IMTDocument, document: *const IMTDocument) -> MTAPIRES,
     pub IMTDocument_Clear: unsafe extern "C" fn(this: *mut IMTDocument) -> MTAPIRES,
-    pub IMTDocument_RecordID: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
     pub IMTDocument_RecordID1:
         unsafe extern "C" fn(this: *mut IMTDocument, record_id: UINT64) -> MTAPIRES,
-    pub IMTDocument_RelatedClient: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
+    pub IMTDocument_RecordID: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
     pub IMTDocument_RelatedClient1:
         unsafe extern "C" fn(this: *mut IMTDocument, record_id: UINT64) -> MTAPIRES,
-    pub IMTDocument_ApprovedDate: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
+    pub IMTDocument_RelatedClient: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
     pub IMTDocument_ApprovedDate1:
         unsafe extern "C" fn(this: *mut IMTDocument, date: INT64) -> MTAPIRES,
-    pub IMTDocument_ApprovedBy: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
+    pub IMTDocument_ApprovedDate: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
     pub IMTDocument_ApprovedBy1:
         unsafe extern "C" fn(this: *mut IMTDocument, manager: UINT64) -> MTAPIRES,
-    pub IMTDocument_DateIssue: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
+    pub IMTDocument_ApprovedBy: unsafe extern "C" fn(this: *const IMTDocument) -> UINT64,
     pub IMTDocument_DateIssue1:
         unsafe extern "C" fn(this: *mut IMTDocument, date: INT64) -> MTAPIRES,
-    pub IMTDocument_DateExpiration: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
+    pub IMTDocument_DateIssue: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
     pub IMTDocument_DateExpiration1:
         unsafe extern "C" fn(this: *mut IMTDocument, date: INT64) -> MTAPIRES,
-    pub IMTDocument_DocumentType: unsafe extern "C" fn(this: *const IMTDocument) -> UINT,
+    pub IMTDocument_DateExpiration: unsafe extern "C" fn(this: *const IMTDocument) -> INT64,
     pub IMTDocument_DocumentType1:
         unsafe extern "C" fn(this: *mut IMTDocument, type_: UINT) -> MTAPIRES,
-    pub IMTDocument_DocumentName: unsafe extern "C" fn(this: *const IMTDocument) -> LPCWSTR,
+    pub IMTDocument_DocumentType: unsafe extern "C" fn(this: *const IMTDocument) -> UINT,
     pub IMTDocument_DocumentName1:
         unsafe extern "C" fn(this: *mut IMTDocument, name: LPCWSTR) -> MTAPIRES,
-    pub IMTDocument_DocumentComment: unsafe extern "C" fn(this: *const IMTDocument) -> LPCWSTR,
+    pub IMTDocument_DocumentName: unsafe extern "C" fn(this: *const IMTDocument) -> LPCWSTR,
     pub IMTDocument_DocumentComment1:
         unsafe extern "C" fn(this: *mut IMTDocument, comment: LPCWSTR) -> MTAPIRES,
+    pub IMTDocument_DocumentComment: unsafe extern "C" fn(this: *const IMTDocument) -> LPCWSTR,
     pub IMTDocument_DocumentStatus: unsafe extern "C" fn(this: *const IMTDocument) -> UINT,
     pub IMTDocument_DocumentStatus1:
         unsafe extern "C" fn(this: *mut IMTDocument, status: UINT) -> MTAPIRES,
@@ -10332,9 +10329,9 @@ pub struct IMTDocument__bindgen_vtable {
         attachment_name: *mut MTAPISTR,
         attachment_size: *mut UINT,
     ) -> MTAPIRES,
-    pub IMTDocument_DocumentSubtype: unsafe extern "C" fn(this: *const IMTDocument) -> UINT,
     pub IMTDocument_DocumentSubtype1:
         unsafe extern "C" fn(this: *mut IMTDocument, subtype: UINT) -> MTAPIRES,
+    pub IMTDocument_DocumentSubtype: unsafe extern "C" fn(this: *const IMTDocument) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -10519,21 +10516,21 @@ pub struct IMTComment__bindgen_vtable {
     pub IMTComment_Assign:
         unsafe extern "C" fn(this: *mut IMTComment, comment: *const IMTComment) -> MTAPIRES,
     pub IMTComment_Clear: unsafe extern "C" fn(this: *mut IMTComment) -> MTAPIRES,
-    pub IMTComment_RecordID: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
     pub IMTComment_RecordID1:
         unsafe extern "C" fn(this: *mut IMTComment, record_id: UINT64) -> MTAPIRES,
-    pub IMTComment_RelatedClient: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
+    pub IMTComment_RecordID: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
     pub IMTComment_RelatedClient1:
         unsafe extern "C" fn(this: *mut IMTComment, record_id: UINT64) -> MTAPIRES,
-    pub IMTComment_RelatedDocument: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
+    pub IMTComment_RelatedClient: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
     pub IMTComment_RelatedDocument1:
         unsafe extern "C" fn(this: *mut IMTComment, record_id: UINT64) -> MTAPIRES,
-    pub IMTComment_Flags: unsafe extern "C" fn(this: *const IMTComment) -> UINT,
+    pub IMTComment_RelatedDocument: unsafe extern "C" fn(this: *const IMTComment) -> UINT64,
     pub IMTComment_Flags1: unsafe extern "C" fn(this: *mut IMTComment, flags: UINT) -> MTAPIRES,
-    pub IMTComment_Extra: unsafe extern "C" fn(this: *const IMTComment) -> LPCWSTR,
+    pub IMTComment_Flags: unsafe extern "C" fn(this: *const IMTComment) -> UINT,
     pub IMTComment_Extra1: unsafe extern "C" fn(this: *mut IMTComment, extra: LPCWSTR) -> MTAPIRES,
-    pub IMTComment_Text: unsafe extern "C" fn(this: *const IMTComment) -> LPCWSTR,
+    pub IMTComment_Extra: unsafe extern "C" fn(this: *const IMTComment) -> LPCWSTR,
     pub IMTComment_Text1: unsafe extern "C" fn(this: *mut IMTComment, text: LPCWSTR) -> MTAPIRES,
+    pub IMTComment_Text: unsafe extern "C" fn(this: *const IMTComment) -> LPCWSTR,
     pub IMTComment_CommentType: unsafe extern "C" fn(this: *const IMTComment) -> UINT,
     pub IMTComment_CommentType1:
         unsafe extern "C" fn(this: *mut IMTComment, type_: UINT) -> MTAPIRES,
@@ -10590,14 +10587,14 @@ pub struct IMTCommentArray__bindgen_vtable {
     pub IMTCommentArray_Assign:
         unsafe extern "C" fn(this: *mut IMTCommentArray, array: *const IMTCommentArray) -> MTAPIRES,
     pub IMTCommentArray_Clear: unsafe extern "C" fn(this: *mut IMTCommentArray) -> MTAPIRES,
-    pub IMTCommentArray_Add:
-        unsafe extern "C" fn(this: *mut IMTCommentArray, comment: *mut IMTComment) -> MTAPIRES,
-    pub IMTCommentArray_AddCopy:
-        unsafe extern "C" fn(this: *mut IMTCommentArray, comment: *const IMTComment) -> MTAPIRES,
     pub IMTCommentArray_Add1:
         unsafe extern "C" fn(this: *mut IMTCommentArray, array: *mut IMTCommentArray) -> MTAPIRES,
+    pub IMTCommentArray_Add:
+        unsafe extern "C" fn(this: *mut IMTCommentArray, comment: *mut IMTComment) -> MTAPIRES,
     pub IMTCommentArray_AddCopy1:
         unsafe extern "C" fn(this: *mut IMTCommentArray, array: *const IMTCommentArray) -> MTAPIRES,
+    pub IMTCommentArray_AddCopy:
+        unsafe extern "C" fn(this: *mut IMTCommentArray, comment: *const IMTComment) -> MTAPIRES,
     pub IMTCommentArray_Delete:
         unsafe extern "C" fn(this: *mut IMTCommentArray, pos: UINT) -> MTAPIRES,
     pub IMTCommentArray_Detach:
@@ -10690,99 +10687,99 @@ pub struct IMTConAutoCondition__bindgen_vtable {
         condition: *const IMTConAutoCondition,
     ) -> MTAPIRES,
     pub IMTConAutoCondition_Clear: unsafe extern "C" fn(this: *mut IMTConAutoCondition) -> MTAPIRES,
-    pub IMTConAutoCondition_Condition:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_Condition1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, condition: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_Rule: unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
+    pub IMTConAutoCondition_Condition:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_Rule1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, rule: UINT) -> MTAPIRES,
+    pub IMTConAutoCondition_Rule: unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueType:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
-    pub IMTConAutoCondition_ValueInt:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
     pub IMTConAutoCondition_ValueInt1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: INT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueUInt:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
+    pub IMTConAutoCondition_ValueInt:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
     pub IMTConAutoCondition_ValueUInt1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueDouble:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> f64,
+    pub IMTConAutoCondition_ValueUInt:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
     pub IMTConAutoCondition_ValueDouble1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: f64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueString:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> LPCWSTR,
+    pub IMTConAutoCondition_ValueDouble:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> f64,
     pub IMTConAutoCondition_ValueString1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: LPCWSTR) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueColor:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> COLORREF,
+    pub IMTConAutoCondition_ValueString:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> LPCWSTR,
     pub IMTConAutoCondition_ValueColor1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: COLORREF) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueMoney:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> f64,
+    pub IMTConAutoCondition_ValueColor:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> COLORREF,
     pub IMTConAutoCondition_ValueMoney1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: f64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueVolume:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
+    pub IMTConAutoCondition_ValueMoney:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> f64,
     pub IMTConAutoCondition_ValueVolume1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueDatetime:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
+    pub IMTConAutoCondition_ValueVolume:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
     pub IMTConAutoCondition_ValueDatetime1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: INT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueLeverage:
+    pub IMTConAutoCondition_ValueDatetime:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
     pub IMTConAutoCondition_ValueLeverage1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: INT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueBool:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> bool,
+    pub IMTConAutoCondition_ValueLeverage:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
     pub IMTConAutoCondition_ValueBool1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: bool) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueTime:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
+    pub IMTConAutoCondition_ValueBool:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> bool,
     pub IMTConAutoCondition_ValueTime1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueDate:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
+    pub IMTConAutoCondition_ValueTime:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueDate1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: INT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValuePercent:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
+    pub IMTConAutoCondition_ValueDate:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> INT64,
     pub IMTConAutoCondition_ValuePercent1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueLanguage:
+    pub IMTConAutoCondition_ValuePercent:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueLanguage1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueServer:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
+    pub IMTConAutoCondition_ValueLanguage:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueServer1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoCondition_ValuePositionType:
-        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
+    pub IMTConAutoCondition_ValueServer:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT64,
     pub IMTConAutoCondition_ValuePositionType1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueReason:
+    pub IMTConAutoCondition_ValuePositionType:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueReason1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueDealType:
+    pub IMTConAutoCondition_ValueReason:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueDealType1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueDealEntry:
+    pub IMTConAutoCondition_ValueDealType:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueDealEntry1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueOrderType:
+    pub IMTConAutoCondition_ValueDealEntry:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueOrderType1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
-    pub IMTConAutoCondition_ValueOrderState:
+    pub IMTConAutoCondition_ValueOrderType:
         unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
     pub IMTConAutoCondition_ValueOrderState1:
         unsafe extern "C" fn(this: *mut IMTConAutoCondition, value: UINT) -> MTAPIRES,
+    pub IMTConAutoCondition_ValueOrderState:
+        unsafe extern "C" fn(this: *const IMTConAutoCondition) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -11144,58 +11141,58 @@ pub struct IMTConAutoParam__bindgen_vtable {
     pub IMTConAutoParam_Assign:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, param: *const IMTConAutoParam) -> MTAPIRES,
     pub IMTConAutoParam_Clear: unsafe extern "C" fn(this: *mut IMTConAutoParam) -> MTAPIRES,
-    pub IMTConAutoParam_Param: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
     pub IMTConAutoParam_Param1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, param: UINT) -> MTAPIRES,
+    pub IMTConAutoParam_Param: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
     pub IMTConAutoParam_ValueType: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
-    pub IMTConAutoParam_ValueInt: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
     pub IMTConAutoParam_ValueInt1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: INT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueUInt: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
+    pub IMTConAutoParam_ValueInt: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
     pub IMTConAutoParam_ValueUInt1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueDouble: unsafe extern "C" fn(this: *const IMTConAutoParam) -> f64,
+    pub IMTConAutoParam_ValueUInt: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
     pub IMTConAutoParam_ValueDouble1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: f64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueString: unsafe extern "C" fn(this: *const IMTConAutoParam) -> LPCWSTR,
+    pub IMTConAutoParam_ValueDouble: unsafe extern "C" fn(this: *const IMTConAutoParam) -> f64,
     pub IMTConAutoParam_ValueString1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: LPCWSTR) -> MTAPIRES,
-    pub IMTConAutoParam_ValueColor: unsafe extern "C" fn(this: *const IMTConAutoParam) -> COLORREF,
+    pub IMTConAutoParam_ValueString: unsafe extern "C" fn(this: *const IMTConAutoParam) -> LPCWSTR,
     pub IMTConAutoParam_ValueColor1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: COLORREF) -> MTAPIRES,
-    pub IMTConAutoParam_ValueMoney: unsafe extern "C" fn(this: *const IMTConAutoParam) -> f64,
+    pub IMTConAutoParam_ValueColor: unsafe extern "C" fn(this: *const IMTConAutoParam) -> COLORREF,
     pub IMTConAutoParam_ValueMoney1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: f64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueVolume: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
+    pub IMTConAutoParam_ValueMoney: unsafe extern "C" fn(this: *const IMTConAutoParam) -> f64,
     pub IMTConAutoParam_ValueVolume1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueDatetime: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
+    pub IMTConAutoParam_ValueVolume: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
     pub IMTConAutoParam_ValueDatetime1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: INT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueLeverage: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
+    pub IMTConAutoParam_ValueDatetime: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
     pub IMTConAutoParam_ValueLeverage1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: INT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueBool: unsafe extern "C" fn(this: *const IMTConAutoParam) -> bool,
+    pub IMTConAutoParam_ValueLeverage: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
     pub IMTConAutoParam_ValueBool1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: bool) -> MTAPIRES,
-    pub IMTConAutoParam_ValueTime: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
+    pub IMTConAutoParam_ValueBool: unsafe extern "C" fn(this: *const IMTConAutoParam) -> bool,
     pub IMTConAutoParam_ValueTime1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT) -> MTAPIRES,
-    pub IMTConAutoParam_ValueDate: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
+    pub IMTConAutoParam_ValueTime: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
     pub IMTConAutoParam_ValueDate1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: INT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValuePercent: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
+    pub IMTConAutoParam_ValueDate: unsafe extern "C" fn(this: *const IMTConAutoParam) -> INT64,
     pub IMTConAutoParam_ValuePercent1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT) -> MTAPIRES,
-    pub IMTConAutoParam_ValueLanguage: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
+    pub IMTConAutoParam_ValuePercent: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
     pub IMTConAutoParam_ValueLanguage1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT) -> MTAPIRES,
-    pub IMTConAutoParam_ValueServer: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
+    pub IMTConAutoParam_ValueLanguage: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT,
     pub IMTConAutoParam_ValueServer1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: UINT64) -> MTAPIRES,
-    pub IMTConAutoParam_ValueHTML: unsafe extern "C" fn(this: *const IMTConAutoParam) -> LPCWSTR,
+    pub IMTConAutoParam_ValueServer: unsafe extern "C" fn(this: *const IMTConAutoParam) -> UINT64,
     pub IMTConAutoParam_ValueHTML1:
         unsafe extern "C" fn(this: *mut IMTConAutoParam, value: LPCWSTR) -> MTAPIRES,
+    pub IMTConAutoParam_ValueHTML: unsafe extern "C" fn(this: *const IMTConAutoParam) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -11576,12 +11573,12 @@ pub struct IMTConAutoAction__bindgen_vtable {
         action: *const IMTConAutoAction,
     ) -> MTAPIRES,
     pub IMTConAutoAction_Clear: unsafe extern "C" fn(this: *mut IMTConAutoAction) -> MTAPIRES,
-    pub IMTConAutoAction_Action: unsafe extern "C" fn(this: *const IMTConAutoAction) -> UINT,
     pub IMTConAutoAction_Action1:
         unsafe extern "C" fn(this: *mut IMTConAutoAction, condition: UINT) -> MTAPIRES,
-    pub IMTConAutoAction_Name: unsafe extern "C" fn(this: *const IMTConAutoAction) -> LPCWSTR,
+    pub IMTConAutoAction_Action: unsafe extern "C" fn(this: *const IMTConAutoAction) -> UINT,
     pub IMTConAutoAction_Name1:
         unsafe extern "C" fn(this: *mut IMTConAutoAction, name: LPCWSTR) -> MTAPIRES,
+    pub IMTConAutoAction_Name: unsafe extern "C" fn(this: *const IMTConAutoAction) -> LPCWSTR,
     pub IMTConAutoAction_ParamAdd:
         unsafe extern "C" fn(this: *mut IMTConAutoAction, param: *mut IMTConAutoParam) -> MTAPIRES,
     pub IMTConAutoAction_ParamUpdate: unsafe extern "C" fn(
@@ -11706,42 +11703,42 @@ pub struct IMTConAutomation__bindgen_vtable {
     pub IMTConAutomation_Clear: unsafe extern "C" fn(this: *mut IMTConAutomation) -> MTAPIRES,
     pub IMTConAutomation_ID: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT64,
     pub IMTConAutomation_ParentID: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT64,
-    pub IMTConAutomation_Name: unsafe extern "C" fn(this: *const IMTConAutomation) -> LPCWSTR,
     pub IMTConAutomation_Name1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConAutomation_Trigger: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
+    pub IMTConAutomation_Name: unsafe extern "C" fn(this: *const IMTConAutomation) -> LPCWSTR,
     pub IMTConAutomation_Trigger1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, trigger: UINT) -> MTAPIRES,
-    pub IMTConAutomation_Flags: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT64,
+    pub IMTConAutomation_Trigger: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_Flags1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, flags: UINT64) -> MTAPIRES,
-    pub IMTConAutomation_TimeStart: unsafe extern "C" fn(this: *const IMTConAutomation) -> INT64,
+    pub IMTConAutomation_Flags: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT64,
     pub IMTConAutomation_TimeStart1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, start: INT64) -> MTAPIRES,
-    pub IMTConAutomation_TimeExpire: unsafe extern "C" fn(this: *const IMTConAutomation) -> INT64,
+    pub IMTConAutomation_TimeStart: unsafe extern "C" fn(this: *const IMTConAutomation) -> INT64,
     pub IMTConAutomation_TimeExpire1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, expire: INT64) -> MTAPIRES,
-    pub IMTConAutomation_TimeWeekdays: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
+    pub IMTConAutomation_TimeExpire: unsafe extern "C" fn(this: *const IMTConAutomation) -> INT64,
     pub IMTConAutomation_TimeWeekdays1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, weekdays: UINT) -> MTAPIRES,
-    pub IMTConAutomation_TimeMonths: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
+    pub IMTConAutomation_TimeWeekdays: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_TimeMonths1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, months: UINT) -> MTAPIRES,
-    pub IMTConAutomation_TimeMonthdays: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
+    pub IMTConAutomation_TimeMonths: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_TimeMonthdays1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, monthdays: UINT) -> MTAPIRES,
-    pub IMTConAutomation_EventPauseMinutes:
-        unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
+    pub IMTConAutomation_TimeMonthdays: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_EventPauseMinutes1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, minutes: UINT) -> MTAPIRES,
-    pub IMTConAutomation_EventPauseHours:
+    pub IMTConAutomation_EventPauseMinutes:
         unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_EventPauseHours1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, hours: UINT) -> MTAPIRES,
-    pub IMTConAutomation_EventPauseDays:
+    pub IMTConAutomation_EventPauseHours:
         unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_EventPauseDays1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, days: UINT) -> MTAPIRES,
+    pub IMTConAutomation_EventPauseDays:
+        unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_EventRepeats: unsafe extern "C" fn(this: *const IMTConAutomation) -> UINT,
     pub IMTConAutomation_EventRepeats1:
         unsafe extern "C" fn(this: *mut IMTConAutomation, repeats: UINT) -> MTAPIRES,
@@ -12042,18 +12039,18 @@ pub struct IMTConSubscriptionSymbol__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConSubscriptionSymbol_Clear:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionSymbol) -> MTAPIRES,
-    pub IMTConSubscriptionSymbol_Symbol:
-        unsafe extern "C" fn(this: *const IMTConSubscriptionSymbol) -> LPCWSTR,
     pub IMTConSubscriptionSymbol_Symbol1:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionSymbol, symbols: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscriptionSymbol_Level:
-        unsafe extern "C" fn(this: *const IMTConSubscriptionSymbol) -> UINT,
+    pub IMTConSubscriptionSymbol_Symbol:
+        unsafe extern "C" fn(this: *const IMTConSubscriptionSymbol) -> LPCWSTR,
     pub IMTConSubscriptionSymbol_Level1:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionSymbol, level: UINT) -> MTAPIRES,
-    pub IMTConSubscriptionSymbol_TickHistory:
+    pub IMTConSubscriptionSymbol_Level:
         unsafe extern "C" fn(this: *const IMTConSubscriptionSymbol) -> UINT,
     pub IMTConSubscriptionSymbol_TickHistory1:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionSymbol, mode: UINT) -> MTAPIRES,
+    pub IMTConSubscriptionSymbol_TickHistory:
+        unsafe extern "C" fn(this: *const IMTConSubscriptionSymbol) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -12111,14 +12108,14 @@ pub struct IMTConSubscriptionNews__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTConSubscriptionNews_Clear:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionNews) -> MTAPIRES,
-    pub IMTConSubscriptionNews_Category:
-        unsafe extern "C" fn(this: *const IMTConSubscriptionNews) -> LPCWSTR,
     pub IMTConSubscriptionNews_Category1:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionNews, category: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscriptionNews_Language:
-        unsafe extern "C" fn(this: *const IMTConSubscriptionNews) -> UINT,
+    pub IMTConSubscriptionNews_Category:
+        unsafe extern "C" fn(this: *const IMTConSubscriptionNews) -> LPCWSTR,
     pub IMTConSubscriptionNews_Language1:
         unsafe extern "C" fn(this: *mut IMTConSubscriptionNews, language: UINT) -> MTAPIRES,
+    pub IMTConSubscriptionNews_Language:
+        unsafe extern "C" fn(this: *const IMTConSubscriptionNews) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -12142,67 +12139,67 @@ pub struct IMTConSubscription__bindgen_vtable {
     pub IMTConSubscription_ID: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT64,
     pub IMTConSubscription_ParentID:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT64,
-    pub IMTConSubscription_DependsID:
-        unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT64,
     pub IMTConSubscription_DependsID1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, depends_id: UINT64) -> MTAPIRES,
-    pub IMTConSubscription_Name: unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
+    pub IMTConSubscription_DependsID:
+        unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT64,
     pub IMTConSubscription_Name1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscription_Type: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
+    pub IMTConSubscription_Name: unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
     pub IMTConSubscription_Type1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, type_: UINT) -> MTAPIRES,
-    pub IMTConSubscription_Image: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
+    pub IMTConSubscription_Type: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_Image1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, image: UINT) -> MTAPIRES,
-    pub IMTConSubscription_Description:
-        unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
+    pub IMTConSubscription_Image: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_Description1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, description: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscription_URLDescription:
+    pub IMTConSubscription_Description:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
     pub IMTConSubscription_URLDescription1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, url: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscription_URLAgreement:
+    pub IMTConSubscription_URLDescription:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
     pub IMTConSubscription_URLAgreement1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, url: LPCWSTR) -> MTAPIRES,
-    pub IMTConSubscription_ControlMode:
-        unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
+    pub IMTConSubscription_URLAgreement:
+        unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
     pub IMTConSubscription_ControlMode1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, mode: UINT) -> MTAPIRES,
-    pub IMTConSubscription_PeriodMode:
+    pub IMTConSubscription_ControlMode:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_PeriodMode1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, mode: UINT) -> MTAPIRES,
-    pub IMTConSubscription_PeriodCustom:
+    pub IMTConSubscription_PeriodMode:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_PeriodCustom1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, days: UINT) -> MTAPIRES,
-    pub IMTConSubscription_PeriodFreeMode:
+    pub IMTConSubscription_PeriodCustom:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_PeriodFreeMode1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, mode: UINT) -> MTAPIRES,
-    pub IMTConSubscription_PeriodFreeCustom:
+    pub IMTConSubscription_PeriodFreeMode:
         unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_PeriodFreeCustom1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, days: UINT) -> MTAPIRES,
-    pub IMTConSubscription_Flags: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
+    pub IMTConSubscription_PeriodFreeCustom:
+        unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_Flags1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, flags: UINT) -> MTAPIRES,
-    pub IMTConSubscription_Price: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
+    pub IMTConSubscription_Flags: unsafe extern "C" fn(this: *const IMTConSubscription) -> UINT,
     pub IMTConSubscription_Price1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, price: f64) -> MTAPIRES,
-    pub IMTConSubscription_PricePro: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
+    pub IMTConSubscription_Price: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
     pub IMTConSubscription_PricePro1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, price: f64) -> MTAPIRES,
-    pub IMTConSubscription_PriceCost: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
+    pub IMTConSubscription_PricePro: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
     pub IMTConSubscription_PriceCost1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, price: f64) -> MTAPIRES,
-    pub IMTConSubscription_PriceCurrency:
-        unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
+    pub IMTConSubscription_PriceCost: unsafe extern "C" fn(this: *const IMTConSubscription) -> f64,
     pub IMTConSubscription_PriceCurrency1:
         unsafe extern "C" fn(this: *mut IMTConSubscription, currency: LPCWSTR) -> MTAPIRES,
+    pub IMTConSubscription_PriceCurrency:
+        unsafe extern "C" fn(this: *const IMTConSubscription) -> LPCWSTR,
     pub IMTConSubscription_CountryAdd:
         unsafe extern "C" fn(this: *mut IMTConSubscription, path: LPCWSTR) -> MTAPIRES,
     pub IMTConSubscription_CountryUpdate:
@@ -12614,27 +12611,27 @@ pub struct IMTSubscription__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTSubscription, obj: *const IMTSubscription) -> MTAPIRES,
     pub IMTSubscription_Clear: unsafe extern "C" fn(this: *mut IMTSubscription) -> MTAPIRES,
     pub IMTSubscription_ID: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT64,
-    pub IMTSubscription_Login: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT64,
     pub IMTSubscription_Login1:
         unsafe extern "C" fn(this: *mut IMTSubscription, login: UINT64) -> MTAPIRES,
-    pub IMTSubscription_Subscription: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT64,
+    pub IMTSubscription_Login: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT64,
     pub IMTSubscription_Subscription1:
         unsafe extern "C" fn(this: *mut IMTSubscription, subscription_id: UINT64) -> MTAPIRES,
-    pub IMTSubscription_Status: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT,
+    pub IMTSubscription_Subscription: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT64,
     pub IMTSubscription_Status1:
         unsafe extern "C" fn(this: *mut IMTSubscription, status: UINT) -> MTAPIRES,
-    pub IMTSubscription_TimeSubscribe: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
+    pub IMTSubscription_Status: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT,
     pub IMTSubscription_TimeSubscribe1:
         unsafe extern "C" fn(this: *mut IMTSubscription, time: INT64) -> MTAPIRES,
-    pub IMTSubscription_TimeRenewal: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
+    pub IMTSubscription_TimeSubscribe: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
     pub IMTSubscription_TimeRenewal1:
         unsafe extern "C" fn(this: *mut IMTSubscription, time: INT64) -> MTAPIRES,
-    pub IMTSubscription_TimeExpire: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
+    pub IMTSubscription_TimeRenewal: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
     pub IMTSubscription_TimeExpire1:
         unsafe extern "C" fn(this: *mut IMTSubscription, time: INT64) -> MTAPIRES,
-    pub IMTSubscription_Flags: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT,
+    pub IMTSubscription_TimeExpire: unsafe extern "C" fn(this: *const IMTSubscription) -> INT64,
     pub IMTSubscription_Flags1:
         unsafe extern "C" fn(this: *mut IMTSubscription, flags: UINT) -> MTAPIRES,
+    pub IMTSubscription_Flags: unsafe extern "C" fn(this: *const IMTSubscription) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -12665,21 +12662,21 @@ pub struct IMTSubscriptionArray__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTSubscriptionArray_Clear:
         unsafe extern "C" fn(this: *mut IMTSubscriptionArray) -> MTAPIRES,
+    pub IMTSubscriptionArray_Add1: unsafe extern "C" fn(
+            this: *mut IMTSubscriptionArray,
+            array: *mut IMTSubscriptionArray,
+        ) -> MTAPIRES,
     pub IMTSubscriptionArray_Add: unsafe extern "C" fn(
         this: *mut IMTSubscriptionArray,
         record: *mut IMTSubscription,
     ) -> MTAPIRES,
-    pub IMTSubscriptionArray_AddCopy: unsafe extern "C" fn(
-        this: *mut IMTSubscriptionArray,
-        record: *const IMTSubscription,
-    ) -> MTAPIRES,
-    pub IMTSubscriptionArray_Add1: unsafe extern "C" fn(
-        this: *mut IMTSubscriptionArray,
-        array: *mut IMTSubscriptionArray,
-    ) -> MTAPIRES,
     pub IMTSubscriptionArray_AddCopy1: unsafe extern "C" fn(
         this: *mut IMTSubscriptionArray,
         array: *const IMTSubscriptionArray,
+    ) -> MTAPIRES,
+    pub IMTSubscriptionArray_AddCopy: unsafe extern "C" fn(
+        this: *mut IMTSubscriptionArray,
+        record: *const IMTSubscription,
     ) -> MTAPIRES,
     pub IMTSubscriptionArray_Delete:
         unsafe extern "C" fn(this: *mut IMTSubscriptionArray, pos: UINT) -> MTAPIRES,
@@ -12766,40 +12763,40 @@ pub struct IMTSubscriptionHistory__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory) -> MTAPIRES,
     pub IMTSubscriptionHistory_ID:
         unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
-    pub IMTSubscriptionHistory_Login:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
     pub IMTSubscriptionHistory_Login1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, login: UINT64) -> MTAPIRES,
-    pub IMTSubscriptionHistory_Subscription:
+    pub IMTSubscriptionHistory_Login:
         unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
     pub IMTSubscriptionHistory_Subscription1: unsafe extern "C" fn(
-        this: *mut IMTSubscriptionHistory,
-        subscription_id: UINT64,
-    ) -> MTAPIRES,
-    pub IMTSubscriptionHistory_Record:
+            this: *mut IMTSubscriptionHistory,
+            subscription_id: UINT64,
+        ) -> MTAPIRES,
+    pub IMTSubscriptionHistory_Subscription:
         unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
     pub IMTSubscriptionHistory_Record1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, record_id: UINT64) -> MTAPIRES,
-    pub IMTSubscriptionHistory_Action:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT,
+    pub IMTSubscriptionHistory_Record:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
     pub IMTSubscriptionHistory_Action1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, status: UINT) -> MTAPIRES,
-    pub IMTSubscriptionHistory_Time:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> INT64,
+    pub IMTSubscriptionHistory_Action:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT,
     pub IMTSubscriptionHistory_Time1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, time: INT64) -> MTAPIRES,
-    pub IMTSubscriptionHistory_Amount:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> f64,
+    pub IMTSubscriptionHistory_Time:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> INT64,
     pub IMTSubscriptionHistory_Amount1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, ammount: f64) -> MTAPIRES,
-    pub IMTSubscriptionHistory_AmountDigits:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT,
+    pub IMTSubscriptionHistory_Amount:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> f64,
     pub IMTSubscriptionHistory_AmountDigits1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, digits: UINT) -> MTAPIRES,
-    pub IMTSubscriptionHistory_AmountDeal:
-        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
+    pub IMTSubscriptionHistory_AmountDigits:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT,
     pub IMTSubscriptionHistory_AmountDeal1:
         unsafe extern "C" fn(this: *mut IMTSubscriptionHistory, deal: UINT64) -> MTAPIRES,
+    pub IMTSubscriptionHistory_AmountDeal:
+        unsafe extern "C" fn(this: *const IMTSubscriptionHistory) -> UINT64,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -12961,15 +12958,15 @@ pub struct IMTConVPSGroup__bindgen_vtable {
     pub IMTConVPSGroup_Assign:
         unsafe extern "C" fn(this: *mut IMTConVPSGroup, param: *mut IMTConVPSGroup) -> MTAPIRES,
     pub IMTConVPSGroup_Clear: unsafe extern "C" fn(this: *mut IMTConVPSGroup) -> MTAPIRES,
-    pub IMTConVPSGroup_Group: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> LPCWSTR,
     pub IMTConVPSGroup_Group1:
         unsafe extern "C" fn(this: *mut IMTConVPSGroup, group: LPCWSTR) -> MTAPIRES,
-    pub IMTConVPSGroup_MinBalance: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> f64,
+    pub IMTConVPSGroup_Group: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> LPCWSTR,
     pub IMTConVPSGroup_MinBalance1:
         unsafe extern "C" fn(this: *mut IMTConVPSGroup, balance: f64) -> MTAPIRES,
-    pub IMTConVPSGroup_InactiveDays: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> UINT,
+    pub IMTConVPSGroup_MinBalance: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> f64,
     pub IMTConVPSGroup_InactiveDays1:
         unsafe extern "C" fn(this: *mut IMTConVPSGroup, days: UINT) -> MTAPIRES,
+    pub IMTConVPSGroup_InactiveDays: unsafe extern "C" fn(this: *const IMTConVPSGroup) -> UINT,
 }
 #[repr(C)]
 #[derive(Debug)]
@@ -12987,14 +12984,14 @@ pub struct IMTConVPS__bindgen_vtable {
     pub IMTConVPS_Assign:
         unsafe extern "C" fn(this: *mut IMTConVPS, param: *mut IMTConVPS) -> MTAPIRES,
     pub IMTConVPS_Clear: unsafe extern "C" fn(this: *mut IMTConVPS) -> MTAPIRES,
-    pub IMTConVPS_Flags: unsafe extern "C" fn(this: *const IMTConVPS) -> UINT64,
     pub IMTConVPS_Flags1: unsafe extern "C" fn(this: *mut IMTConVPS, flags: UINT64) -> MTAPIRES,
-    pub IMTConVPS_MQL5Login: unsafe extern "C" fn(this: *const IMTConVPS) -> LPCWSTR,
+    pub IMTConVPS_Flags: unsafe extern "C" fn(this: *const IMTConVPS) -> UINT64,
     pub IMTConVPS_MQL5Login1:
         unsafe extern "C" fn(this: *mut IMTConVPS, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConVPS_MQL5Password: unsafe extern "C" fn(this: *const IMTConVPS) -> LPCWSTR,
+    pub IMTConVPS_MQL5Login: unsafe extern "C" fn(this: *const IMTConVPS) -> LPCWSTR,
     pub IMTConVPS_MQL5Password1:
         unsafe extern "C" fn(this: *mut IMTConVPS, password: LPCWSTR) -> MTAPIRES,
+    pub IMTConVPS_MQL5Password: unsafe extern "C" fn(this: *const IMTConVPS) -> LPCWSTR,
     pub IMTConVPS_GroupAdd:
         unsafe extern "C" fn(this: *mut IMTConVPS, group: *mut IMTConVPSGroup) -> MTAPIRES,
     pub IMTConVPS_GroupUpdate: unsafe extern "C" fn(
@@ -13049,10 +13046,10 @@ pub struct IMTConKYCCountry__bindgen_vtable {
         country: *const IMTConKYCCountry,
     ) -> MTAPIRES,
     pub IMTConKYCCountry_Clear: unsafe extern "C" fn(this: *mut IMTConKYCCountry) -> MTAPIRES,
-    pub IMTConKYCCountry_CountryCode:
-        unsafe extern "C" fn(this: *const IMTConKYCCountry) -> LPCWSTR,
     pub IMTConKYCCountry_CountryCode1:
         unsafe extern "C" fn(this: *mut IMTConKYCCountry, code: LPCWSTR) -> MTAPIRES,
+    pub IMTConKYCCountry_CountryCode:
+        unsafe extern "C" fn(this: *const IMTConKYCCountry) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -13070,9 +13067,9 @@ pub struct IMTConKYCGroup__bindgen_vtable {
     pub IMTConKYCGroup_Assign:
         unsafe extern "C" fn(this: *mut IMTConKYCGroup, group: *const IMTConKYCGroup) -> MTAPIRES,
     pub IMTConKYCGroup_Clear: unsafe extern "C" fn(this: *mut IMTConKYCGroup) -> MTAPIRES,
-    pub IMTConKYCGroup_Group: unsafe extern "C" fn(this: *const IMTConKYCGroup) -> LPCWSTR,
     pub IMTConKYCGroup_Group1:
         unsafe extern "C" fn(this: *mut IMTConKYCGroup, group: LPCWSTR) -> MTAPIRES,
+    pub IMTConKYCGroup_Group: unsafe extern "C" fn(this: *const IMTConKYCGroup) -> LPCWSTR,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -13090,25 +13087,25 @@ pub struct IMTConKYC__bindgen_vtable {
     pub IMTConKYC_Assign:
         unsafe extern "C" fn(this: *mut IMTConKYC, config: *const IMTConKYC) -> MTAPIRES,
     pub IMTConKYC_Clear: unsafe extern "C" fn(this: *mut IMTConKYC) -> MTAPIRES,
-    pub IMTConKYC_Name: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_Name1: unsafe extern "C" fn(this: *mut IMTConKYC, name: LPCWSTR) -> MTAPIRES,
-    pub IMTConKYC_ProviderType: unsafe extern "C" fn(this: *const IMTConKYC) -> UINT,
+    pub IMTConKYC_Name: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_ProviderType1:
         unsafe extern "C" fn(this: *mut IMTConKYC, provider: UINT) -> MTAPIRES,
-    pub IMTConKYC_ProviderAddress: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
+    pub IMTConKYC_ProviderType: unsafe extern "C" fn(this: *const IMTConKYC) -> UINT,
     pub IMTConKYC_ProviderAddress1:
         unsafe extern "C" fn(this: *mut IMTConKYC, address: LPCWSTR) -> MTAPIRES,
-    pub IMTConKYC_ProviderLogin: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
+    pub IMTConKYC_ProviderAddress: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_ProviderLogin1:
         unsafe extern "C" fn(this: *mut IMTConKYC, login: LPCWSTR) -> MTAPIRES,
-    pub IMTConKYC_ProviderPassword: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
+    pub IMTConKYC_ProviderLogin: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_ProviderPassword1:
         unsafe extern "C" fn(this: *mut IMTConKYC, password: LPCWSTR) -> MTAPIRES,
-    pub IMTConKYC_ProviderToken: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
+    pub IMTConKYC_ProviderPassword: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_ProviderToken1:
         unsafe extern "C" fn(this: *mut IMTConKYC, token: LPCWSTR) -> MTAPIRES,
-    pub IMTConKYC_Flags: unsafe extern "C" fn(this: *const IMTConKYC) -> UINT64,
+    pub IMTConKYC_ProviderToken: unsafe extern "C" fn(this: *const IMTConKYC) -> LPCWSTR,
     pub IMTConKYC_Flags1: unsafe extern "C" fn(this: *mut IMTConKYC, flags: UINT64) -> MTAPIRES,
+    pub IMTConKYC_Flags: unsafe extern "C" fn(this: *const IMTConKYC) -> UINT64,
     pub IMTConKYC_CountryAdd:
         unsafe extern "C" fn(this: *mut IMTConKYC, country: *mut IMTConKYCCountry) -> MTAPIRES,
     pub IMTConKYC_CountryUpdate: unsafe extern "C" fn(
@@ -13233,10 +13230,12 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, plugin: *mut IMTConPlugin) -> MTAPIRES,
     pub IMTServerAPI_PluginAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, plugin: *mut IMTConPlugin) -> MTAPIRES,
-    pub IMTServerAPI_PluginDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
+    pub IMTServerAPI_PluginDelete2:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, server: UINT64, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_PluginDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_PluginDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_PluginShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -13246,6 +13245,12 @@ pub struct IMTServerAPI__bindgen_vtable {
     pub IMTServerAPI_PluginNext: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
+        plugin: *mut IMTConPlugin,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_PluginGet1: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        server: UINT64,
+        name: LPCWSTR,
         plugin: *mut IMTConPlugin,
     ) -> MTAPIRES,
     pub IMTServerAPI_PluginGet: unsafe extern "C" fn(
@@ -13259,22 +13264,14 @@ pub struct IMTServerAPI__bindgen_vtable {
         pos: UINT,
         module: *mut IMTConPluginModule,
     ) -> MTAPIRES,
-    pub IMTServerAPI_PluginModuleGet: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        name: LPCWSTR,
-        module: *mut IMTConPluginModule,
-    ) -> MTAPIRES,
-    pub IMTServerAPI_PluginDelete2:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, server: UINT64, name: LPCWSTR) -> MTAPIRES,
-    pub IMTServerAPI_PluginGet1: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        server: UINT64,
-        name: LPCWSTR,
-        plugin: *mut IMTConPlugin,
-    ) -> MTAPIRES,
     pub IMTServerAPI_PluginModuleGet1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         server: UINT64,
+        name: LPCWSTR,
+        module: *mut IMTConPluginModule,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_PluginModuleGet: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
         name: LPCWSTR,
         module: *mut IMTConPluginModule,
     ) -> MTAPIRES,
@@ -13416,15 +13413,15 @@ pub struct IMTServerAPI__bindgen_vtable {
         pos: UINT,
         symbol: *mut IMTConSymbol,
     ) -> MTAPIRES,
-    pub IMTServerAPI_SymbolGet: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        name: LPCWSTR,
-        symbol: *mut IMTConSymbol,
-    ) -> MTAPIRES,
     pub IMTServerAPI_SymbolGet1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         name: LPCWSTR,
         group: *const IMTConGroup,
+        symbol: *mut IMTConSymbol,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_SymbolGet: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        name: LPCWSTR,
         symbol: *mut IMTConSymbol,
     ) -> MTAPIRES,
     pub IMTServerAPI_SymbolExist: unsafe extern "C" fn(
@@ -13449,10 +13446,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConGroupSink) -> MTAPIRES,
     pub IMTServerAPI_GroupAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, group: *mut IMTConGroup) -> MTAPIRES,
-    pub IMTServerAPI_GroupDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_GroupDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_GroupDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_GroupShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -13548,10 +13545,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConFeederSink) -> MTAPIRES,
     pub IMTServerAPI_FeederAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, feeder: *mut IMTConFeeder) -> MTAPIRES,
-    pub IMTServerAPI_FeederDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_FeederDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_FeederDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_FeederShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -13646,10 +13643,12 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConReportSink) -> MTAPIRES,
     pub IMTServerAPI_ReportAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, report: *mut IMTConReport) -> MTAPIRES,
-    pub IMTServerAPI_ReportDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
+    pub IMTServerAPI_ReportDelete2:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, server: UINT64, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_ReportDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_ReportDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_ReportShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -13659,6 +13658,12 @@ pub struct IMTServerAPI__bindgen_vtable {
     pub IMTServerAPI_ReportNext: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
+        report: *mut IMTConReport,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_ReportGet1: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        server: UINT64,
+        name: LPCWSTR,
         report: *mut IMTConReport,
     ) -> MTAPIRES,
     pub IMTServerAPI_ReportGet: unsafe extern "C" fn(
@@ -13672,22 +13677,14 @@ pub struct IMTServerAPI__bindgen_vtable {
         pos: UINT,
         module: *mut IMTConReportModule,
     ) -> MTAPIRES,
-    pub IMTServerAPI_ReportModuleGet: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        name: LPCWSTR,
-        module: *mut IMTConReportModule,
-    ) -> MTAPIRES,
-    pub IMTServerAPI_ReportDelete2:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, server: UINT64, name: LPCWSTR) -> MTAPIRES,
-    pub IMTServerAPI_ReportGet1: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        server: UINT64,
-        name: LPCWSTR,
-        report: *mut IMTConReport,
-    ) -> MTAPIRES,
     pub IMTServerAPI_ReportModuleGet1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         server: UINT64,
+        name: LPCWSTR,
+        module: *mut IMTConReportModule,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_ReportModuleGet: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
         name: LPCWSTR,
         module: *mut IMTConReportModule,
     ) -> MTAPIRES,
@@ -13703,10 +13700,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConRouteSink) -> MTAPIRES,
     pub IMTServerAPI_RouteAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, route: *mut IMTConRoute) -> MTAPIRES,
-    pub IMTServerAPI_RouteDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_RouteDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_RouteDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_RouteShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -13942,17 +13939,17 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, ticket: UINT64) -> MTAPIRES,
     pub IMTServerAPI_HistoryUpdate:
         unsafe extern "C" fn(this: *mut IMTServerAPI, order: *mut IMTOrder) -> MTAPIRES,
-    pub IMTServerAPI_HistoryGet: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        ticket: UINT64,
-        order: *mut IMTOrder,
-    ) -> MTAPIRES,
     pub IMTServerAPI_HistoryGet1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         from: INT64,
         to: INT64,
         login: UINT64,
         orders: *mut IMTOrderArray,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_HistoryGet: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        ticket: UINT64,
+        order: *mut IMTOrder,
     ) -> MTAPIRES,
     pub IMTServerAPI_HistoryReopen:
         unsafe extern "C" fn(this: *mut IMTServerAPI, ticket: UINT64) -> MTAPIRES,
@@ -14019,14 +14016,14 @@ pub struct IMTServerAPI__bindgen_vtable {
         tick: *mut MTTick,
         stat: *mut MTTickStat,
     ) -> MTAPIRES,
-    pub IMTServerAPI_TickLast: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        symbol: LPCWSTR,
-        tick: *mut MTTickShort,
-    ) -> MTAPIRES,
     pub IMTServerAPI_TickLast1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         symbol: *const IMTConSymbol,
+        tick: *mut MTTickShort,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_TickLast: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        symbol: LPCWSTR,
         tick: *mut MTTickShort,
     ) -> MTAPIRES,
     pub IMTServerAPI_TickStat: unsafe extern "C" fn(
@@ -14034,17 +14031,17 @@ pub struct IMTServerAPI__bindgen_vtable {
         symbol: LPCWSTR,
         stat: *mut MTTickStat,
     ) -> MTAPIRES,
-    pub IMTServerAPI_TickGet: unsafe extern "C" fn(
+    pub IMTServerAPI_TickGet1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
-        symbol: LPCWSTR,
+        symbol: *const IMTConSymbol,
         from: INT64,
         to: INT64,
         ticks: *mut *mut MTTickShort,
         ticks_total: *mut UINT,
     ) -> MTAPIRES,
-    pub IMTServerAPI_TickGet1: unsafe extern "C" fn(
+    pub IMTServerAPI_TickGet: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
-        symbol: *const IMTConSymbol,
+        symbol: LPCWSTR,
         from: INT64,
         to: INT64,
         ticks: *mut *mut MTTickShort,
@@ -14141,6 +14138,12 @@ pub struct IMTServerAPI__bindgen_vtable {
         symbol: LPCWSTR,
         price: f64,
     ) -> MTAPIRES,
+    pub IMTServerAPI_TradeMarginCheck1: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        order: *const IMTOrder,
+        account_new: *mut IMTAccount,
+        account_current: *mut IMTAccount,
+    ) -> MTAPIRES,
     pub IMTServerAPI_TradeMarginCheck: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         login: UINT64,
@@ -14148,12 +14151,6 @@ pub struct IMTServerAPI__bindgen_vtable {
         type_: UINT,
         volume: UINT64,
         price: f64,
-        account_new: *mut IMTAccount,
-        account_current: *mut IMTAccount,
-    ) -> MTAPIRES,
-    pub IMTServerAPI_TradeMarginCheck1: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        order: *const IMTOrder,
         account_new: *mut IMTAccount,
         account_current: *mut IMTAccount,
     ) -> MTAPIRES,
@@ -14322,15 +14319,15 @@ pub struct IMTServerAPI__bindgen_vtable {
         results: *mut MTAPIRES,
     ) -> MTAPIRES,
     pub IMTServerAPI_OnlineReserved4: unsafe extern "C" fn(this: *mut IMTServerAPI) -> MTAPIRES,
-    pub IMTServerAPI_NotificationsSend: unsafe extern "C" fn(
-        this: *mut IMTServerAPI,
-        metaquotes_ids: LPCWSTR,
-        message: LPCWSTR,
-    ) -> MTAPIRES,
     pub IMTServerAPI_NotificationsSend1: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         logins: *const UINT64,
         logins_total: UINT,
+        message: LPCWSTR,
+    ) -> MTAPIRES,
+    pub IMTServerAPI_NotificationsSend: unsafe extern "C" fn(
+        this: *mut IMTServerAPI,
+        metaquotes_ids: LPCWSTR,
         message: LPCWSTR,
     ) -> MTAPIRES,
     pub IMTServerAPI_NotificationsReserved1:
@@ -14567,10 +14564,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConEmailSink) -> MTAPIRES,
     pub IMTServerAPI_EmailAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, config: *mut IMTConEmail) -> MTAPIRES,
-    pub IMTServerAPI_EmailDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_EmailDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_EmailDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_EmailShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -14606,10 +14603,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConMessengerSink) -> MTAPIRES,
     pub IMTServerAPI_MessengerAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, config: *mut IMTConMessenger) -> MTAPIRES,
-    pub IMTServerAPI_MessengerDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_MessengerDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_MessengerDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_MessengerShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -14996,10 +14993,10 @@ pub struct IMTServerAPI__bindgen_vtable {
     ) -> MTAPIRES,
     pub IMTServerAPI_SubscriptionCfgAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, config: *mut IMTConSubscription) -> MTAPIRES,
-    pub IMTServerAPI_SubscriptionCfgDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_SubscriptionCfgDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_SubscriptionCfgDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_SubscriptionCfgDeleteByID:
         unsafe extern "C" fn(this: *mut IMTServerAPI, id: UINT64) -> MTAPIRES,
     pub IMTServerAPI_SubscriptionCfgShift: unsafe extern "C" fn(
@@ -15210,10 +15207,10 @@ pub struct IMTServerAPI__bindgen_vtable {
         unsafe extern "C" fn(this: *mut IMTServerAPI, sink: *mut IMTConKYCSink) -> MTAPIRES,
     pub IMTServerAPI_KYCAdd:
         unsafe extern "C" fn(this: *mut IMTServerAPI, config: *mut IMTConKYC) -> MTAPIRES,
-    pub IMTServerAPI_KYCDelete:
-        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_KYCDelete1:
         unsafe extern "C" fn(this: *mut IMTServerAPI, pos: UINT) -> MTAPIRES,
+    pub IMTServerAPI_KYCDelete:
+        unsafe extern "C" fn(this: *mut IMTServerAPI, name: LPCWSTR) -> MTAPIRES,
     pub IMTServerAPI_KYCShift: unsafe extern "C" fn(
         this: *mut IMTServerAPI,
         pos: UINT,
@@ -15263,5 +15260,3 @@ const _: () = {
     ["Size of IMTServerPlugin"][::std::mem::size_of::<IMTServerPlugin>() - 8usize];
     ["Alignment of IMTServerPlugin"][::std::mem::align_of::<IMTServerPlugin>() - 8usize];
 };
-
-

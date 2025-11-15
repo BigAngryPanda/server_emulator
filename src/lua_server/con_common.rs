@@ -1,3 +1,9 @@
+use mlua::{
+    Table,
+    Value,
+    MultiValue
+};
+
 use server_emulator_macro::log_impl_calls;
 
 use crate::mt5_apiserver::{
@@ -7,12 +13,14 @@ use crate::mt5_apiserver::{
 
 use crate::interfaces::con_common::MT5ConCommon;
 
+use crate::lua_server::lua_object::LuaObject;
+
 use crate::vtable_impl;
 
 use std::os::raw::c_uint;
 
 pub struct ConCommon {
-    dummy: char // make type non-zero
+    lua_impl: Table,
 }
 
 impl ConCommon {
@@ -20,14 +28,14 @@ impl ConCommon {
 
     const CON_COMMON_VTABLE: IMTConCommon__bindgen_vtable = vtable_impl::con_common::new();
 
-    pub fn new() -> ConCommon {
+    pub fn new(lua_impl: Table) -> ConCommon {
         ConCommon {
-            dummy: 'f'
+            lua_impl
         }
     }
 
-    pub fn alloc() -> *mut ConCommon {
-        Box::into_raw(Box::new(ConCommon::new()))
+    pub fn alloc(lua_impl: Table) -> *mut ConCommon {
+        Box::into_raw(Box::new(ConCommon::new(lua_impl)))
     }
 
     pub fn alloc_con_server(self_ptr: *mut dyn MT5ConCommon) -> *mut IMTConCommon {
@@ -41,6 +49,20 @@ impl ConCommon {
         }
 
         con_server
+    }
+
+    pub fn as_lua_arg(self_ptr: *mut ConCommon) -> MultiValue {
+        let mut result = MultiValue::new();
+
+        result.push_back(Value::Table(unsafe { (*self_ptr).lua_impl.clone() }));
+
+        result
+    }
+}
+
+impl LuaObject for ConCommon {
+    fn lua_impl(&self) -> Table {
+        self.lua_impl.clone()
     }
 }
 

@@ -7,3 +7,4 @@ pub mod trade_sink;
 pub mod request;
 pub mod symbol;
 pub mod order;
+pub mod con_plugin;

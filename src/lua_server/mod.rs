@@ -1,5 +1,9 @@
 pub mod server;
 pub mod lua_handler;
+pub mod lua_object;
+pub mod con_common;
+pub mod con_plugin;
+pub mod con_server;
 
 use mlua::{
     Lua,
@@ -16,7 +20,7 @@ fn load_module(lua: &Lua, dir: &str, mod_name: &str) {
     preload.set(mod_name, module_loader).unwrap();
 }
 
-pub fn lua_test() {
+pub fn run() {
     let script_content = std::fs::read_to_string("scripts/test.lua").unwrap();
 
     let lua = Lua::new();
@@ -24,6 +28,9 @@ pub fn lua_test() {
     lua.globals().set("Server", lua.create_proxy::<server::Server>().unwrap()).unwrap();
 
     load_module(&lua, "scripts", "server");
+    load_module(&lua, "scripts", "con_common");
+    load_module(&lua, "scripts", "con_plugin");
+    load_module(&lua, "scripts", "con_server");
 
     lua.load(&script_content).exec().unwrap();
 }
