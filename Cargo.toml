@@ -8,8 +8,9 @@ name = "server_emulator"
 path = "src/main.rs"
 
 [features]
-lua_server = []
+lua_server  = []
 rust_server = []
+log_calls = ["server_emulator_macro/log_calls"]
 
 [dependencies]
 libloading = "0.8"
@@ -17,3 +18,4 @@ mlua = { version = "0.11.4", features = ["lua54", "vendored"]}
 
 [dependencies.server_emulator_macro]
 path = "src/lib"
+features = ["log_calls"]

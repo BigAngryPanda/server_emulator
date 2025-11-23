@@ -26,6 +26,7 @@ pub fn log_trait_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
             let original_block = block.clone();
 
             *block = syn::parse_quote!({
+                #[cfg(feature = "log_calls")]
                 println!("[{:?}] virtual: {}::{}", std::thread::current().id(), #trait_name, #method_name);
                 #original_block
             });
@@ -59,6 +60,7 @@ pub fn log_impl_calls(_args: TokenStream, item: TokenStream) -> TokenStream {
                         let name_str = ident.ident.to_string();
                         let name_ident = &ident.ident;
                         param_logs.push(quote! {
+                            #[cfg(feature = "log_calls")]
                             println!("    {} = {:?}", #name_str, #name_ident);
                         });
                     }
@@ -66,6 +68,7 @@ pub fn log_impl_calls(_args: TokenStream, item: TokenStream) -> TokenStream {
             }
 
             method.block = syn::parse_quote!({
+                #[cfg(feature = "log_calls")]
                 println!("[{:?}] real: {}::{}", std::thread::current().id(), #struct_name, #method_name);
                 #(#param_logs)*
                 #original_block
@@ -75,7 +78,6 @@ pub fn log_impl_calls(_args: TokenStream, item: TokenStream) -> TokenStream {
 
     quote!(#input).into()
 }
-
 
 #[proc_macro_attribute]
 pub fn log_fn_call(_attr: TokenStream, item: TokenStream) -> TokenStream {
@@ -88,6 +90,7 @@ pub fn log_fn_call(_attr: TokenStream, item: TokenStream) -> TokenStream {
 
     let result = quote! {
         #vis #sig {
+            #[cfg(feature = "log_calls")]
             println!("Calling function: {}", #fn_name);
             #block
         }

@@ -17,9 +17,11 @@ return settings
 
 ### Run
 
-`cargo run --bin server_emulator --features lua_server`
+`cargo run --bin server_emulator --features lua_server,log_calls`
 
 Note: make sure scripts directory is in current working directory
+
+To disable function calls log remove `log_calls` from the command above
 
 ## (Re)generate bindings (not needed)
 

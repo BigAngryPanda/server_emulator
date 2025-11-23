@@ -71,7 +71,6 @@ impl LuaHandler {
             func.call::<Value>(args).unwrap_or(Value::Nil)
         }
         else {
-            println!("FAIL {}", name);
             Value::Nil
         }
     }
