@@ -4121,6 +4121,7 @@ pub struct IMTConGroup__bindgen_vtable {
 #[derive(Debug)]
 pub struct IMTConGroup {
     pub vtable_: *const IMTConGroup__bindgen_vtable,
+    pub impl_ptr: *mut dyn crate::interfaces::con_group::MT5ConGroup
 }
 pub const IMTConGroup_EnPermissionsFlags_PERMISSION_NONE: IMTConGroup_EnPermissionsFlags = 0;
 pub const IMTConGroup_EnPermissionsFlags_PERMISSION_CERT_CONFIRM: IMTConGroup_EnPermissionsFlags =
@@ -4247,7 +4248,7 @@ pub const IMTConGroup_EnTradeFlags_TRADEFLAGS_ALL: IMTConGroup_EnTradeFlags = 40
 pub type IMTConGroup_EnTradeFlags = ::std::os::raw::c_int;
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of IMTConGroup"][::std::mem::size_of::<IMTConGroup>() - 8usize];
+    ["Size of IMTConGroup"][::std::mem::size_of::<IMTConGroup>() - 24usize];
     ["Alignment of IMTConGroup"][::std::mem::align_of::<IMTConGroup>() - 8usize];
 };
 #[repr(C)]
@@ -6351,6 +6352,7 @@ pub struct IMTPosition__bindgen_vtable {
 #[derive(Debug)]
 pub struct IMTPosition {
     pub vtable_: *const IMTPosition__bindgen_vtable,
+    pub impl_ptr: *mut dyn crate::interfaces::mt_position::MTPosition
 }
 pub const IMTPosition_EnPositionAction_POSITION_BUY: IMTPosition_EnPositionAction = 0;
 pub const IMTPosition_EnPositionAction_POSITION_SELL: IMTPosition_EnPositionAction = 1;
@@ -6425,7 +6427,7 @@ pub const IMTPosition_EnTradeModifyFlags_MODIFY_FLAGS_ALL: IMTPosition_EnTradeMo
 pub type IMTPosition_EnTradeModifyFlags = ::std::os::raw::c_int;
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of IMTPosition"][::std::mem::size_of::<IMTPosition>() - 8usize];
+    ["Size of IMTPosition"][::std::mem::size_of::<IMTPosition>() - 24usize];
     ["Alignment of IMTPosition"][::std::mem::align_of::<IMTPosition>() - 8usize];
 };
 #[repr(C)]
@@ -6705,6 +6707,7 @@ pub struct IMTDeal__bindgen_vtable {
 #[derive(Debug)]
 pub struct IMTDeal {
     pub vtable_: *const IMTDeal__bindgen_vtable,
+    pub impl_ptr: *mut dyn crate::interfaces::mt_deal::MT5Deal
 }
 pub const IMTDeal_EnDealAction_DEAL_BUY: IMTDeal_EnDealAction = 0;
 pub const IMTDeal_EnDealAction_DEAL_SELL: IMTDeal_EnDealAction = 1;
@@ -6772,7 +6775,7 @@ pub const IMTDeal_EnTradeModifyFlags_MODIFY_FLAGS_ALL: IMTDeal_EnTradeModifyFlag
 pub type IMTDeal_EnTradeModifyFlags = ::std::os::raw::c_int;
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
-    ["Size of IMTDeal"][::std::mem::size_of::<IMTDeal>() - 8usize];
+    ["Size of IMTDeal"][::std::mem::size_of::<IMTDeal>() - 24usize];
     ["Alignment of IMTDeal"][::std::mem::align_of::<IMTDeal>() - 8usize];
 };
 #[repr(C)]

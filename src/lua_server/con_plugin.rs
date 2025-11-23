@@ -1,14 +1,14 @@
 use mlua::Table;
 
-use std::os::raw::{
-    c_uint
-};
-
 use server_emulator_macro::log_impl_calls;
 
 use crate::interfaces::con_plugin::MT5ConPlugin;
 
-use crate::lua_server::lua_object::LuaObject;
+use crate::lua_server::{
+    lua_object::LuaObject,
+    lua_object::LuaConstructible,
+    lua_handler::LuaHandler
+};
 
 use crate::mt5_apiserver::{
     IMTConPlugin,
@@ -17,43 +17,51 @@ use crate::mt5_apiserver::{
 
 use crate::vtable_impl;
 
+use std::sync::Arc;
+
 pub struct ConPlugin {
-    pub lua_impl: Table
+    lua: Arc<LuaHandler>,
+    lua_impl: Table,
+    name: Vec<u16>
 }
 
 #[log_impl_calls]
 impl ConPlugin {
-    const STR_DATA: &[u16] = &[85, 110, 107, 110, 111, 119, 110, 0]; // "Unknown"
-
-    const CON_PLUGIN_VTABLE: IMTConPlugin__bindgen_vtable = vtable_impl::con_plugin::new();
-
-    pub fn new(lua_impl: Table) -> ConPlugin {
-        ConPlugin {
-            lua_impl
-        }
-    }
-
-    pub fn alloc(lua_impl: Table) -> *mut ConPlugin {
-        Box::into_raw(Box::new(ConPlugin::new(lua_impl)))
-    }
-
-    pub fn alloc_con_plugin(self_ptr: *mut dyn MT5ConPlugin) -> *mut IMTConPlugin {
-        let con_server = unsafe {
-            std::alloc::alloc(std::alloc::Layout::new::<IMTConPlugin>()) as *mut IMTConPlugin
-        };
-
-        unsafe {
-            (*con_server).vtable_ = &Self::CON_PLUGIN_VTABLE as *const IMTConPlugin__bindgen_vtable;
-            (*con_server).impl_ptr = self_ptr;
-        }
-
-        con_server
-    }
+    const VTABLE: IMTConPlugin__bindgen_vtable = vtable_impl::con_plugin::new();
 }
 
 impl LuaObject for ConPlugin {
     fn lua_impl(&self) -> Table {
         self.lua_impl.clone()
+    }
+
+    fn lua_handler(&self) -> &LuaHandler {
+        &self.lua
+    }
+}
+
+impl LuaConstructible for ConPlugin {
+    type MTType = IMTConPlugin;
+
+    fn new(lua: Arc<LuaHandler>, lua_impl: Table) -> Self {
+        let mut result = Self {
+            lua_impl,
+            lua,
+            name: Vec::new()
+        };
+
+        result.name = result.call_str("name");
+
+        result
+    }
+
+    fn mt_type(self_ptr: *mut Self, mt_obj: &mut Self::MTType) {
+        mt_obj.vtable_ = &Self::VTABLE;
+        mt_obj.impl_ptr = self_ptr;
+    }
+
+    fn free_by_ptr(self_ptr: *mut Self::MTType) {
+        unsafe { (*(*self_ptr).impl_ptr).release(); }
     }
 }
 
@@ -66,11 +74,11 @@ impl MT5ConPlugin for ConPlugin {
         };
     }
 
-    fn name1(&mut self, name: &[u16]) -> c_uint {
-        0
+    fn name(&self) -> *const u16 {
+        self.name.as_ptr()
     }
 
-    fn name(&self) -> *const u16 {
-        Self::STR_DATA.as_ptr()
+    fn server(&self) -> u64 {
+        self.call_int("server", 1)
     }
 }

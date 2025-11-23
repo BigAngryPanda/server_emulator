@@ -3,11 +3,11 @@ use mlua::Table;
 use server_emulator_macro::log_impl_calls;
 
 use crate::mt5_apiserver::{
-    IMTConServer,
-    IMTConServer__bindgen_vtable
+    IMTConGroup,
+    IMTConGroup__bindgen_vtable
 };
 
-use crate::interfaces::con_server::MT5ConServer;
+use crate::interfaces::con_group::MT5ConGroup;
 
 use crate::lua_server::{
     lua_object::LuaObject,
@@ -19,18 +19,17 @@ use crate::vtable_impl;
 
 use std::sync::Arc;
 
-pub struct ConServer {
+pub struct Group {
     lua_impl: Table,
-    lua: Arc<LuaHandler>,
-    address: Vec<u16>
+    lua: Arc<LuaHandler>
 }
 
 #[log_impl_calls]
-impl ConServer {
-    const VTABLE: IMTConServer__bindgen_vtable = vtable_impl::con_server::new();
+impl Group {
+    const VTABLE: IMTConGroup__bindgen_vtable = vtable_impl::con_group::new();
 }
 
-impl LuaObject for ConServer {
+impl LuaObject for Group {
     fn lua_impl(&self) -> Table {
         self.lua_impl.clone()
     }
@@ -40,19 +39,14 @@ impl LuaObject for ConServer {
     }
 }
 
-impl LuaConstructible for ConServer {
-    type MTType = IMTConServer;
+impl LuaConstructible for Group {
+    type MTType = IMTConGroup;
 
     fn new(lua: Arc<LuaHandler>, lua_impl: Table) -> Self {
-        let mut result = Self {
+        Self {
             lua_impl,
-            lua,
-            address: Vec::new()
-        };
-
-        result.address = result.call_str("address");
-
-        result
+            lua
+        }
     }
 
     fn mt_type(self_ptr: *mut Self, mt_obj: &mut Self::MTType) {
@@ -66,11 +60,7 @@ impl LuaConstructible for ConServer {
 }
 
 #[log_impl_calls]
-impl MT5ConServer for ConServer {
-    fn address(&self) -> *const u16 {
-        self.address.as_ptr()
-    }
-
+impl MT5ConGroup for Group {
     fn release(&mut self) {
         self.free();
     }

@@ -23,7 +23,7 @@ pub trait MTOrder {
         0
     }
 
-    fn print(&self, string: *mut MTAPISTR) -> *const u16 {
+    fn print(&self, string: *mut [u16; 260usize]) -> *const u16 {
         std::ptr::null()
     }
 

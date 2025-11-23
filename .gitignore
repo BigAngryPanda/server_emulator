@@ -71,3 +71,5 @@ docs/_build/
 .env/
 
 *.lock
+
+scripts/settings.lua

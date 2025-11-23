@@ -2,15 +2,7 @@ use crate::mt5_apiserver::*;
 
 use server_emulator_macro::log_trait_calls;
 
-use std::os::raw::{
-    c_uint
-};
-
-type UINT = c_uint;
-type UINT64 = u64;
-type INT = i32;
-type INT64 = i64;
-type COLORREF = u32;
+use std::os::raw::c_uint;
 
 #[allow(unused_variables)]
 #[log_trait_calls]

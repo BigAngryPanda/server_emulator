@@ -18,7 +18,7 @@ unsafe extern "C" fn IMTServerAPI_About(this: *mut IMTServerAPI, info: *mut MTSe
 unsafe extern "C" fn IMTServerAPI_LicenseCheck(this: *mut IMTServerAPI, license_name: LPCWSTR)
     -> MTAPIRES
 {
-    (*(*this).impl_ptr).license_check(&*license_name)
+    (*(*this).impl_ptr).license_check(license_name)
 }
 
 unsafe extern "C" fn IMTServerAPI_Allocate(this: *mut IMTServerAPI, bytes: UINT)

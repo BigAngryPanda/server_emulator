@@ -10,7 +10,6 @@ use std::os::raw::{
     c_longlong,
     c_ulonglong
 };
-use std::ptr;
 
 #[allow(unused_variables)]
 #[log_trait_calls]
@@ -25,8 +24,8 @@ pub trait MTRequest {
         0
     }
 
-    fn print(&self, string: &mut [u16; 260usize]) -> *const c_ushort {
-        ptr::null()
+    fn print(&self, string: &mut [u16; 260usize]) -> *const u16 {
+        std::ptr::null()
     }
 
     fn id(&self) -> c_uint {
@@ -41,15 +40,15 @@ pub trait MTRequest {
         0
     }
 
-    fn group(&self) -> *const c_ushort {
-        ptr::null()
+    fn group(&self) -> *const u16 {
+        std::ptr::null()
     }
 
-    fn symbol(&self) -> *const c_ushort {
-        ptr::null()
+    fn symbol(&self) -> *const u16 {
+        std::ptr::null()
     }
 
-    fn symbol1(&mut self, symbol: *const c_ushort) -> c_uint {
+    fn symbol1(&mut self, symbol: *const u16) -> c_uint {
         0
     }
 
@@ -122,7 +121,7 @@ pub trait MTRequest {
     }
 
     fn order_external_id(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn order_external_id1(&mut self, id: *const c_ushort) -> c_uint {
@@ -178,7 +177,7 @@ pub trait MTRequest {
     }
 
     fn comment(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn comment1(&mut self, comment: *const c_ushort) -> c_uint {
@@ -234,11 +233,11 @@ pub trait MTRequest {
     }
 
     fn result_comment(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn external_account(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn external_account1(&mut self, account: *const c_ushort) -> c_uint {
@@ -250,7 +249,7 @@ pub trait MTRequest {
     }
 
     fn ip(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn ip1(&mut self, ip: *const c_ushort) -> c_uint {
@@ -282,7 +281,7 @@ pub trait MTRequest {
     }
 
     fn position_external_id(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn position_external_id1(&mut self, id: *const c_ushort) -> c_uint {
@@ -290,7 +289,7 @@ pub trait MTRequest {
     }
 
     fn position_by_external_id(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn position_by_external_id1(&mut self, id: *const c_ushort) -> c_uint {
@@ -362,7 +361,7 @@ pub trait MTRequest {
     }
 
     fn api_data_raw(&self) -> *mut c_void {
-        ptr::null_mut()
+        std::ptr::null_mut()
     }
 
     fn api_data_raw_max(&self) -> c_uint {
@@ -394,7 +393,7 @@ pub trait MTRequest {
     }
 
     fn symbol_original(&self) -> *const c_ushort {
-        ptr::null()
+        std::ptr::null()
     }
 
     fn symbol_original1(&mut self, symbol: *const c_ushort) -> c_uint {

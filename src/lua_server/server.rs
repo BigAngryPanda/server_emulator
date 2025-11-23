@@ -3,8 +3,7 @@ use mlua::{
     Table,
     UserData,
     UserDataMethods,
-    Value,
-    MultiValue
+    Value
 };
 
 use crate::mt5_apiserver::{
@@ -14,6 +13,12 @@ use crate::mt5_apiserver::{
     IMTConCommon,
     IMTConPlugin,
     IMTConServer,
+    IMTUserSink,
+    IMTUser,
+    IMTTradeSink,
+    IMTConSymbol,
+    IMTOrder,
+    IMTRequest,
     IMTServerPlugin__bindgen_vtable,
     IMTServerAPI__bindgen_vtable,
     IMTConPlugin__bindgen_vtable,
@@ -24,7 +29,10 @@ use crate::{
     vtable_impl,
 };
 
-use crate::lua_server::lua_handler::LuaHandler;
+use crate::lua_server::{
+    lua_handler::LuaHandler,
+    lua_object::LuaConstructible
+};
 
 use crate::interfaces::{
     server::MT5Server,
@@ -38,9 +46,23 @@ use crate::lua_server::{
     con_common::ConCommon,
     con_plugin::ConPlugin,
     con_server::ConServer,
+    order::Order,
+    user::User,
+    symbol::Symbol,
+    request::Request,
+    trade_sink::TradeSink,
 };
 
-use crate::lua_server::lua_object::as_lua_arg;
+use crate::lua_server::lua_object::{
+    LuaObject,
+    as_lua_value
+};
+
+use crate::conversion::{
+    to_utf16_str,
+    copy_unaligned,
+    FromInt64
+};
 
 use std::os::raw::{
     c_uint,
@@ -53,8 +75,10 @@ use std::sync::atomic::{
     Ordering::Relaxed
 };
 
+use std::sync::Arc;
+
 pub struct Server {
-    lua: LuaHandler,
+    lua: Arc<LuaHandler>,
     server_impl: Table,
     server_api: AtomicPtr<IMTServerAPI>,
     plugin: libloading::Library,
@@ -72,7 +96,7 @@ impl Server {
         };
 
         Server {
-            lua: LuaHandler::new(lua),
+            lua: Arc::new(LuaHandler::new(lua)),
             server_impl,
             server_api: AtomicPtr::new(std::ptr::null_mut()),
             plugin,
@@ -128,6 +152,36 @@ impl Server {
     fn plugin_vtable(&self) -> &IMTServerPlugin__bindgen_vtable {
         unsafe { &(*(*self.plugin_vtable.load(Relaxed)).vtable_) }
     }
+
+    fn read_str(&self, name: &str, dst: *mut u16, max_bytes: usize) {
+        let utf16_name = self.call_str(name);
+
+        copy_unaligned(
+            utf16_name.as_ptr(),
+            dst,
+            std::cmp::min(utf16_name.len(), max_bytes));
+    }
+
+    fn read_int<T: FromInt64>(&self, name: &str, dst: *mut T) {
+        match self.call(name) {
+            Value::Integer(ver) => {
+                unsafe {
+                    std::ptr::write_unaligned(dst, FromInt64::from_i64(ver));
+                }
+            }
+            _ => {}
+        }
+    }
+}
+
+impl LuaObject for Server  {
+    fn lua_impl(&self) -> Table {
+        self.server_impl.clone()
+    }
+
+    fn lua_handler(&self) -> &LuaHandler {
+        &self.lua
+    }
 }
 
 impl UserData for Server {
@@ -152,22 +206,30 @@ impl UserData for Server {
 
 #[log_impl_calls]
 impl MT5Server for Server {
-    fn about(&mut self, info: &mut MTServerInfo) -> c_uint {
-        0
+    fn about(&mut self, info: &mut MTServerInfo) -> u32 {
+        self.read_str("get_platform_name",  &raw mut info.platform_name  as *mut u16, 63);
+        self.read_str("get_platform_owner", &raw mut info.platform_owner as *mut u16, 127);
+
+        self.read_int("get_server_version", &raw mut info.server_version);
+        self.read_int("get_server_build",   &raw mut info.server_build);
+        self.read_int("get_server_type",    &raw mut info.server_type);
+        self.read_int("get_server_id",      &raw mut info.server_type);
+
+        self.call_int("about", 1)
     }
 
-    fn license_check(&mut self, license_name: &u16) -> c_uint {
-        0
+    fn license_check(&mut self, license_name: *const u16) -> u32 {
+        let name = String::from_utf16_lossy(to_utf16_str(license_name));
+
+        let lua_str = self.lua.create_string(name.as_bytes());
+
+        self.call_int_with_args("license_check", &[Value::String(lua_str)], 1)
     }
 
     fn common_create(&mut self) -> *mut IMTConCommon {
-        match self.lua.call(self.server_impl.clone(), "common_create", MultiValue::new()) {
+        match self.lua.call(self.server_impl.clone(), "common_create", self.prepare_args(&[])) {
             Value::Table(lua_impl) => {
-                let con_common = ConCommon::alloc(lua_impl);
-
-                let mt_con_common = ConCommon::alloc_con_server(con_common);
-
-                mt_con_common
+                ConCommon::alloc(self.lua.clone(), lua_impl)
             }
             _ => {
                 std::ptr::null_mut()
@@ -175,25 +237,16 @@ impl MT5Server for Server {
         }
     }
 
-    fn common_get(&mut self, common: &mut IMTConCommon) -> c_uint {
-        match self.lua.call(self.server_impl.clone(), "common_get", as_lua_arg::<_, ConCommon>(common.impl_ptr)) {
-            Value::Integer(res) => {
-                res as c_uint
-            }
-            _ => {
-                0
-            }
-        }
+    fn common_get(&mut self, common: &mut IMTConCommon) -> u32 {
+        let args = [as_lua_value::<_, ConCommon>(common.impl_ptr)];
+
+        self.call_int_with_args("common_get", &args, 1)
     }
 
     fn plugin_create(&mut self) -> *mut IMTConPlugin {
-        match self.lua.call(self.server_impl.clone(), "plugin_create", MultiValue::new()) {
+        match self.lua.call(self.server_impl.clone(), "plugin_create", self.prepare_args(&[])) {
             Value::Table(lua_impl) => {
-                let con_plugin = ConPlugin::alloc(lua_impl);
-
-                let mt_con_plugin = ConPlugin::alloc_con_plugin(con_plugin);
-
-                mt_con_plugin
+                ConPlugin::alloc(self.lua.clone(), lua_impl)
             }
             _ => {
                 std::ptr::null_mut()
@@ -204,25 +257,16 @@ impl MT5Server for Server {
     fn plugin_current(
         &mut self,
         plugin: &mut IMTConPlugin,
-    ) -> c_uint {
-        match self.lua.call(self.server_impl.clone(), "plugin_current", as_lua_arg::<_, ConPlugin>(plugin.impl_ptr)) {
-            Value::Integer(res) => {
-                res as c_uint
-            }
-            _ => {
-                0
-            }
-        }
+    ) -> u32 {
+        let args = [as_lua_value::<_, ConPlugin>(plugin.impl_ptr)];
+
+        self.call_int_with_args("plugin_current", &args, 1)
     }
 
     fn net_server_create(&mut self) -> *mut IMTConServer {
-        match self.lua.call(self.server_impl.clone(), "net_server_create", MultiValue::new()) {
+        match self.lua.call(self.server_impl.clone(), "net_server_create", self.prepare_args(&[])) {
             Value::Table(lua_impl) => {
-                let con_server = ConServer::alloc(lua_impl);
-
-                let mt_con_server = ConServer::alloc_con_server(con_server);
-
-                mt_con_server
+                ConServer::alloc(self.lua.clone(), lua_impl)
             }
             _ => {
                 std::ptr::null_mut()
@@ -234,13 +278,88 @@ impl MT5Server for Server {
         &mut self,
         id: c_ulonglong,
         config: &mut IMTConServer,
-    ) -> c_uint {
-        0
+    ) -> u32 {
+        let args = [
+            as_lua_value::<_, ConServer>(config.impl_ptr),
+            Value::Integer(id as i64)
+        ];
+
+        self.call_int_with_args("net_server_get", &args, 1)
     }
 
     fn time_current_msc(&mut self) -> c_longlong {
         use std::time::{SystemTime, UNIX_EPOCH};
 
+        //self.lua.call(self.server_impl.clone(), "time_current_msc", MultiValue::new());
+
         SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis() as c_longlong
+    }
+
+    fn user_subscribe(&mut self, sink: &mut IMTUserSink) -> u32 {
+        // todo
+        0
+    }
+
+    fn user_create(&mut self) -> *mut IMTUser {
+        match self.lua.call(self.server_impl.clone(), "user_create", self.prepare_args(&[])) {
+            Value::Table(lua_impl) => {
+                User::alloc(self.lua.clone(), lua_impl)
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
+    }
+
+    fn trade_subscribe(&mut self, sink: &mut IMTTradeSink) -> u32 {
+        let trade_sink = self.lua.wrap_value(TradeSink::new(self.lua.clone(), sink));
+
+        self.call_int_with_args("trade_subscribe", &[trade_sink], 1)
+    }
+
+    fn symbol_create(&mut self) -> *mut IMTConSymbol {
+        match self.lua.call(self.server_impl.clone(), "symbol_create", self.prepare_args(&[])) {
+            Value::Table(lua_impl) => {
+                Symbol::alloc(self.lua.clone(), lua_impl)
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
+    }
+
+    fn trade_request_create(&mut self) -> *mut IMTRequest {
+        match self.lua.call(self.server_impl.clone(), "trade_request_create", self.prepare_args(&[])) {
+            Value::Table(lua_impl) => {
+                Request::alloc(self.lua.clone(), lua_impl)
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
+    }
+
+    fn order_create(&mut self) -> *mut IMTOrder {
+        match self.lua.call(self.server_impl.clone(), "order_create", self.prepare_args(&[])) {
+            Value::Table(lua_impl) => {
+                Order::alloc(self.lua.clone(), lua_impl)
+            }
+            _ => {
+                std::ptr::null_mut()
+            }
+        }
+    }
+
+    fn symbol_next(
+        &mut self,
+        pos: c_uint,
+        symbol: &mut IMTConSymbol,
+    ) -> u32 {
+        let args = [
+            as_lua_value::<_, Symbol>(symbol.impl_ptr),
+            Value::Integer(pos as i64)
+        ];
+
+        self.call_int_with_args("symbol_next", &args, 1)
     }
 }

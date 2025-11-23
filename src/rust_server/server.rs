@@ -133,7 +133,7 @@ impl MT5Server for Server {
         0
     }
 
-    fn license_check(&mut self, license_name: &u16) -> c_uint {
+    fn license_check(&mut self, license_name: *const u16) -> c_uint {
         0
     }
 
